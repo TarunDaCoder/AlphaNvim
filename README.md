@@ -1,0 +1,2 @@
+# GalaxyVim
+nvim config
