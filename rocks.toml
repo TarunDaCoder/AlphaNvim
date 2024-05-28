@@ -1,0 +1,65 @@
+# This is your rocks.nvim plugins declaration file.
+# Here is a small yet pretty detailed example on how to use it:
+#
+# [plugins]
+# nvim-treesitter = "semver_version"  # e.g. "1.0.0"
+
+# List of non-Neovim rocks.
+# This includes things like `toml` or other lua packages.
+[rocks]
+
+# List of Neovim plugins to install alongside their versions.
+# If the plugin name contains a dot then you must add quotes to the key name!
+[plugins]
+"rocks.nvim" = "2.29.0"
+neorg = "8.5.0"
+nvim-web-devicons = "0.100"
+nvim-navic = "scm"
+"rocks-git.nvim" = "1.5.1"
+"plenary.nvim"= "scm"
+luasnip = "2.3.0"
+
+[plugins."lualine.nvim"]
+git = "nvim-lualine/lualine.nvim"
+rev = "compat-nvim-0.6"
+
+[plugins."barbecue.nvim"]
+git = "utilyre/barbecue.nvim"
+rev = "v1.2.0"
+
+[plugins."nvim-tree.lua"]
+git = "nvim-tree/nvim-tree.lua"
+rev = "v1.3.3"
+
+[plugins.nvim-treesitter]
+git = "nvim-treesitter/nvim-treesitter"
+rev = "v0.9.2^{}"
+
+[plugins."telescope.nvim"]
+git = "nvim-telescope/telescope.nvim"
+rev = "nvim-0.6"
+
+[plugins."mason.nvim"]
+git = "williamboman/mason.nvim"
+rev = "v1.10.0"
+
+[plugins."mason-lspconfig.nvim"]
+git = "williamboman/mason-lspconfig.nvim"
+rev = "v1.9.0"
+
+[plugins.nvim-lspconfig]
+git = "neovim/nvim-lspconfig"
+rev = "v0.1.8"
+
+[plugins."lspsaga.nvim"]
+git = "nvimdev/lspsaga.nvim"
+
+[plugins.nvim-cmp]
+git = "hrsh7th/nvim-cmp"
+rev = "v0.0.1"
+
+[plugins.cmp-nvim-lsp]
+git = "hrsh7th/cmp-nvim-lsp"
+
+[plugins."onedark.nvim"]
+git = "navarasu/onedark.nvim"
