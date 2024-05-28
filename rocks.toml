@@ -11,7 +11,7 @@
 # List of Neovim plugins to install alongside their versions.
 # If the plugin name contains a dot then you must add quotes to the key name!
 [plugins]
-"rocks.nvim" = "2.29.0"
+"rocks.nvim" = "2.29.1"
 neorg = "8.5.0"
 nvim-web-devicons = "0.100"
 nvim-navic = "scm"
@@ -60,12 +60,17 @@ git = "nvimdev/lspsaga.nvim"
 [plugins.nvim-cmp]
 git = "hrsh7th/nvim-cmp"
 rev = "v0.0.1"
+# commit = "b356f2c"
 
 [plugins.cmp-nvim-lsp]
 git = "hrsh7th/cmp-nvim-lsp"
 
 [plugins."onedark.nvim"]
 git = "navarasu/onedark.nvim"
+
+[plugins."gitsigns.nvim"]
+git = "lewis6991/gitsigns.nvim"
+rev = "v0.8.1"
 
 
 # Neovim config
