@@ -18,6 +18,7 @@ nvim-navic = "scm"
 "rocks-git.nvim" = "1.5.1"
 "plenary.nvim"= "scm"
 luasnip = "2.3.0"
+"comment.nvim" = "0.8.0"
 
 [plugins."lualine.nvim"]
 git = "nvim-lualine/lualine.nvim"
