@@ -19,6 +19,8 @@ nvim-navic = "scm"
 "plenary.nvim"= "scm"
 luasnip = "2.3.0"
 "comment.nvim" = "0.8.0"
+"rocks-dev.nvim" = "1.2.1"
+"rocks-config.nvim" = "1.6.0"
 
 [plugins."lualine.nvim"]
 git = "nvim-lualine/lualine.nvim"
@@ -64,3 +66,23 @@ git = "hrsh7th/cmp-nvim-lsp"
 
 [plugins."onedark.nvim"]
 git = "navarasu/onedark.nvim"
+
+
+# Neovim config
+[config.options]
+number = true
+relativenumber = true
+splitbelow = true
+splitright = true
+wrap = false
+expandtab = true
+tabstop = 4
+shiftwidth = 4
+clipboard = "unnamedplus"
+scrolloff = 999
+virtualedit = "block"
+inccommand = "split"
+ignorecase = true
+termguicolors = true
+updatetime = 100
+conceallevel = 2
