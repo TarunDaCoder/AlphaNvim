@@ -1,0 +1,7 @@
+require("tarun.plugin_conf.lualine")
+require("tarun.plugin_conf.barbecue")
+require("tarun.plugin_conf.nvimtree")
+require("tarun.plugin_conf.treesitter")
+require("tarun.plugin_conf.telescope")
+require("tarun.plugin_conf.lspconf")
+-- require("tarun.plugin_conf.completions")
