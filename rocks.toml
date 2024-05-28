@@ -57,11 +57,6 @@ rev = "v0.1.8"
 [plugins."lspsaga.nvim"]
 git = "nvimdev/lspsaga.nvim"
 
-[plugins.nvim-cmp]
-git = "hrsh7th/nvim-cmp"
-rev = "v0.0.1"
-# commit = "b356f2c"
-
 [plugins.cmp-nvim-lsp]
 git = "hrsh7th/cmp-nvim-lsp"
 
@@ -71,6 +66,16 @@ git = "navarasu/onedark.nvim"
 [plugins."gitsigns.nvim"]
 git = "lewis6991/gitsigns.nvim"
 rev = "v0.8.1"
+
+[plugins.nvim-cmp]
+git = "hrsh7th/nvim-cmp"
+rev = "v0.0.1"
+
+[plugins.cmp_luasnip]
+git = "saadparwaiz1/cmp_luasnip"
+
+[plugins.nvim-autopairs]
+git = "windwp/nvim-autopairs"
 
 
 # Neovim config
@@ -91,3 +96,4 @@ ignorecase = true
 termguicolors = true
 updatetime = 100
 conceallevel = 2
+fileformat = "dos"
