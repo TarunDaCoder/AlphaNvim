@@ -104,6 +104,9 @@ rev = "v3.0.0"
 [plugins."lspkind.nvim"]
 git = "onsails/lspkind.nvim"
 
+[plugins.cmp]
+git = "petertriho/cmp-git"
+
 
 # Neovim config
 [config.options]
