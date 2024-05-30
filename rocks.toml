@@ -69,7 +69,8 @@ rev = "v0.8.1"
 
 [plugins.nvim-cmp]
 git = "hrsh7th/nvim-cmp"
-rev = "v0.0.1"
+# rev = "v0.0.1"
+rev = "5260e5e"
 
 [plugins.cmp_luasnip]
 git = "saadparwaiz1/cmp_luasnip"
@@ -77,11 +78,36 @@ git = "saadparwaiz1/cmp_luasnip"
 [plugins.nvim-autopairs]
 git = "windwp/nvim-autopairs"
 
+[plugins.dashboard-nvim]
+git = "nvimdev/dashboard-nvim"
+
+[plugins.cmp-cmdline]
+git = "hrsh7th/cmp-cmdline"
+
+[plugins.cmp-buffer]
+git = "hrsh7th/cmp-buffer"
+
+[plugins.cmp-path]
+git = "hrsh7th/cmp-path"
+
+[plugins."telescope-ui-select.nvim"]
+git = "nvim-telescope/telescope-ui-select.nvim"
+
+[plugins."barbar.nvim"]
+git = "romgrk/barbar.nvim"
+rev = "v1.7.0-beta.4"
+
+[plugins."trouble.nvim"]
+git = "folke/trouble.nvim"
+rev = "v3.0.0"
+
+[plugins."lspkind.nvim"]
+git = "onsails/lspkind.nvim"
+
 
 # Neovim config
 [config.options]
 number = true
-relativenumber = true
 splitbelow = true
 splitright = true
 wrap = false
@@ -96,4 +122,4 @@ ignorecase = true
 termguicolors = true
 updatetime = 100
 conceallevel = 2
-fileformat = "dos"
+fileformat = "unix"
