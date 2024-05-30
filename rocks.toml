@@ -107,6 +107,13 @@ git = "onsails/lspkind.nvim"
 [plugins.cmp]
 git = "petertriho/cmp-git"
 
+[plugins."which-key.nvim"]
+git = "folke/which-key.nvim"
+rev = "v1.6.0"
+
+[plugins.alpha-nvim]
+git = "goolord/alpha-nvim"
+
 
 # Neovim config
 [config.options]
