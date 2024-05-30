@@ -20,5 +20,3 @@ require("lualine").setup {
     end,
   }
 }
-
-
