@@ -1,10 +1,13 @@
 -- ONEDARK ========================
-vim.cmd[[colorscheme onedark]]
-
 require("onedark").setup {
-  style = "cool"
+  style = "deep",
+  transparent = true,
+  lualine = {
+      transparent = true,
+  },
 }
 
+vim.cmd[[colorscheme onedark]]
 -- NEOFUSION ======================
 -- vim.cmd[[ colorscheme neofusion ]]
 --
