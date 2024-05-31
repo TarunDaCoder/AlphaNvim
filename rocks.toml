@@ -142,3 +142,4 @@ conceallevel = 2
 foldlevel = 99
 fileformat = "unix"
 background = "dark"
+backspace = "2"
