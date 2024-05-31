@@ -114,6 +114,10 @@ rev = "v1.6.0"
 [plugins.alpha-nvim]
 git = "goolord/alpha-nvim"
 
+[plugins.nvim-dap]
+git = "mfussenegger/nvim-dap"
+rev = "0.8.0^{}"
+
 
 # Neovim config
 [config.options]
@@ -132,4 +136,5 @@ ignorecase = true
 termguicolors = true
 updatetime = 100
 conceallevel = 2
+foldlevel = 99
 fileformat = "unix"
