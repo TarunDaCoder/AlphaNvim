@@ -1,6 +1,7 @@
 require("lualine").setup {
   options = {
     theme = "onedark",
+    -- theme = require("neofusion.lualine"),
     function(_, opts)
         local trouble = require("trouble")
         local symbols = trouble.statusline({

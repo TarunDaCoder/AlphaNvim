@@ -118,6 +118,9 @@ git = "goolord/alpha-nvim"
 git = "mfussenegger/nvim-dap"
 rev = "0.8.0^{}"
 
+[plugins."neofusion.nvim"]
+git = "diegoulloao/neofusion.nvim"
+
 
 # Neovim config
 [config.options]
@@ -138,3 +141,4 @@ updatetime = 100
 conceallevel = 2
 foldlevel = 99
 fileformat = "unix"
+background = "dark"
