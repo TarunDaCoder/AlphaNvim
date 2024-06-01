@@ -1,9 +1,9 @@
-vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
-  pattern = {"*.norg"},
-  command = "set conceallevel=3"
+vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
+	pattern = { '*.norg' },
+	command = 'set conceallevel=3',
 })
 
-local neorg = require("neorg")
+local neorg = require('neorg')
 neorg.setup({
     load = {
         ['core.defaults'] = {},

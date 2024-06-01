@@ -1,1 +1,1 @@
-require("indentmini").setup({})
+require('indentmini').setup({})

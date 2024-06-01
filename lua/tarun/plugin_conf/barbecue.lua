@@ -1,3 +1,3 @@
-require("barbecue").setup {
-  theme = "onedark",
-}
+require('barbecue').setup({
+	theme = 'onedark',
+})

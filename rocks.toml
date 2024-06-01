@@ -22,6 +22,8 @@ luasnip = "2.3.0"
 "rocks-dev.nvim" = "1.2.1"
 "rocks-config.nvim" = "1.6.0"
 "oil.nvim" = "2.9.0"
+"none-ls.nvim" = "scm"
+"none-ls-extras.nvim" = "scm"
 
 [plugins."lualine.nvim"]
 git = "nvim-lualine/lualine.nvim"
@@ -124,6 +126,10 @@ git = "diegoulloao/neofusion.nvim"
 
 [plugins."indentmini.nvim"]
 git = "nvimdev/indentmini.nvim"
+
+[plugins."none-ls-luacheck.nvim"]
+git = "gbprod/none-ls-luacheck.nvim"
+rev = "v0.0.1"
 
 
 # Neovim config

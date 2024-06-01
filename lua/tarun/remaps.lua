@@ -7,7 +7,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Keymap to save file
-map('n', '<leader>w', ':w<CR>', opts)
+map('n', '<leader>w', ':w!<CR>', opts)
 
 -- Normal mode --
 -- Better window navigation
@@ -66,9 +66,9 @@ map('n', 'sh', [[<cmd>lua vim.lsp.buf.signature_help()<CR>]], opts)
 -- 	nnoremap <silent><S-TAB> :BufferPrevious<CR>
 -- ]])
 
-map("n", "<TAB>", ":BufferNext<CR>", opts)
-map("n", "<S-TAB>", ":BufferPrevious<CR>", opts)
-map("n", "<leader>w", ":BufferClose<CR>", opts)
+map('n', '<TAB>', ':BufferNext<CR>', opts)
+map('n', '<S-TAB>', ':BufferPrevious<CR>', opts)
+map('n', '<leader>wc', ':BufferClose<CR>', opts)
 
 -- PLugin stuff --
 -- NvimTree
@@ -81,7 +81,7 @@ map('n', '<leader>th', ':Telescope help_tags<CR>', opts)
 map('n', '<leader>thl', ':Telescope highlights<CR>', opts)
 
 -- Remove hl search
-map("n", "<Esc>", ":nohlsearch<CR>", opts)
+map('n', '<Esc>', ':nohlsearch<CR>', opts)
 
 -- Whichkey
-map("n", "<leader>", ":WhichKey<CR>", opts)
+map('n', '<leader>', ':WhichKey<CR>', opts)

@@ -1,1 +1,1 @@
-require("tarun")
+require('tarun')
