@@ -69,7 +69,7 @@ map('n', 'sh', [[<cmd>lua vim.lsp.buf.signature_help()<CR>]], opts)
 
 map("n", "<TAB>", ":BufferNext<CR>", opts)
 map("n", "<S-TAB>", ":BufferPrevious<CR>", opts)
-map("n", "<C-w>", ":BufferClose<CR>", opts)
+map("n", "<leader>w", ":BufferClose<CR>", opts)
 
 -- PLugin stuff --
 -- NvimTree
