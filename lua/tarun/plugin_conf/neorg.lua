@@ -1,22 +1,23 @@
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  pattern = {"*.norg"},
+  command = "set conceallevel=3"
+})
+
 local neorg = require("neorg")
 neorg.setup({
     load = {
         ['core.defaults'] = {},
-        ['core.norg.completion'] = {
+        ['core.completion'] = {
             config = {
                 engine = 'nvim-cmp',
             },
         },
-        ['core.norg.concealer'] = {
+        ['core.concealer'] = {
             config = {
                 markup_preset = 'conceal',
                 icon_preset = 'diamond',
                 icons = {
-                    marker = {
-                        icon = '󰁘 ',
-                    },
                     todo = {
-                        enable = true,
                         pending = {
                             -- icon = ""
                             icon = '',
@@ -37,16 +38,16 @@ neorg.setup({
                 },
             },
         },
-        ['core.norg.dirman'] = {
+        ['core.dirman'] = {
             config = {
                 workspaces = {
-                    bobvim_todos = '~/.config/nvim/',
-                    neorg = '~/.norg/',
+                    alphanvim_todos = '~/.config/nvim/',
+                    neorg = '~/neorg/',
                 },
                 autodetect = true,
                 autochdir = true,
             },
         },
-        ['core.integrations.telescope'] = {},
+        -- ['core.integrations.telescope'] = {},
     },
 })
