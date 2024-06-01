@@ -1,3 +1,5 @@
+local lspconfig = require('lspconfig')
+
 require('mason').setup()
 require('mason-lspconfig').setup({
 	ensure_installed = { 'lua_ls', 'cssls', 'eslint', 'emmet_ls', 'html', 'quick_lint_js', 'pyright', 'tsserver' },
@@ -5,7 +7,7 @@ require('mason-lspconfig').setup({
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require('lspconfig').lua_ls.setup({
+lspconfig.lua_ls.setup({
 	capabilties = capabilities,
 	settings = {
 		Lua = {
@@ -26,17 +28,24 @@ vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
 
-require('lspconfig').pyright.setup({})
-require('lspconfig').emmet_ls.setup({})
-require('lspconfig').cssls.setup({})
-require('lspconfig').eslint.setup({})
-require('lspconfig').quick_lint_js.setup({})
-require('lspconfig').html.setup({})
-require('lspconfig').tsserver.setup({})
+lspconfig.pyright.setup({})
+lspconfig.emmet_ls.setup({})
+lspconfig.cssls.setup({})
+lspconfig.eslint.setup({})
+lspconfig.quick_lint_js.setup({})
+lspconfig.html.setup({})
+lspconfig.tsserver.setup({})
 
-require('lspsaga').setup({})
+local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
+for type, icon in pairs(signs) do
+	local hl = 'DiagnosticSign' .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
 
-require('trouble').setup({
-	auto_close = true,
-	use_diagnostic_signs = true,
+vim.diagnostic.config({
+	virtual_text = true,
+	signs = true,
+	underline = true,
+	update_in_insert = false,
+	severity_sort = false,
 })
