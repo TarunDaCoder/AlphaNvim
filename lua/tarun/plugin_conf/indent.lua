@@ -1,1 +1,3 @@
-require('indentmini').setup({})
+local ibl = require('ibl')
+
+ibl.setup({})

@@ -24,6 +24,7 @@ luasnip = "2.3.0"
 "oil.nvim" = "2.9.0"
 "none-ls.nvim" = "scm"
 "none-ls-extras.nvim" = "scm"
+"nui.nvim" = "0.3.0"
 
 [plugins."lualine.nvim"]
 git = "nvim-lualine/lualine.nvim"
@@ -72,7 +73,6 @@ rev = "v0.8.1"
 
 [plugins.nvim-cmp]
 git = "hrsh7th/nvim-cmp"
-# rev = "v0.0.1"
 rev = "5260e5e"
 
 [plugins.cmp_luasnip]
@@ -80,9 +80,6 @@ git = "saadparwaiz1/cmp_luasnip"
 
 [plugins.nvim-autopairs]
 git = "windwp/nvim-autopairs"
-
-[plugins.dashboard-nvim]
-git = "nvimdev/dashboard-nvim"
 
 [plugins.cmp-cmdline]
 git = "hrsh7th/cmp-cmdline"
@@ -124,9 +121,6 @@ rev = "0.8.0^{}"
 [plugins."neofusion.nvim"]
 git = "diegoulloao/neofusion.nvim"
 
-[plugins."indentmini.nvim"]
-git = "nvimdev/indentmini.nvim"
-
 [plugins."none-ls-luacheck.nvim"]
 git = "gbprod/none-ls-luacheck.nvim"
 rev = "v0.0.1"
@@ -138,6 +132,9 @@ git = "yamatsum/nvim-cursorline"
 git = "0x00-ketsu/autosave.nvim"
 rev = "v1.0^{}"
 
+[plugins."indent-blankline.nvim"]
+git = "lukas-reineke/indent-blankline.nvim"
+rev = "v3.6.2"
 
 # Neovim config
 [config.options]
