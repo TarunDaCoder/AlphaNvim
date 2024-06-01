@@ -1,2 +1,2 @@
 # AlphaNvim
-The alpha of all neovim configs
+The α Alpha of all neovim configs
