@@ -146,3 +146,4 @@ foldlevel = 99
 fileformat = "unix"
 background = "dark"
 backspace = "2"
+swapfile = false
