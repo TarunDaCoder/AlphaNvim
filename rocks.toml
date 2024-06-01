@@ -25,6 +25,8 @@ luasnip = "2.3.0"
 "none-ls.nvim" = "scm"
 "none-ls-extras.nvim" = "scm"
 "nui.nvim" = "0.3.0"
+"neodev.nvim" = "2.5.2"
+"toggleterm.nvim" = "2.11.0"
 
 [plugins."lualine.nvim"]
 git = "nvim-lualine/lualine.nvim"
@@ -57,9 +59,6 @@ rev = "v1.9.0"
 [plugins.nvim-lspconfig]
 git = "neovim/nvim-lspconfig"
 rev = "v0.1.8"
-
-[plugins."lspsaga.nvim"]
-git = "nvimdev/lspsaga.nvim"
 
 [plugins.cmp-nvim-lsp]
 git = "hrsh7th/cmp-nvim-lsp"
@@ -97,10 +96,6 @@ git = "nvim-telescope/telescope-ui-select.nvim"
 git = "romgrk/barbar.nvim"
 rev = "v1.7.0-beta.4"
 
-[plugins."trouble.nvim"]
-git = "folke/trouble.nvim"
-rev = "v3.1.0"
-
 [plugins."lspkind.nvim"]
 git = "onsails/lspkind.nvim"
 
@@ -135,6 +130,12 @@ rev = "v1.0^{}"
 [plugins."indent-blankline.nvim"]
 git = "lukas-reineke/indent-blankline.nvim"
 rev = "v3.6.2"
+
+[plugins."nvim-colorizer.lua"]
+git = "norcalli/nvim-colorizer.lua"
+
+[plugins."duckytype.nvim"]
+git = "kwakzalver/duckytype.nvim"
 
 # Neovim config
 [config.options]
