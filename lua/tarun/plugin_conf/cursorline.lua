@@ -2,7 +2,7 @@ local curline = require('nvim-cursorline')
 
 curline.setup({
     cursorline = {
-        enable = true,
+        enable = false,
         number = true,
         timeout = 1000,
     },
