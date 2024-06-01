@@ -1,6 +1,7 @@
 * TODO LIST
   - ( ) fix dap
-  - ( ) add gradient bg
+  - (x) add gradient bg
   - ( ) fix whichkey
   - ( ) toggleterm
   - ( ) duckytype
+  - ( ) oil.nvim

@@ -62,10 +62,14 @@ map('n', 'td', [[<cmd>lua vim.lsp.buf.type_definition()<CR>]], opts)
 map('n', 'sh', [[<cmd>lua vim.lsp.buf.signature_help()<CR>]], opts)
 
 -- Navigate buffers
-vim.cmd([[
-	nnoremap <silent><TAB> :BufferNext<CR>
-	nnoremap <silent><S-TAB> :BufferPrevious<CR>
-]])
+-- vim.cmd([[
+-- 	nnoremap <silent><TAB> :BufferNext<CR>
+-- 	nnoremap <silent><S-TAB> :BufferPrevious<CR>
+-- ]])
+
+map("n", "<TAB>", ":BufferNext<CR>", opts)
+map("n", "<S-TAB>", ":BufferPrevious<CR>", opts)
+map("n", "<C-w>", ":BufferClose<CR>", opts)
 
 -- PLugin stuff --
 -- NvimTree
