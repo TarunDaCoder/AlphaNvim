@@ -11,8 +11,8 @@
 # List of Neovim plugins to install alongside their versions.
 # If the plugin name contains a dot then you must add quotes to the key name!
 [plugins]
-"rocks.nvim" = "2.29.1"
-neorg = "8.5.0"
+"rocks.nvim" = "2.29.2"
+neorg = "8.6.0"
 nvim-web-devicons = "0.100"
 nvim-navic = "scm"
 "rocks-git.nvim" = "1.5.1"
@@ -21,6 +21,7 @@ luasnip = "2.3.0"
 "comment.nvim" = "0.8.0"
 "rocks-dev.nvim" = "1.2.1"
 "rocks-config.nvim" = "1.6.0"
+"oil.nvim" = "2.9.0"
 
 [plugins."lualine.nvim"]
 git = "nvim-lualine/lualine.nvim"
@@ -99,7 +100,7 @@ rev = "v1.7.0-beta.4"
 
 [plugins."trouble.nvim"]
 git = "folke/trouble.nvim"
-rev = "v3.0.0"
+rev = "v3.1.0"
 
 [plugins."lspkind.nvim"]
 git = "onsails/lspkind.nvim"
@@ -109,7 +110,7 @@ git = "petertriho/cmp-git"
 
 [plugins."which-key.nvim"]
 git = "folke/which-key.nvim"
-rev = "v1.6.0"
+rev = "v1.6.1"
 
 [plugins.alpha-nvim]
 git = "goolord/alpha-nvim"
