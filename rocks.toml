@@ -131,6 +131,13 @@ git = "nvimdev/indentmini.nvim"
 git = "gbprod/none-ls-luacheck.nvim"
 rev = "v0.0.1"
 
+[plugins.nvim-cursorline]
+git = "yamatsum/nvim-cursorline"
+
+[plugins."autosave.nvim"]
+git = "0x00-ketsu/autosave.nvim"
+rev = "v1.0^{}"
+
 
 # Neovim config
 [config.options]
