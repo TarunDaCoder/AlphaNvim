@@ -1,10 +1,11 @@
 local builtin = require('telescope.builtin')
+local telescope = require('telescope')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
-require('telescope').setup({
+telescope.setup({
     extensions = {
         ['ui-select'] = {
             require('telescope.themes').get_dropdown({}),
@@ -12,28 +13,9 @@ require('telescope').setup({
     },
 })
 
-require('telescope').load_extension('ui-select')
-
-local open_with_trouble = require('trouble.sources.telescope').open
-
-local telescope = require('telescope')
+telescope.load_extension('ui-select')
 
 telescope.setup({
-    defaults = {
-        mappings = {
-            i = { ['<c-t>'] = open_with_trouble },
-            n = { ['<c-t>'] = open_with_trouble },
-        },
-    },
-})
-
--- require('telescope').load_extension('file_browser')
--- require("telescope").extensions.live_grep_raw.live_grep_raw()
--- require('telescope').load_extension('zoxide')
--- require('telescope').load_extension('sessions_picker')
--- require('telescope').load_extension('project')
-
-require('telescope').setup({
     defaults = {
         prompt_prefix = '   ',
         selection_caret = ' ',
