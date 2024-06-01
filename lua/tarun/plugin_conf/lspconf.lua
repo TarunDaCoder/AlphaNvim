@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "cssls", "eslint", "emmet_ls", "grammarly", "html", "quick_lint_js", "pyright", "tsserver", }
+  ensure_installed = { "lua_ls", "cssls", "eslint", "emmet_ls",  "html", "quick_lint_js", "pyright", "tsserver", }
 })
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -30,7 +30,6 @@ require("lspconfig").pyright.setup({})
 require("lspconfig").emmet_ls.setup({})
 require("lspconfig").cssls.setup({})
 require("lspconfig").eslint.setup({})
-require("lspconfig").grammarly.setup({})
 require("lspconfig").quick_lint_js.setup({})
 require("lspconfig").html.setup({})
 require("lspconfig").tsserver.setup({})
