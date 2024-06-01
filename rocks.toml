@@ -121,6 +121,9 @@ rev = "0.8.0^{}"
 [plugins."neofusion.nvim"]
 git = "diegoulloao/neofusion.nvim"
 
+[plugins."indentmini.nvim"]
+git = "nvimdev/indentmini.nvim"
+
 
 # Neovim config
 [config.options]
