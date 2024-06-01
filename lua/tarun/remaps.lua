@@ -85,3 +85,6 @@ map('n', '<Esc>', ':nohlsearch<CR>', opts)
 
 -- Whichkey
 map('n', '<leader>', ':WhichKey<CR>', opts)
+
+-- Lazygit
+map('n', '<leader>lg', ':LazyGit<CR>', opts)

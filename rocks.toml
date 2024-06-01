@@ -27,6 +27,9 @@ luasnip = "2.3.0"
 "nui.nvim" = "0.3.0"
 "neodev.nvim" = "2.5.2"
 "toggleterm.nvim" = "2.11.0"
+nvim-notify = "3.13.5"
+"noice.nvim" = "4.0.0"
+"lazygit.nvim" = "scm"
 
 [plugins."lualine.nvim"]
 git = "nvim-lualine/lualine.nvim"
@@ -112,9 +115,6 @@ git = "goolord/alpha-nvim"
 [plugins.nvim-dap]
 git = "mfussenegger/nvim-dap"
 rev = "0.8.0^{}"
-
-[plugins."neofusion.nvim"]
-git = "diegoulloao/neofusion.nvim"
 
 [plugins."none-ls-luacheck.nvim"]
 git = "gbprod/none-ls-luacheck.nvim"
