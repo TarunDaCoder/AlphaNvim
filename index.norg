@@ -1,6 +1,7 @@
 * TODO LIST
-  - ( ) fix dap
+  - (x) fix dap
   - (x) add gradient bg
-  - ( ) toggleterm
-  - ( ) duckytype
+  - (x) toggleterm
+  - (x) duckytype
   - (x) oil.nvim
+  - ( ) fix notify bg colour msg
