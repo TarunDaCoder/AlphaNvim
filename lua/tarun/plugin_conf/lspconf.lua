@@ -33,7 +33,6 @@ lspconfig.emmet_ls.setup({})
 lspconfig.cssls.setup({})
 lspconfig.eslint.setup({})
 lspconfig.html.setup({})
-lspconfig.prettierd.setup({})
 
 local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
 for type, icon in pairs(signs) do
