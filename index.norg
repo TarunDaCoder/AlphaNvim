@@ -4,4 +4,5 @@
   - (x) toggleterm
   - (x) duckytype
   - (x) oil.nvim
-  - ( ) fix notify bg colour msg
+  - (x) fix notify bg colour msg
+  - (x) add nvim-ts-autotag
