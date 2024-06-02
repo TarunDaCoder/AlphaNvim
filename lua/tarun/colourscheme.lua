@@ -1,6 +1,6 @@
 -- ONEDARK ========================
 require('onedark').setup({
-    style = 'deep',
+    style = 'dark',
     transparent = true,
     lualine = {
         transparent = true,
