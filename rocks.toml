@@ -33,6 +33,7 @@ nvim-notify = "3.13.5"
 "rocks-treesitter.nvim" = "scm"
 nvim-ts-autotag = "scm"
 "hardtime.nvim" = "scm"
+nvim-surround = "2.1.5"
 
 [plugins."lualine.nvim"]
 git = "nvim-lualine/lualine.nvim"
