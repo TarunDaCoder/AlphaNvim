@@ -31,7 +31,6 @@ nvim-notify = "3.13.5"
 "noice.nvim" = "4.0.0"
 "lazygit.nvim" = "scm"
 "rocks-treesitter.nvim" = "scm"
-"better-escape.nvim" = "scm"
 nvim-ts-autotag = "scm"
 "hardtime.nvim" = "scm"
 
