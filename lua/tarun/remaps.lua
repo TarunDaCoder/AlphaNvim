@@ -27,7 +27,7 @@ map('n', '<leader>f', ':lua vim.lsp.buf.format(nil, 2000)<CR>', opts)
 
 -- Insert mode --
 -- Quicker escape
-map('i', 'jj', '<ESC>', opts)
+-- map('i', 'jj', '<ESC>', opts)
 
 -- Visual mode --
 -- Stay in indent mode

@@ -30,6 +30,8 @@ luasnip = "2.3.0"
 nvim-notify = "3.13.5"
 "noice.nvim" = "4.0.0"
 "lazygit.nvim" = "scm"
+"rocks-treesitter.nvim" = "scm"
+"better-escape.nvim" = "scm"
 
 [plugins."lualine.nvim"]
 git = "nvim-lualine/lualine.nvim"
@@ -137,6 +139,9 @@ git = "norcalli/nvim-colorizer.lua"
 [plugins."duckytype.nvim"]
 git = "kwakzalver/duckytype.nvim"
 
+[plugins.supermaven-nvim]
+git = "supermaven-inc/supermaven-nvim"
+
 # Neovim config
 [config.options]
 number = true
@@ -159,3 +164,8 @@ fileformat = "unix"
 background = "dark"
 backspace = "2"
 swapfile = false
+
+# Treesitter options
+[treesitter]
+auto_highlight = "all"
+auto_install = "prompt"
