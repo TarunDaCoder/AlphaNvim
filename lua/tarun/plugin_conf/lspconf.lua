@@ -2,7 +2,7 @@ local lspconfig = require('lspconfig')
 
 require('mason').setup()
 require('mason-lspconfig').setup({
-    ensure_installed = { 'lua_ls', 'cssls', 'eslint', 'emmet_ls', 'html', 'pyright', },
+    ensure_installed = { 'lua_ls', 'cssls', 'eslint', 'emmet_ls', 'pyright', },
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -32,7 +32,6 @@ lspconfig.pyright.setup({})
 lspconfig.emmet_ls.setup({})
 lspconfig.cssls.setup({})
 lspconfig.eslint.setup({})
-lspconfig.html.setup({})
 
 local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
 for type, icon in pairs(signs) do
