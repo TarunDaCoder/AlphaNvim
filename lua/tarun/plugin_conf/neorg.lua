@@ -42,7 +42,7 @@ neorg.setup({
             config = {
                 workspaces = {
                     alphanvim_todos = '~/.config/nvim/',
-                    neorg = '~/neorg/',
+                    neorg = '~/dev/neorg/',
                 },
                 autodetect = true,
                 autochdir = true,
