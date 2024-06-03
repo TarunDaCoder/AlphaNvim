@@ -2,7 +2,7 @@ local lspconfig = require('lspconfig')
 
 require('mason').setup()
 require('mason-lspconfig').setup({
-    ensure_installed = { 'lua_ls', 'cssls', 'eslint', 'emmet_ls', 'pyright', },
+    ensure_installed = { 'lua_ls', 'cssls', 'eslint', 'emmet_language_server', 'pyright', },
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -29,7 +29,7 @@ vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
 
 lspconfig.pyright.setup({})
-lspconfig.emmet_ls.setup({})
+lspconfig.emmet_language_server.setup({})
 lspconfig.cssls.setup({})
 lspconfig.eslint.setup({})
 
