@@ -36,6 +36,27 @@ nvim-ts-autotag = "scm"
 nvim-surround = "2.1.5"
 treesj = "scm"
 
+# ----- TREESITTER PARSERS -----
+tree-sitter-markdown = "scm"
+tree-sitter-markdown_inline = "scm"
+tree-sitter-c = "scm"
+tree-sitter-query = "scm"
+tree-sitter-lua = "scm"
+tree-sitter-python = "scm"
+
+tree-sitter-yaml = "scm"
+tree-sitter-vimdoc = "scm"
+tree-sitter-astro = "scm"
+tree-sitter-typescript = "scm"
+tree-sitter-javascript = "scm"
+tree-sitter-scheme = "scm"
+tree-sitter-janet_simple = "scm"
+tree-sitter-typst = "scm"
+tree-sitter-toml = "scm"
+tree-sitter-nix = "scm"
+tree-sitter-json = "scm"
+tree-sitter-rust = "scm"
+
 [plugins."lualine.nvim"]
 git = "nvim-lualine/lualine.nvim"
 rev = "compat-nvim-0.6"
