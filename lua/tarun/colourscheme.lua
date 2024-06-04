@@ -8,9 +8,3 @@ require('onedark').setup({
 })
 
 vim.cmd([[colorscheme onedark]])
--- NEOFUSION ======================
--- vim.cmd[[ colorscheme neofusion ]]
---
--- require("neofusion").setup{
---     transparent_mode = true,
--- }

@@ -61,11 +61,6 @@ map('n', 'td', [[<cmd>lua vim.lsp.buf.type_definition()<CR>]], opts)
 map('n', 'sh', [[<cmd>lua vim.lsp.buf.signature_help()<CR>]], opts)
 
 -- Navigate buffers
--- vim.cmd([[
--- 	nnoremap <silent><TAB> :BufferNext<CR>
--- 	nnoremap <silent><S-TAB> :BufferPrevious<CR>
--- ]])
-
 map('n', '<TAB>', ':BufferNext<CR>', opts)
 map('n', '<S-TAB>', ':BufferPrevious<CR>', opts)
 map('n', '<leader>wc', ':BufferClose<CR>', opts)
@@ -88,3 +83,12 @@ map('n', '<leader>', ':WhichKey<CR>', opts)
 
 -- Lazygit
 map('n', '<leader>lg', ':LazyGit<CR>', opts)
+
+-- Todo comments
+vim.keymap.set('n', ']t', function()
+	require('todo-comments').jump_next()
+end, opts)
+
+vim.keymap.set('n', '[t', function()
+	require('todo-comments').jump_prev()
+end, opts)

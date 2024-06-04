@@ -35,6 +35,8 @@ nvim-ts-autotag = "scm"
 "hardtime.nvim" = "scm"
 nvim-surround = "2.1.5"
 treesj = "scm"
+"todo-comments.nvim" = "1.2.0"
+neorg-telescope = "1.1.0"
 
 [plugins."lualine.nvim"]
 git = "nvim-lualine/lualine.nvim"
@@ -166,6 +168,6 @@ backspace = "2"
 swapfile = false
 
 # Treesitter options
-[treesitter]
-auto_highlight = "all"
-auto_install = "prompt"
+# [treesitter]
+# auto_highlight = "all"
+# auto_install = "prompt"

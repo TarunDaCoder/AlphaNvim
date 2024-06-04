@@ -1,5 +1,6 @@
 local cmp = require('cmp')
 local luasnip = require('luasnip')
+
 local check_backspace = function()
 	local col = vim.fn.col('.') - 1
 	return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s')
@@ -77,8 +78,6 @@ cmp.setup({
 	}),
 })
 
--- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
--- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
 	sources = cmp.config.sources({
 		{ name = 'git' },
@@ -88,7 +87,6 @@ cmp.setup.filetype('gitcommit', {
 })
 require('cmp_git').setup()
 
--- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline({ '/', '?' }, {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
@@ -96,7 +94,6 @@ cmp.setup.cmdline({ '/', '?' }, {
 	},
 })
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources({

@@ -1,3 +1,1 @@
-local ibl = require('ibl')
-
-ibl.setup({})
+require('ibl').setup({})

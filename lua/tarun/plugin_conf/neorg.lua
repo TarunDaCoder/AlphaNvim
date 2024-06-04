@@ -19,8 +19,7 @@ neorg.setup({
                 icons = {
                     todo = {
                         pending = {
-                            -- icon = ""
-                            icon = '',
+                            icon = ""
                         },
                         uncertain = {
                             icon = '?',
@@ -48,6 +47,6 @@ neorg.setup({
                 autochdir = true,
             },
         },
-        -- ['core.integrations.telescope'] = {},
+        ['core.integrations.telescope'] = {},
     },
 })

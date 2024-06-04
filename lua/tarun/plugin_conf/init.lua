@@ -22,6 +22,14 @@ require('tarun.plugin_conf.notify')
 require('tarun.plugin_conf.noice')
 require('tarun.plugin_conf.supermaven')
 require('tarun.plugin_conf.autotags')
--- require('tarun.plugin_conf.hardtime')
 require('tarun.plugin_conf.surround')
 require('tarun.plugin_conf.treesj')
+require('tarun.plugin_conf.todo-comments')
+
+-- WARNING: FOR ULTRA HARDCORE VIM USERS ONLY
+-- require('tarun.plugin_conf.hardtime')
+
+
+-- FIX: gotta fix treesitter segv
+-- require('tarun.plugin_conf.treesitter')
+
