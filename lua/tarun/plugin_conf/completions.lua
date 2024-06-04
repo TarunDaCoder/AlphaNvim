@@ -19,7 +19,7 @@ local border = {
 cmp.setup({
 	snippet = {
 		expand = function(args)
-			require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+			luasnip.lsp_expand(args.body) -- For `luasnip` users.
 		end,
 	},
 	window = {
@@ -37,8 +37,6 @@ cmp.setup({
 		['<C-f>'] = cmp.mapping.scroll_docs(4),
 		['<C-Space>'] = cmp.mapping.complete(),
 		['<C-e>'] = cmp.mapping.abort(),
-		-- Accept currently selected item. If none selected, `select` first item.
-		-- Set `select` to `false` to only confirm explicitly selected items.
 		['<CR>'] = cmp.mapping.confirm({ select = true }),
 		['<Tab>'] = cmp.mapping(function(fallback)
 			if cmp.visible() then

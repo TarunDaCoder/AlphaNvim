@@ -52,30 +52,3 @@ vim.diagnostic.config({
     update_in_insert = false,
     severity_sort = false,
 })
-
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
-require("null-ls").setup({
-    sources = sources,
-    on_attach = function(client, bufnr)
-        if client.supports_method("textDocument/formatting") then
-            vim.api.nvim_buf_create_user_command(bufnr, "LspFormatting", function()
-                -- or vim.lsp.buf.formatting(bufnr) on 0.8
-                vim.lsp.buf.formatting_sync()
-            end, {})
-
-            -- you can leave this out if your on_attach is unique to null-ls,
-            -- but if you share it with multiple servers, you'll want to keep it
-            vim.api.nvim_clear_autocmds({
-                group = augroup,
-                buffer = bufnr,
-            })
-
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                group = augroup,
-                buffer = bufnr,
-                command = "undojoin | LspFormatting",
-            })
-        end
-    end,
-})
