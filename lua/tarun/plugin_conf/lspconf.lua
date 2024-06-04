@@ -24,9 +24,13 @@ lspconfig.lua_ls.setup({
     },
 })
 
-vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
+
+function on_attach(client, bufnr)
+    local bufopts = { nnoremap = true, silent = true }
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+end
 
 lspconfig.pyright.setup({})
 lspconfig.emmet_language_server.setup({})
