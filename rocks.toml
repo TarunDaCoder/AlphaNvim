@@ -37,6 +37,7 @@ nvim-surround = "2.1.5"
 treesj = "scm"
 "todo-comments.nvim" = "1.2.0"
 neorg-telescope = "1.1.0"
+"codeium.nvim" = "scm"
 
 [plugins."lualine.nvim"]
 git = "nvim-lualine/lualine.nvim"

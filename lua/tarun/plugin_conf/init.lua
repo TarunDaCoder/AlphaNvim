@@ -20,11 +20,12 @@ require('tarun.plugin_conf.toggleterm')
 require('tarun.plugin_conf.dap')
 require('tarun.plugin_conf.notify')
 require('tarun.plugin_conf.noice')
-require('tarun.plugin_conf.supermaven')
+-- require('tarun.plugin_conf.supermaven')
 require('tarun.plugin_conf.autotags')
 require('tarun.plugin_conf.surround')
 require('tarun.plugin_conf.treesj')
 require('tarun.plugin_conf.todo-comments')
+require('tarun.plugin_conf.codeium')
 
 -- WARNING: FOR ULTRA HARDCORE VIM USERS ONLY
 -- require('tarun.plugin_conf.hardtime')

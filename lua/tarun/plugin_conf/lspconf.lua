@@ -26,7 +26,7 @@ lspconfig.lua_ls.setup({
 
 
 function on_attach(client, bufnr)
-    local bufopts = { nnoremap = true, silent = true }
+    local bufopts = { nnoremap = true, silent = true, buffer = bufnr }
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
