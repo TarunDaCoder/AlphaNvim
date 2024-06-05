@@ -13,10 +13,11 @@
     - (x) ducky type
     - (x) oil.nvim
     - (x) add nvim-ts-autotag
-    - ( ) search.nvim
+    - ( ) telescope-symbols.nvim
     - ( ) cmdline_hl.nvim
-    - ( ) colorgen-nvim
-        - ( ) autoscheme.nvim
+    - ( ) search.nvim
+    - (_ ) colorgen-nvim
+        - (_ ) autoscheme.nvim
     - ( ) legendary.nvim
     - ( ) harpoon
     - ( ) 2048
