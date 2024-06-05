@@ -1,8 +1,25 @@
 * TODO LIST
-  - (x) fix dap
-  - (x) add gradient bg
-  - (x) toggleterm
-  - (x) duckytype
-  - (x) oil.nvim
-  - (x) fix notify bg colour msg
-  - (x) add nvim-ts-autotag
+** ( ) Fixes
+    - (x) dap
+    - (x) notify bg colour msg
+    - (!) treesitter segfault
+    - ( ) which-key
+
+** (x) Features
+    - (x) add gradient bg
+
+** ( ) Plugins
+    - (x) toggleterm
+    - (x) ducky type
+    - (x) oil.nvim
+    - (x) add nvim-ts-autotag
+    - ( ) search.nvim
+    - ( ) cmdline_hl.nvim
+    - ( ) colorgen-nvim
+        - ( ) autoscheme.nvim
+    - ( ) legendary.nvim
+    - ( ) harpoon
+    - ( ) 2048
+    - ( ) live-server
+    - ( ) markdown-preview
+    - ( ) vim-be-good
