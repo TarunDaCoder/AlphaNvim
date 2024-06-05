@@ -144,6 +144,10 @@ git = "kwakzalver/duckytype.nvim"
 [plugins.supermaven-nvim]
 git = "supermaven-inc/supermaven-nvim"
 
+[plugins."codeium.vim"]
+git = "Exafunction/codeium.vim"
+rev = "1.8.5"
+
 # Neovim config
 [config.options]
 relativenumber = true

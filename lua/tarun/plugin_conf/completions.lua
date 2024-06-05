@@ -113,7 +113,12 @@ cmp.setup({
 			maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 			ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
 			show_labelDetails = true, -- show labelDetails in menu. Disabled by default
-			symbol_map = {  Codeium = ' ' },
+			symbol_map = { Codeium = ' ' },
 		}),
 	},
 })
+
+-- when cmp completion is loaded, clear the virtual text from codium
+require('cmp').event:on('menu_opened', function()
+	vim.fn['codeium#Clear']()
+end)
