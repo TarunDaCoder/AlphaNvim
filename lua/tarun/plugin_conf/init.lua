@@ -29,7 +29,4 @@ require('tarun.plugin_conf.codeium')
 -- WARNING: FOR ULTRA HARDCORE VIM USERS ONLY
 -- require('tarun.plugin_conf.hardtime')
 
-
--- FIX: gotta fix treesitter segv
--- require('tarun.plugin_conf.treesitter')
-
+require('tarun.plugin_conf.treesitter')
