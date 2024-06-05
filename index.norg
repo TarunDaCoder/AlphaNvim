@@ -2,7 +2,7 @@
 ** ( ) Fixes
     - (x) dap
     - (x) notify bg colour msg
-    - (!) treesitter segfault
+    - (x) treesitter segfault
     - ( ) which-key
 
 ** (x) Features
