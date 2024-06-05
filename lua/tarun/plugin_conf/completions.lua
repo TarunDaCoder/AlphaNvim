@@ -79,6 +79,9 @@ cmp.setup({
 	}),
 })
 
+-- Set up friendly snippets with luasnip
+require('luasnip.loaders.from_vscode').lazy_load()
+
 cmp.setup.filetype('gitcommit', {
 	sources = cmp.config.sources({
 		{ name = 'git' },

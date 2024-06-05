@@ -148,6 +148,9 @@ git = "supermaven-inc/supermaven-nvim"
 git = "Exafunction/codeium.vim"
 rev = "1.8.5"
 
+[plugins.friendly-snippets]
+git = "rafamadriz/friendly-snippets"
+
 # Neovim config
 [config.options]
 relativenumber = true
