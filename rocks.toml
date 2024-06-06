@@ -38,6 +38,8 @@ treesj = "scm"
 "todo-comments.nvim" = "1.2.0"
 neorg-telescope = "1.1.0"
 "codeium.nvim" = "scm"
+"telescope-dap.nvim" = "scm"
+"telescope-ui-select.nvim"= "scm"
 
 [plugins."lualine.nvim"]
 git = "nvim-lualine/lualine.nvim"
@@ -96,9 +98,6 @@ git = "hrsh7th/cmp-buffer"
 [plugins.cmp-path]
 git = "hrsh7th/cmp-path"
 
-[plugins."telescope-ui-select.nvim"]
-git = "nvim-telescope/telescope-ui-select.nvim"
-
 [plugins."barbar.nvim"]
 git = "romgrk/barbar.nvim"
 rev = "v1.7.0-beta.4"
@@ -150,6 +149,13 @@ rev = "1.8.5"
 
 [plugins.friendly-snippets]
 git = "rafamadriz/friendly-snippets"
+
+[plugins."outline.nvim"]
+git = "hedyhli/outline.nvim"
+rev = "v1.0.0^{}"
+
+[plugins."telescope-symbols.nvim"]
+git = "nvim-telescope/telescope-symbols.nvim"
 
 # Neovim config
 [config.options]
