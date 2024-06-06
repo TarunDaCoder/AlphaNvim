@@ -24,7 +24,7 @@ require('tarun.plugin_conf.autotags')
 require('tarun.plugin_conf.surround')
 require('tarun.plugin_conf.treesj')
 require('tarun.plugin_conf.todo-comments')
-require('tarun.plugin_conf.codeium')
+-- require('tarun.plugin_conf.codeium')
 require('tarun.plugin_conf.treesitter')
 require('tarun.plugin_conf.outline')
 

@@ -180,6 +180,8 @@ fileformat = "unix"
 background = "dark"
 backspace = "2"
 swapfile = false
+list = true
+listchars = "eol:󱞣"
 
 # Treesitter options
 # [treesitter]
