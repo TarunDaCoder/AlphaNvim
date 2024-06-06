@@ -25,8 +25,8 @@ require('tarun.plugin_conf.surround')
 require('tarun.plugin_conf.treesj')
 require('tarun.plugin_conf.todo-comments')
 require('tarun.plugin_conf.codeium')
+require('tarun.plugin_conf.treesitter')
+require('tarun.plugin_conf.outline')
 
 -- WARNING: FOR ULTRA HARDCORE VIM USERS ONLY
 -- require('tarun.plugin_conf.hardtime')
-
-require('tarun.plugin_conf.treesitter')
