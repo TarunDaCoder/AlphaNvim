@@ -13,7 +13,7 @@
     - (x) ducky type
     - (x) oil.nvim
     - (x) add nvim-ts-autotag
-    - ( ) telescope-symbols.nvim
+    - (x) telescope-symbols.nvim
     - ( ) cmdline_hl.nvim
     - ( ) search.nvim
     - (_ ) colorgen-nvim

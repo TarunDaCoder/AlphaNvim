@@ -19,7 +19,7 @@ neorg.setup({
                 icons = {
                     todo = {
                         pending = {
-                            icon = ""
+                            icon = " "
                         },
                         uncertain = {
                             icon = '?',
@@ -28,10 +28,10 @@ neorg.setup({
                             icon = '',
                         },
                         on_hold = {
-                            icon = '󰏦',
+                            icon = '󰏦 ',
                         },
                         cancelled = {
-                            icon = '',
+                            icon = ' ',
                         },
                     },
                 },
