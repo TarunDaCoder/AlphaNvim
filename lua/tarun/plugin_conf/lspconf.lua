@@ -4,6 +4,7 @@ require('mason').setup()
 require('mason-lspconfig').setup({
     ensure_installed = { 'lua_ls', 'cssls', 'eslint', 'pyright', },
 })
+require("mason-null-ls").setup()
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 

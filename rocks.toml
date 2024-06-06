@@ -157,6 +157,10 @@ rev = "v1.0.0^{}"
 [plugins."telescope-symbols.nvim"]
 git = "nvim-telescope/telescope-symbols.nvim"
 
+[plugins."mason-null-ls.nvim"]
+git = "jay-babu/mason-null-ls.nvim"
+rev = "v2.6.0"
+
 # Neovim config
 [config.options]
 relativenumber = true
