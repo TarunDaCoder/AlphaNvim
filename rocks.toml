@@ -41,6 +41,7 @@ neorg-telescope = "1.1.0"
 "telescope-dap.nvim" = "scm"
 "telescope-ui-select.nvim"= "scm"
 "fidget.nvim" = "1.4.1"
+"overseer.nvim" = "1.4.0"
 
 [plugins."lualine.nvim"]
 git = "nvim-lualine/lualine.nvim"
@@ -164,9 +165,6 @@ rev = "v2.6.0"
 
 [plugins."live-server.nvim"]
 git = "barrett-ruth/live-server.nvim"
-
-[plugins."quick-code-runner.nvim"]
-git = "jellydn/quick-code-runner.nvim"
 
 # Neovim config
 [config.options]
