@@ -40,6 +40,7 @@ neorg-telescope = "1.1.0"
 "codeium.nvim" = "scm"
 "telescope-dap.nvim" = "scm"
 "telescope-ui-select.nvim"= "scm"
+"fidget.nvim" = "1.4.1"
 
 [plugins."lualine.nvim"]
 git = "nvim-lualine/lualine.nvim"

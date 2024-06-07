@@ -21,6 +21,6 @@
     - ( ) legendary.nvim
     - ( ) harpoon
     - ( ) 2048
-    - ( ) live-server
+    - (x) live-server
     - ( ) markdown-preview
     - ( ) vim-be-good
