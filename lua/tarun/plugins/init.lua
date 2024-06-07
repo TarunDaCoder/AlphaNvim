@@ -28,6 +28,7 @@ require('tarun.plugins.todo-comments')
 require('tarun.plugins.treesitter')
 require('tarun.plugins.outline')
 require('tarun.plugins.live-server')
+require('tarun.plugins.code-runner')
 
 -- WARNING: FOR ULTRA HARDCORE VIM USERS ONLY
 -- require('tarun.plugins.hardtime')

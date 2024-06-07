@@ -164,6 +164,9 @@ rev = "v2.6.0"
 [plugins."live-server.nvim"]
 git = "barrett-ruth/live-server.nvim"
 
+[plugins."quick-code-runner.nvim"]
+git = "jellydn/quick-code-runner.nvim"
+
 # Neovim config
 [config.options]
 relativenumber = true
