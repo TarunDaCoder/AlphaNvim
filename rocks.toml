@@ -161,6 +161,9 @@ git = "nvim-telescope/telescope-symbols.nvim"
 git = "jay-babu/mason-null-ls.nvim"
 rev = "v2.6.0"
 
+[plugins."live-server.nvim"]
+git = "barrett-ruth/live-server.nvim"
+
 # Neovim config
 [config.options]
 relativenumber = true
