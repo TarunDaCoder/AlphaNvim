@@ -43,6 +43,7 @@ neorg-telescope = "1.1.0"
 "overseer.nvim" = "1.4.0"
 "dressing.nvim" = "2.2.1"
 fzf-lua = "0.0.1301"
+"barbecue.nvim" = "scm"
 
 [plugins."lualine.nvim"]
 git = "nvim-lualine/lualine.nvim"
@@ -190,6 +191,7 @@ fileformat = "unix"
 background = "dark"
 backspace = "2"
 swapfile = false
+laststatus=3
 
 # Treesitter options
 # [treesitter]
