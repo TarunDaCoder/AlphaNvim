@@ -30,6 +30,7 @@ require('tarun.plugins.outline')
 require('tarun.plugins.live-server')
 require('tarun.plugins.dressing')
 require('tarun.plugins.lazydev')
+require('tarun.plugins.undotree')
 
 -- WARNING: FOR ULTRA HARDCORE VIM USERS ONLY
 -- require('tarun.plugins.hardtime')

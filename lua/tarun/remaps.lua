@@ -92,3 +92,6 @@ end, opts)
 vim.keymap.set('n', '[t', function()
 	require('todo-comments').jump_prev()
 end, opts)
+
+-- Undotree
+vim.keymap.set('n', '<leader>u', ':lua require("undotree").toggle()<CR>', opts)

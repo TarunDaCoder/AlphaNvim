@@ -168,6 +168,9 @@ git = "barrett-ruth/live-server.nvim"
 git = "folke/lazydev.nvim"
 rev = "v1.5.0"
 
+[plugins.undotree]
+git = "jiaoshijie/undotree"
+
 # Neovim config
 [config.options]
 relativenumber = true
