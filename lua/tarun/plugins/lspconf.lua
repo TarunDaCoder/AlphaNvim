@@ -26,16 +26,25 @@ lspconfig.lua_ls.setup({
 })
 
 function on_attach(client, bufnr)
-	local bufopts = { nnoremap = true, silent = true, buffer = bufnr }
+	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 	vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
 	vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
 	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
 end
 
-lspconfig.pyright.setup({})
-lspconfig.emmet_language_server.setup({})
-lspconfig.cssls.setup({})
-lspconfig.eslint.setup({})
+local lang_servers = {
+    'lua_ls',
+    'cssls',
+    'eslint',
+    'pyright',
+}
+
+for _, server in ipairs(lang_servers) do
+    lspconfig[server].setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+    })
+end
 
 local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
 for type, icon in pairs(signs) do
