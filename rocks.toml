@@ -25,7 +25,6 @@ luasnip = "2.3.0"
 "none-ls.nvim" = "scm"
 "none-ls-extras.nvim" = "scm"
 "nui.nvim" = "0.3.0"
-"neodev.nvim" = "3.0.0"
 "toggleterm.nvim" = "2.11.0"
 nvim-notify = "3.13.5"
 "noice.nvim" = "4.0.1"
@@ -42,6 +41,8 @@ neorg-telescope = "1.1.0"
 "telescope-ui-select.nvim"= "scm"
 "fidget.nvim" = "1.4.1"
 "overseer.nvim" = "1.4.0"
+"dressing.nvim" = "2.2.1"
+fzf-lua = "0.0.1301"
 
 [plugins."lualine.nvim"]
 git = "nvim-lualine/lualine.nvim"
@@ -165,6 +166,10 @@ rev = "v2.6.0"
 
 [plugins."live-server.nvim"]
 git = "barrett-ruth/live-server.nvim"
+
+[plugins."lazydev.nvim"]
+git = "folke/lazydev.nvim"
+rev = "v1.5.0"
 
 # Neovim config
 [config.options]
