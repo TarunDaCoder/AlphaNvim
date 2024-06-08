@@ -1,9 +1,8 @@
 -- Global objects
 globals = {
-  "vim",
-  "PACKER_BOOTSTRAP",
+	'vim',
 }
 
 ignore = {
-  "631", -- max_line_length
+	'6310', -- max_line_length
 }
