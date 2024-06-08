@@ -192,8 +192,3 @@ background = "dark"
 backspace = "2"
 swapfile = false
 laststatus=3
-
-# Treesitter options
-# [treesitter]
-# auto_highlight = "all"
-# auto_install = "prompt"
