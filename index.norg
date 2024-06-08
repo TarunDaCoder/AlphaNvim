@@ -1,9 +1,9 @@
 * TODO LIST
-** ( ) Fixes
+** (x) Fixes
     - (x) dap
     - (x) notify bg colour msg
     - (x) treesitter segfault
-    - ( ) which-key
+    - (x) which-key
 
 ** (x) Features
     - (x) add gradient bg
@@ -14,13 +14,7 @@
     - (x) oil.nvim
     - (x) add nvim-ts-autotag
     - (x) telescope-symbols.nvim
-    - ( ) cmdline_hl.nvim
-    - ( ) search.nvim
-    - (_ ) colorgen-nvim
-        - (_ ) autoscheme.nvim
-    - ( ) legendary.nvim
     - ( ) harpoon
-    - ( ) 2048
     - (x) live-server
     - ( ) markdown-preview
     - ( ) vim-be-good
