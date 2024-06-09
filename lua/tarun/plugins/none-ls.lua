@@ -8,7 +8,6 @@ null.setup({
 
         -- Lua
         null.builtins.formatting.stylua,
-        require('none-ls-luacheck.diagnostics.luacheck'),
 
         -- Spell
         null.builtins.completion.spell,

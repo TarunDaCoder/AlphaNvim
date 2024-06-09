@@ -7,17 +7,6 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 telescope.setup({
-    extensions = {
-        ['ui-select'] = {
-            require('telescope.themes').get_dropdown({}),
-        },
-    },
-})
-
-telescope.load_extension('ui-select')
-telescope.load_extension('dap')
-
-telescope.setup({
     defaults = {
         vimgrep_arguments = {
             "rg",

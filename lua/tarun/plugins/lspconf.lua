@@ -4,7 +4,6 @@ require('mason').setup()
 require('mason-lspconfig').setup({
 	ensure_installed = { 'lua_ls', 'cssls', 'eslint', 'pyright', 'tsserver' },
 })
-require('mason-null-ls').setup()
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
@@ -62,5 +61,3 @@ vim.diagnostic.config({
 	update_in_insert = false,
 	severity_sort = false,
 })
-
-require('fidget').setup()
