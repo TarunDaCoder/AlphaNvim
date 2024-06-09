@@ -18,7 +18,6 @@ nvim-navic = "scm"
 "rocks-git.nvim" = "1.5.1"
 "plenary.nvim"= "scm"
 luasnip = "2.3.0"
-"comment.nvim" = "0.8.0"
 "rocks-dev.nvim" = "1.2.2"
 "rocks-config.nvim" = "1.6.0"
 "oil.nvim" = "2.9.0"
@@ -29,11 +28,8 @@ luasnip = "2.3.0"
 nvim-notify = "3.13.5"
 "noice.nvim" = "4.0.1"
 "lazygit.nvim" = "scm"
-"rocks-treesitter.nvim" = "scm"
 nvim-ts-autotag = "scm"
-"hardtime.nvim" = "scm"
 nvim-surround = "2.1.5"
-treesj = "scm"
 "todo-comments.nvim" = "1.2.0"
 neorg-telescope = "1.1.0"
 "codeium.nvim" = "scm"
@@ -44,6 +40,7 @@ neorg-telescope = "1.1.0"
 "dressing.nvim" = "2.2.1"
 fzf-lua = "0.0.1302"
 "barbecue.nvim" = "scm"
+"bufferline.nvim" = "4.6.1"
 
 [plugins."lualine.nvim"]
 git = "nvim-lualine/lualine.nvim"
@@ -127,9 +124,6 @@ rev = "0.8.0^{}"
 git = "gbprod/none-ls-luacheck.nvim"
 rev = "v0.0.1"
 
-[plugins.nvim-cursorline]
-git = "yamatsum/nvim-cursorline"
-
 [plugins."indent-blankline.nvim"]
 git = "lukas-reineke/indent-blankline.nvim"
 rev = "v3.6.2"
@@ -137,22 +131,12 @@ rev = "v3.6.2"
 [plugins."nvim-colorizer.lua"]
 git = "norcalli/nvim-colorizer.lua"
 
-[plugins."duckytype.nvim"]
-git = "kwakzalver/duckytype.nvim"
-
-[plugins.supermaven-nvim]
-git = "supermaven-inc/supermaven-nvim"
-
 [plugins."codeium.vim"]
 git = "Exafunction/codeium.vim"
 rev = "1.8.5"
 
 [plugins.friendly-snippets]
 git = "rafamadriz/friendly-snippets"
-
-[plugins."outline.nvim"]
-git = "hedyhli/outline.nvim"
-rev = "v1.0.0^{}"
 
 [plugins."telescope-symbols.nvim"]
 git = "nvim-telescope/telescope-symbols.nvim"

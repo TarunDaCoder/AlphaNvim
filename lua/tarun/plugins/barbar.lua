@@ -1,12 +1,5 @@
-local barbar = require('barbar')
-
-vim.g.barbar_auto_setup = false
-
-barbar.setup({
-	icons = {
-		button = ' ',
-	},
-})
+local bl = require('bufferline')
+bl.setup({})
 
 -- BARBECUE ==========================
 require('barbecue').setup({
