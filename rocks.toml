@@ -177,5 +177,5 @@ fileformat = "unix"
 background = "dark"
 backspace = "2"
 swapfile = false
-laststatus=3
-timeoutlen=50
+laststatus = 3
+timeoutlen = 100
