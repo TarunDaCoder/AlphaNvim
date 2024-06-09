@@ -8,13 +8,10 @@
 ** (x) Features
     - (x) add gradient bg
 
-** ( ) Plugins
+** (x) Plugins
     - (x) toggleterm
     - (x) ducky type
     - (x) oil.nvim
     - (x) add nvim-ts-autotag
     - (x) telescope-symbols.nvim
-    - ( ) harpoon
     - (x) live-server
-    - ( ) markdown-preview
-    - ( ) vim-be-good
