@@ -99,10 +99,6 @@ git = "hrsh7th/cmp-buffer"
 [plugins.cmp-path]
 git = "hrsh7th/cmp-path"
 
-[plugins."barbar.nvim"]
-git = "romgrk/barbar.nvim"
-rev = "v1.8.0^{}"
-
 [plugins."lspkind.nvim"]
 git = "onsails/lspkind.nvim"
 
