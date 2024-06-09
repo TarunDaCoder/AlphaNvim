@@ -2,7 +2,7 @@ local lspconfig = require('lspconfig')
 
 require('mason').setup()
 require('mason-lspconfig').setup({
-	ensure_installed = { 'lua_ls', 'cssls', 'eslint', 'pyright' },
+	ensure_installed = { 'lua_ls', 'cssls', 'eslint', 'pyright', 'tsserver' },
 })
 require('mason-null-ls').setup()
 
@@ -37,6 +37,7 @@ local lang_servers = {
     'cssls',
     'eslint',
     'pyright',
+    'tsserver',
 }
 
 for _, server in ipairs(lang_servers) do

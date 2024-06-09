@@ -11,7 +11,7 @@
 # List of Neovim plugins to install alongside their versions.
 # If the plugin name contains a dot then you must add quotes to the key name!
 [plugins]
-"rocks.nvim" = "2.29.2"
+"rocks.nvim" = "2.30.0"
 neorg = "8.6.0"
 nvim-web-devicons = "0.100"
 nvim-navic = "scm"
@@ -42,7 +42,7 @@ neorg-telescope = "1.1.0"
 "fidget.nvim" = "1.4.1"
 "overseer.nvim" = "1.4.0"
 "dressing.nvim" = "2.2.1"
-fzf-lua = "0.0.1301"
+fzf-lua = "0.0.1302"
 "barbecue.nvim" = "scm"
 
 [plugins."lualine.nvim"]
@@ -51,7 +51,7 @@ rev = "compat-nvim-0.6"
 
 [plugins."nvim-tree.lua"]
 git = "nvim-tree/nvim-tree.lua"
-rev = "v1.3.3"
+rev = "v1.4.0^{}"
 
 [plugins.nvim-treesitter]
 git = "nvim-treesitter/nvim-treesitter"
@@ -104,7 +104,7 @@ git = "hrsh7th/cmp-path"
 
 [plugins."barbar.nvim"]
 git = "romgrk/barbar.nvim"
-rev = "v1.7.0-beta.4"
+rev = "v1.8.0^{}"
 
 [plugins."lspkind.nvim"]
 git = "onsails/lspkind.nvim"
@@ -114,7 +114,7 @@ git = "petertriho/cmp-git"
 
 [plugins."which-key.nvim"]
 git = "folke/which-key.nvim"
-rev = "v1.6.1"
+rev = "v2.1.0"
 
 [plugins.alpha-nvim]
 git = "goolord/alpha-nvim"
