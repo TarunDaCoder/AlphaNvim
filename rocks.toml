@@ -31,10 +31,7 @@ neorg-telescope = "1.1.0"
 "overseer.nvim" = "1.4.0"
 "barbecue.nvim" = "scm"
 "bufferline.nvim" = "4.6.1"
-
-[plugins."lualine.nvim"]
-git = "nvim-lualine/lualine.nvim"
-rev = "compat-nvim-0.6"
+"feline.nvim" = "1.6.2"
 
 [plugins."nvim-tree.lua"]
 git = "nvim-tree/nvim-tree.lua"
@@ -146,4 +143,4 @@ background = "dark"
 backspace = "2"
 swapfile = false
 laststatus = 3
-timeoutlen = 100
+timeoutlen = 150

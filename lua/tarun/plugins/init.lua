@@ -1,4 +1,4 @@
-require('tarun.plugins.lualine')
+require('tarun.plugins.statusline')
 require('tarun.plugins.nvimtree')
 require('tarun.plugins.telescope')
 require('tarun.plugins.lspconf')
