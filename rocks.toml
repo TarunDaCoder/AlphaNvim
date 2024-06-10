@@ -31,6 +31,9 @@ neorg-telescope = "1.1.0"
 "bufferline.nvim" = "4.6.1"
 "feline.nvim" = "1.6.2"
 "conform.nvim" = "5.8.0"
+"better-escape.nvim" = "1.0.0"
+"telescope-undo.nvim" = "scm"
+"trouble.nvim" = "3.3.0"
 
 [plugins."nvim-tree.lua"]
 git = "nvim-tree/nvim-tree.lua"

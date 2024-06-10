@@ -32,18 +32,18 @@ function on_attach(client, bufnr)
 end
 
 local lang_servers = {
-    'lua_ls',
-    'cssls',
-    'eslint',
-    'pyright',
-    'tsserver',
+	'lua_ls',
+	'cssls',
+	'eslint',
+	'pyright',
+	'tsserver',
 }
 
 for _, server in ipairs(lang_servers) do
-    lspconfig[server].setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-    })
+	lspconfig[server].setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+	})
 end
 
 local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
@@ -60,4 +60,22 @@ vim.diagnostic.config({
 	underline = true,
 	update_in_insert = false,
 	severity_sort = false,
+})
+
+require('trouble').setup({
+	icons = {
+		indent = {
+			middle = ' ',
+			last = ' ',
+			top = ' ',
+			ws = '│  ',
+		},
+	},
+	modes = {
+		diagnostics = {
+			groups = {
+				{ 'filename', format = '{file_icon} {basename:Title} {count}' },
+			},
+		},
+	},
 })

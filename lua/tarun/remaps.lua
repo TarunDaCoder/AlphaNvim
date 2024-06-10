@@ -73,6 +73,7 @@ map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
 map('n', '<leader>tt', ':Telescope<CR>', opts)
 map('n', '<leader>th', ':Telescope help_tags<CR>', opts)
 map('n', '<leader>thl', ':Telescope highlights<CR>', opts)
+map('n', '<leader>tu', ':Telescope undo<CR>', opts)
 
 -- Remove hl search
 map('n', '<Esc>', ':nohlsearch<CR>', opts)
@@ -91,6 +92,3 @@ end, opts)
 vim.keymap.set('n', '[t', function()
 	require('todo-comments').jump_prev()
 end, opts)
-
--- Undotree
-vim.keymap.set('n', '<leader>u', ':lua require("undotree").toggle()<CR>', opts)
