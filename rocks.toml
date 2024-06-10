@@ -43,7 +43,7 @@ cmp-nvim-lsp= "scm"
 cmp-path= "scm"
 cmp_luasnip= "scm"
 "lspkind.nvim"= "scm"
-cmp-cmdline= "scm"
+# cmp-cmdline= "scm"
 nvim-autopairs= "scm"
 "indent-blankline.nvim"= "3.6.2"
 "which-key.nvim"= "2.1.0"
@@ -72,6 +72,9 @@ git = "nvim-telescope/telescope-symbols.nvim"
 
 [plugins."live-server.nvim"]
 git = "barrett-ruth/live-server.nvim"
+
+[plugins.cmp-cmdline]
+git = "hrsh7th/cmp-cmdline"
 
 # Neovim config
 [config.options]
