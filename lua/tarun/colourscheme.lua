@@ -1,10 +1,8 @@
 -- ONEDARK ========================
-require('onedark').setup({
-    style = 'cool',
-    transparent = true,
-    lualine = {
-        transparent = true,
-    },
+require('onedarkpro').setup({
+	options = {
+		transparency = true,
+	},
 })
 
-vim.cmd([[colorscheme onedark]])
+vim.cmd([[colorscheme onedark_vivid]])
