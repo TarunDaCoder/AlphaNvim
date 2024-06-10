@@ -8,8 +8,5 @@ null.setup({
 
         -- Lua
         null.builtins.formatting.stylua,
-
-        -- Spell
-        null.builtins.completion.spell,
     },
 })
