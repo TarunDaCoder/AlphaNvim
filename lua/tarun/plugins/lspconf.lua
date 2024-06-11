@@ -63,19 +63,6 @@ vim.diagnostic.config({
 })
 
 require('trouble').setup({
-	icons = {
-		indent = {
-			middle = ' ',
-			last = ' ',
-			top = ' ',
-			ws = '│  ',
-		},
-	},
-	modes = {
-		diagnostics = {
-			groups = {
-				{ 'filename', format = '{file_icon} {basename:Title} {count}' },
-			},
-		},
-	},
+	auto_close = true,
+	use_diagnostic_signs = true,
 })

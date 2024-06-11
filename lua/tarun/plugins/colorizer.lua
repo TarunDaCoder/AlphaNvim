@@ -1,1 +1,13 @@
-require('colorizer').setup()
+require('colorizer').setup({
+	'css',
+	'html',
+	'javascript',
+	'json',
+	'lua',
+	'markdown',
+	'python',
+	'rust',
+	'toml',
+	'typescript',
+	'yaml',
+})
