@@ -24,7 +24,6 @@ nvim-notify = "3.13.5"
 nvim-ts-autotag = "scm"
 nvim-surround = "2.1.5"
 neorg-telescope = "1.1.0"
-"codeium.nvim" = "scm"
 "overseer.nvim" = "1.4.0"
 "bufferline.nvim" = "4.6.1"
 "feline.nvim" = "1.6.2"
@@ -60,10 +59,6 @@ rev = "5260e5e"
 [plugins."nvim-colorizer.lua"]
 git = "norcalli/nvim-colorizer.lua"
 
-[plugins."codeium.vim"]
-git = "Exafunction/codeium.vim"
-rev = "1.8.5"
-
 [plugins.friendly-snippets]
 git = "rafamadriz/friendly-snippets"
 
@@ -75,6 +70,9 @@ git = "barrett-ruth/live-server.nvim"
 
 [plugins.cmp-cmdline]
 git = "hrsh7th/cmp-cmdline"
+
+[plugins.supermaven-nvim]
+git = "supermaven-inc/supermaven-nvim"
 
 # Neovim config
 [config.options]

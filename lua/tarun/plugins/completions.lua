@@ -71,7 +71,7 @@ cmp.setup({
 		{ name = 'luasnip' }, -- For luasnip users.
 	}, {
 		{ name = 'neorg' },
-		{ name = 'codeium' },
+		{ name = 'supermaven' },
 	}),
 })
 
@@ -101,14 +101,9 @@ cmp.setup({
 		format = lspkind.cmp_format({
 			mode = 'symbol',
 			maxwidth = 50,
-			ellipsis_char = '...',
-			show_labelDetails = true,
-			symbol_map = { Codeium = ' ' },
+			symbol_map = {
+				SuperMaven = ' ',
+			},
 		}),
 	},
 })
-
--- when cmp completion is loaded, clear the virtual text from codium
-require('cmp').event:on('menu_opened', function()
-	vim.fn['codeium#Clear']()
-end)
