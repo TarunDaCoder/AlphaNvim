@@ -1,5 +1,0 @@
-require('tarun.remaps')
-require('tarun.rocks')
-require('tarun.colourscheme')
-require('tarun.plugins')
-require('tarun.autocmd')
