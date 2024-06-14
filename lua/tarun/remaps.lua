@@ -25,11 +25,8 @@ map('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 -- Format code
 map('n', '<leader>f', ':lua vim.lsp.buf.format(nil, 2000)<CR>', opts)
 
--- Insert mode --
--- Quicker escape
--- map('i', 'jj', '<ESC>', opts)
-
 -- Visual mode --
+
 -- Stay in indent mode
 map('v', '<', '<gv', opts)
 map('v', '>', '>gv', opts)
@@ -83,12 +80,3 @@ map('n', '<leader>', ':WhichKey<CR>', opts)
 
 -- Lazygit
 map('n', '<leader>lg', ':LazyGit<CR>', opts)
-
--- Todo comments
-vim.keymap.set('n', ']t', function()
-	require('todo-comments').jump_next()
-end, opts)
-
-vim.keymap.set('n', '[t', function()
-	require('todo-comments').jump_prev()
-end, opts)
