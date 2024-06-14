@@ -22,9 +22,6 @@ map('n', '<C-Down>', ':resize -2<CR>', opts)
 map('n', '<C-Left>', ':vertical resize -2<CR>', opts)
 map('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 
--- Format code
-map('n', '<leader>f', ':lua vim.lsp.buf.format(nil, 2000)<CR>', opts)
-
 -- Visual mode --
 
 -- Stay in indent mode
@@ -76,7 +73,7 @@ map('n', '<leader>tu', ':Telescope undo<CR>', opts)
 map('n', '<Esc>', ':nohlsearch<CR>', opts)
 
 -- Whichkey
-map('n', '<leader>', ':WhichKey<CR>', opts)
+map({ 'n', 'v' }, '<leader>', ':WhichKey<CR>', opts)
 
 -- Lazygit
 map('n', '<leader>lg', ':LazyGit<CR>', opts)
