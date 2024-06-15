@@ -1,7 +1,6 @@
 * TODO LIST
 ** (x) Fixes
     - (x) dap
-    - (x) notify bg colour msg
     - (x) treesitter segfault
     - (x) which-key
 
@@ -10,8 +9,7 @@
 
 ** (x) Plugins
     - (x) toggleterm
-    - (x) ducky type
     - (x) oil.nvim
-    - (x) add nvim-ts-autotag
+    - (x) nvim-ts-autotag
     - (x) telescope-symbols.nvim
     - (x) live-server
