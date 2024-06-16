@@ -13,9 +13,8 @@
 -- Enable lazy loader
 vim.loader.enable()
 
--- Require main modules
-require('tarun.core.rocks')
-require('tarun.core.autocmd')
-require('tarun.core.colourscheme')
-require('tarun.core.remaps')
+-- Source core files
+require('tarun.core')
+
+-- Source plugin configs
 require('tarun.plugins')
