@@ -14,8 +14,8 @@
 vim.loader.enable()
 
 -- Require main modules
-require('tarun.rocks')
-require('tarun.autocmd')
-require('tarun.colourscheme')
-require('tarun.remaps')
+require('tarun.core.rocks')
+require('tarun.core.autocmd')
+require('tarun.core.colourscheme')
+require('tarun.core.remaps')
 require('tarun.plugins')
