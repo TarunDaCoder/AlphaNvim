@@ -73,7 +73,7 @@ map('n', '<leader>tu', ':Telescope undo<CR>', opts)
 map('n', '<Esc>', ':nohlsearch<CR>', opts)
 
 -- Whichkey
-map({ 'n', 'v' }, '<leader>', ':WhichKey<CR>', opts)
+map({ 'n' }, '<leader>', ':WhichKey<CR>', opts)
 
 -- Lazygit
 map('n', '<leader>lg', ':LazyGit<CR>', opts)
