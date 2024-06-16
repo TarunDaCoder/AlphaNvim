@@ -1,6 +1,7 @@
 local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 local map = vim.keymap.set
+
 -- Remap space as leader key
 map('', '<Space>', '<Nop>', opts)
 vim.g.mapleader = ' '
@@ -48,11 +49,13 @@ map('t', '<C-k>', '<C-\\><C-N><C-w>k', term_opts)
 map('t', '<C-l>', '<C-\\><C-N><C-w>l', term_opts)
 
 -- LSP --
-map('n', 'r', [[<cmd>lua vim.lsp.buf.rename()<CR>]], opts)
-map('n', 'gD', [[<cmd>lua vim.lsp.buf.declaration()<CR>]], opts)
-map('n', 'gd', [[<cmd>lua vim.lsp.buf.definition()<CR>]], opts)
-map('n', 'td', [[<cmd>lua vim.lsp.buf.type_definition()<CR>]], opts)
-map('n', 'sh', [[<cmd>lua vim.lsp.buf.signature_help()<CR>]], opts)
+map('n', '<leader>r', vim.lsp.buf.rename, opts)
+map('n', '<leader>gD', vim.lsp.buf.declaration, opts)
+map('n', '<leader>gd', vim.lsp.buf.definition, opts)
+map('n', '<leader>gh', vim.lsp.buf.hover, opts)
+map('n', '<leader>gtd', vim.lsp.buf.type_definition, opts)
+map('n', '<leader>sh', vim.lsp.buf.signature_help, opts)
+map('n', '<leader>ca', vim.lsp.buf.code_action, opts)
 
 -- Navigate buffers
 map('n', '<TAB>', ':BufferLineCycleNext<CR>', opts)

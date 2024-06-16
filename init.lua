@@ -10,7 +10,7 @@
 -- GitHub: https://github.com/TarunDaCoder/AlphaNvim
 -- License: MIT License Copyright (c) 2024 TarunDaCoder
 
--- Enable lazy loader
+-- Enable loader
 vim.loader.enable()
 
 -- Source core files
