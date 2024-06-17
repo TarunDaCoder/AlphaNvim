@@ -72,6 +72,9 @@ git = "hrsh7th/cmp-cmdline"
 [plugins.supermaven-nvim]
 git = "supermaven-inc/supermaven-nvim"
 
+[plugins.nvim-emmet]
+git = "olrtg/nvim-emmet"
+
 # Neovim config
 [config.options]
 relativenumber = true

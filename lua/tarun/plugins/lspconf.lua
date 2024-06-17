@@ -30,6 +30,7 @@ local lang_servers = {
 	'eslint',
 	'pyright',
 	'tsserver',
+	'emmet_language_server',
 }
 
 for _, server in ipairs(lang_servers) do
