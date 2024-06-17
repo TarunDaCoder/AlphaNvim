@@ -54,7 +54,7 @@ map('n', '<leader>gD', vim.lsp.buf.declaration, opts)
 map('n', '<leader>gd', vim.lsp.buf.definition, opts)
 map('n', '<leader>gh', vim.lsp.buf.hover, opts)
 map('n', '<leader>gtd', vim.lsp.buf.type_definition, opts)
-map('n', '<leader>sh', vim.lsp.buf.signature_help, opts)
+map('n', '<leader>gsh', vim.lsp.buf.signature_help, opts)
 map('n', '<leader>ca', vim.lsp.buf.code_action, opts)
 
 -- Navigate buffers
@@ -78,5 +78,15 @@ map('n', '<Esc>', ':nohlsearch<CR>', opts)
 -- Whichkey
 map({ 'n' }, '<leader>', ':WhichKey<CR>', opts)
 
--- Lazygit
-map('n', '<leader>lg', ':LazyGit<CR>', opts)
+-- Gitsigns
+map('n', '<leader>ss', ':Gitsigns stage_hunk<CR>', opts)
+map('n', '<leader>su', ':Gitsigns undo_stage_hunk<CR>', opts)
+map('n', '<leader>sr', ':Gitsigns reset_hunk<CR>', opts)
+map('n', '<leader>st', ':Gitsigns reset_buffer<CR>', opts)
+map('n', '<leader>sa', ':Gitsigns stage_buffer<CR>', opts)
+map('n', '<leader>si', ':Gitsigns toggle_current_line<CR>', opts)
+map('n', '<leader>sd', ':Gitsigns diffthis<CR>', opts)
+map('n', '<leader>sp', ':Gitsigns preview_hunk<CR>', opts)
+map('n', '<leader>sS', ':Gitsigns stage_buffer<CR>', opts)
+map('n', '<leader>su', ':Gitsigns reset_buffer<CR>', opts)
+map('n', '<leader>sd', ':Gitsigns diffthis<CR>', opts)
