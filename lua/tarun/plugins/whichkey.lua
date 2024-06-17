@@ -1,14 +1,14 @@
 local wk = require('which-key')
 
 wk.setup({
-    window = {
-        border = 'double',
-        winblend = 30,
-    },
-    icons = {
-        breadcrumb = '➜',
-        separator = '»',
-        group = '+',
-    },
-    require("tarun.remaps")
+	window = {
+		border = 'double',
+		winblend = 30,
+	},
+	icons = {
+		breadcrumb = '➜',
+		separator = '»',
+		group = '+',
+	},
+	require('tarun.core.remaps'),
 })

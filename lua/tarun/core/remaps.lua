@@ -90,3 +90,7 @@ map('n', '<leader>sp', ':Gitsigns preview_hunk<CR>', opts)
 map('n', '<leader>sS', ':Gitsigns stage_buffer<CR>', opts)
 map('n', '<leader>su', ':Gitsigns reset_buffer<CR>', opts)
 map('n', '<leader>sd', ':Gitsigns diffthis<CR>', opts)
+
+-- Leap
+map('n', 'z', '<Plug>(leap-forward)', opts)
+map('n', 'Z', '<Plug>(leap-backward)', opts)
