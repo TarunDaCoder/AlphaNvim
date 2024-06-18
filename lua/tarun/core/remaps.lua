@@ -75,9 +75,6 @@ map('n', '<leader>tu', ':Telescope undo<CR>', opts)
 -- Remove hl search
 map('n', '<Esc>', ':nohlsearch<CR>', opts)
 
--- Whichkey
-map({ 'n' }, '<leader>', ':WhichKey<CR>', opts)
-
 -- Gitsigns
 map('n', '<leader>ss', ':Gitsigns stage_hunk<CR>', opts)
 map('n', '<leader>su', ':Gitsigns undo_stage_hunk<CR>', opts)
