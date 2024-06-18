@@ -75,9 +75,6 @@ git = "supermaven-inc/supermaven-nvim"
 [plugins.nvim-emmet]
 git = "olrtg/nvim-emmet"
 
-[plugins."leap.nvim"]
-git = "ggandor/leap.nvim"
-
 # Neovim config
 [config.options]
 relativenumber = true
