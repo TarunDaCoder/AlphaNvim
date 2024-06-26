@@ -8,7 +8,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Keymap to save file
-map('n', '<leader>w', ':w!<CR>', opts)
+map('n', '<leader>w', ':w!<CR>', { desc = 'Save file' }, opts)
 
 -- Normal mode --
 -- Better window navigation
@@ -49,43 +49,43 @@ map('t', '<C-k>', '<C-\\><C-N><C-w>k', term_opts)
 map('t', '<C-l>', '<C-\\><C-N><C-w>l', term_opts)
 
 -- LSP --
-map('n', '<leader>r', vim.lsp.buf.rename, opts)
-map('n', '<leader>gD', vim.lsp.buf.declaration, opts)
-map('n', '<leader>gd', vim.lsp.buf.definition, opts)
-map('n', '<leader>gh', vim.lsp.buf.hover, opts)
-map('n', '<leader>gtd', vim.lsp.buf.type_definition, opts)
-map('n', '<leader>gsh', vim.lsp.buf.signature_help, opts)
-map('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+map('n', '<leader>r', vim.lsp.buf.rename, { desc = 'Rename' }, opts)
+map('n', '<leader>gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' }, opts)
+map('n', '<leader>gd', vim.lsp.buf.definition, { desc = 'Go to definition' }, opts)
+map('n', '<leader>gh', vim.lsp.buf.hover, { desc = 'Hover' }, opts)
+map('n', '<leader>gtd', vim.lsp.buf.type_definition, { desc = 'Go to type definition' }, opts)
+map('n', '<leader>gsh', vim.lsp.buf.signature_help, { desc = 'Signature help' }, opts)
+map('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code action' }, opts)
 
 -- Navigate buffers
 map('n', '<TAB>', ':BufferLineCycleNext<CR>', opts)
-map('n', '<S-TAB>', ':BufferLineCyclePrevious<CR>', opts)
+map('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', opts)
 
 -- PLugin stuff --
 -- NvimTree
-map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
+map('n', '<leader>e', ':NvimTreeToggle<CR>', { desc = 'Nvim Tree' }, opts)
 
 -- Telescope
-map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
-map('n', '<leader>tt', ':Telescope<CR>', opts)
-map('n', '<leader>th', ':Telescope help_tags<CR>', opts)
-map('n', '<leader>thl', ':Telescope highlights<CR>', opts)
-map('n', '<leader>tu', ':Telescope undo<CR>', opts)
+map('n', '<leader>tf', ':Telescope find_files<CR>', { desc = 'Find files' }, opts)
+map('n', '<leader>tg', ':Telescope live_grep<CR>', { desc = 'Live grep' }, opts)
+map('n', '<leader>tt', ':Telescope<CR>', { desc = 'Telescope' }, opts)
+map('n', '<leader>th', ':Telescope help_tags<CR>', { desc = 'Help tags' }, opts)
+map('n', '<leader>thl', ':Telescope highlights<CR>', { desc = 'Highlights' }, opts)
+map('n', '<leader>tu', ':Telescope undo<CR>', { desc = 'Undo changes' }, opts)
 
 -- Remove hl search
 map('n', '<Esc>', ':nohlsearch<CR>', opts)
 
 -- Gitsigns
-map('n', '<leader>ss', ':Gitsigns stage_hunk<CR>', opts)
-map('n', '<leader>su', ':Gitsigns undo_stage_hunk<CR>', opts)
-map('n', '<leader>sr', ':Gitsigns reset_hunk<CR>', opts)
-map('n', '<leader>st', ':Gitsigns reset_buffer<CR>', opts)
-map('n', '<leader>sa', ':Gitsigns stage_buffer<CR>', opts)
-map('n', '<leader>si', ':Gitsigns toggle_current_line<CR>', opts)
-map('n', '<leader>sd', ':Gitsigns diffthis<CR>', opts)
-map('n', '<leader>sh', ':Gitsigns preview_hunk<CR>', opts)
-map('n', '<leader>sS', ':Gitsigns stage_buffer<CR>', opts)
-map('n', '<leader>su', ':Gitsigns reset_buffer<CR>', opts)
-map('n', '<leader>sd', ':Gitsigns diffthis<CR>', opts)
-map('n', '<leader>sn', ':Gitsigns next_hunk<CR>', opts)
-map('n', '<leader>sp', ':Gitsigns prev_hunk<CR>', opts)
+map('n', '<leader>ss', ':Gitsigns stage_hunk<CR>', { desc = 'Stage hunk' }, opts)
+map('n', '<leader>su', ':Gitsigns undo_stage_hunk<CR>', { desc = 'Undo stage hunk' }, opts)
+map('n', '<leader>sr', ':Gitsigns reset_hunk<CR>', { desc = 'Reset hunk' }, opts)
+map('n', '<leader>st', ':Gitsigns reset_buffer<CR>', { desc = 'Reset buffer' }, opts)
+map('n', '<leader>sa', ':Gitsigns stage_buffer<CR>', { desc = 'Stage buffer' }, opts)
+map('n', '<leader>si', ':Gitsigns toggle_current_line_blame<CR>', { desc = 'Toggle current line blame' }, opts)
+map('n', '<leader>sd', ':Gitsigns diffthis<CR>', { desc = 'Diff this' }, opts)
+map('n', '<leader>sh', ':Gitsigns preview_hunk<CR>', { desc = 'Preview hunk' }, opts)
+map('n', '<leader>sS', ':Gitsigns stage_buffer<CR>', { desc = 'Stage buffer' }, opts)
+map('n', '<leader>su', ':Gitsigns reset_buffer<CR>', { desc = 'Reset buffer' }, opts)
+map('n', '<leader>sn', ':Gitsigns next_hunk<CR>', { desc = 'Next hunk' }, opts)
+map('n', '<leader>sp', ':Gitsigns prev_hunk<CR>', { desc = 'Previous hunk' }, opts)
