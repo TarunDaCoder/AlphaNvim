@@ -11,14 +11,13 @@
 # List of Neovim plugins to install alongside their versions.
 # If the plugin name contains a dot then you must add quotes to the key name!
 [plugins]
-"rocks.nvim" = "2.31.3"
+"rocks.nvim" = "2.32.0"
 nvim-web-devicons = "0.100"
 "rocks-git.nvim" = "1.5.1"
-"plenary.nvim"= "scm"
+"plenary.nvim"= "0.1.4"
 luasnip = "2.3.0"
-"rocks-config.nvim" = "2.0.0"
+"rocks-config.nvim" = "2.1.1"
 "oil.nvim" = "2.10.0"
-"toggleterm.nvim" = "2.11.0"
 nvim-ts-autotag = "scm"
 nvim-surround = "2.1.5"
 "overseer.nvim" = "1.4.0"
@@ -35,10 +34,18 @@ nvim-treesitter= "0.9.2"
 nvim-lspconfig= "0.1.8"
 "lspkind.nvim"= "scm"
 nvim-autopairs= "scm"
-"indent-blankline.nvim"= "3.6.3"
+"indent-blankline.nvim"= "3.7.0"
 "which-key.nvim"= "2.1.0"
 alpha-nvim= "scm"
 "rocks-lazy.nvim" = "scm"
+
+[plugins.nvim-cmp]
+git = "hrsh7th/nvim-cmp"
+event = "InsertEnter"
+
+[plugins.cmp-cmdline]
+version = "scm"
+event = "InsertEnter"
 
 [plugins.cmp-nvim-lsp]
 version = "scm"
@@ -66,7 +73,7 @@ colorscheme = [
 ]
 
 [plugins.neorg]
-version = "8.7.1"
+version = "8.8.0"
 ft = 'norg'
 
 [plugins.neorg-telescope]
@@ -76,10 +83,6 @@ ft = 'norg'
 [plugins."gitsigns.nvim"]
 git = "lewis6991/gitsigns.nvim"
 rev = "v0.9.0"
-
-[plugins.nvim-cmp]
-git = "hrsh7th/nvim-cmp"
-event = "InsertEnter"
 
 [plugins."nvim-colorizer.lua"]
 git = "norcalli/nvim-colorizer.lua"
@@ -92,10 +95,6 @@ git = "nvim-telescope/telescope-symbols.nvim"
 
 [plugins."live-server.nvim"]
 git = "barrett-ruth/live-server.nvim"
-
-[plugins.cmp-cmdline]
-git = "hrsh7th/cmp-cmdline"
-event = "InsertEnter"
 
 [plugins.supermaven-nvim]
 git = "supermaven-inc/supermaven-nvim"
