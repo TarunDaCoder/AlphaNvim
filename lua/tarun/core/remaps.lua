@@ -53,9 +53,9 @@ map('n', '<leader>lr', vim.lsp.buf.rename, { desc = 'Rename' }, opts)
 map('n', '<leader>lD', vim.lsp.buf.declaration, { desc = 'Go to declaration' }, opts)
 map('n', '<leader>ld', vim.lsp.buf.definition, { desc = 'Go to definition' }, opts)
 map('n', '<leader>lh', vim.lsp.buf.hover, { desc = 'Hover' }, opts)
-map('n', '<leader>ltd', vim.lsp.buf.type_definition, { desc = 'Go to type definition' }, opts)
-map('n', '<leader>lsh', vim.lsp.buf.signature_help, { desc = 'Signature help' }, opts)
-map('n', '<leader>lca', vim.lsp.buf.code_action, { desc = 'Code action' }, opts)
+map('n', '<leader>lt', vim.lsp.buf.type_definition, { desc = 'Go to type definition' }, opts)
+map('n', '<leader>ls', vim.lsp.buf.signature_help, { desc = 'Signature help' }, opts)
+map('n', '<leader>lc', vim.lsp.buf.code_action, { desc = 'Code action' }, opts)
 
 -- Navigate buffers
 map('n', '<TAB>', ':BufferLineCycleNext<CR>', opts)
