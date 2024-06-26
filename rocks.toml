@@ -45,19 +45,19 @@ event = "InsertEnter"
 
 [plugins.cmp-cmdline]
 version = "scm"
-event = "InsertEnter"
+# event = "InsertEnter"
 
 [plugins.cmp-nvim-lsp]
 version = "scm"
-event = "InsertEnter"
+# event = "InsertEnter"
 
 [plugins.cmp-path]
 version = "scm"
-event = "InsertEnter"
+# event = "InsertEnter"
 
 [plugins.cmp_luasnip]
 version = "scm"
-event = "InsertEnter"
+# event = "InsertEnter"
 
 [plugins.'nvim-tree.lua']
 version = "1.4.0"
