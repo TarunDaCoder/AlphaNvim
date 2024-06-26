@@ -49,13 +49,13 @@ map('t', '<C-k>', '<C-\\><C-N><C-w>k', term_opts)
 map('t', '<C-l>', '<C-\\><C-N><C-w>l', term_opts)
 
 -- LSP --
-map('n', '<leader>r', vim.lsp.buf.rename, { desc = 'Rename' }, opts)
-map('n', '<leader>gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' }, opts)
-map('n', '<leader>gd', vim.lsp.buf.definition, { desc = 'Go to definition' }, opts)
-map('n', '<leader>gh', vim.lsp.buf.hover, { desc = 'Hover' }, opts)
-map('n', '<leader>gtd', vim.lsp.buf.type_definition, { desc = 'Go to type definition' }, opts)
-map('n', '<leader>gsh', vim.lsp.buf.signature_help, { desc = 'Signature help' }, opts)
-map('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code action' }, opts)
+map('n', '<leader>lr', vim.lsp.buf.rename, { desc = 'Rename' }, opts)
+map('n', '<leader>lD', vim.lsp.buf.declaration, { desc = 'Go to declaration' }, opts)
+map('n', '<leader>ld', vim.lsp.buf.definition, { desc = 'Go to definition' }, opts)
+map('n', '<leader>lh', vim.lsp.buf.hover, { desc = 'Hover' }, opts)
+map('n', '<leader>ltd', vim.lsp.buf.type_definition, { desc = 'Go to type definition' }, opts)
+map('n', '<leader>lsh', vim.lsp.buf.signature_help, { desc = 'Signature help' }, opts)
+map('n', '<leader>lca', vim.lsp.buf.code_action, { desc = 'Code action' }, opts)
 
 -- Navigate buffers
 map('n', '<TAB>', ':BufferLineCycleNext<CR>', opts)
