@@ -66,7 +66,6 @@ wk.register({
 		f = { ':NvimTreeFindFile<CR>', 'Find file', opts },
 		r = { ':NvimTreeRefresh<CR>', 'Refresh', opts },
 		R = { ':NvimTreeRefresh<CR>', 'Refresh', opts },
-		t = { ':NvimTreeToggle<CR>', 'Toggle', opts },
 	},
 	prefix = '<leader>',
 })
