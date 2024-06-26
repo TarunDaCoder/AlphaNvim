@@ -2,7 +2,7 @@ local lspconfig = require('lspconfig')
 
 require('mason').setup()
 require('mason-lspconfig').setup({
-	ensure_installed = { 'lua_ls', 'cssls', 'eslint', 'pyright', 'tsserver' },
+	ensure_installed = { 'html', 'lua_ls', 'cssls', 'eslint', 'pyright', 'tsserver' },
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -31,6 +31,7 @@ local lang_servers = {
 	'pyright',
 	'tsserver',
 	'emmet_language_server',
+	'html',
 }
 
 for _, server in ipairs(lang_servers) do
