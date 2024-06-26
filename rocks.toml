@@ -30,7 +30,7 @@ nvim-surround = "2.1.5"
 "mason.nvim"= "1.10.0"
 "mason-lspconfig.nvim"= "1.29.0"
 nvim-treesitter= "0.9.2"
-"telescope.nvim"= "scm"
+"telescope.nvim"= { version = "scm", cmd = ["Telescope", "Telescope find_files", "Telescope live_grep", "Telescope oldfiles"] }
 nvim-lspconfig= "0.1.8"
 "lspkind.nvim"= "scm"
 nvim-autopairs= "scm"
@@ -41,7 +41,6 @@ alpha-nvim= "scm"
 
 [plugins.nvim-cmp]
 git = "hrsh7th/nvim-cmp"
-event = "InsertEnter"
 
 [plugins.cmp-cmdline]
 version = "scm"
