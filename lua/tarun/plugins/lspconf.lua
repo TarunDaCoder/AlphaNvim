@@ -36,7 +36,6 @@ local lang_servers = {
 
 for _, server in ipairs(lang_servers) do
 	lspconfig[server].setup({
-		on_attach = on_attach,
 		capabilities = capabilities,
 	})
 end
