@@ -38,12 +38,12 @@ nvim-autopairs= "scm"
 alpha-nvim= "scm"
 "rocks-lazy.nvim" = "scm"
 
+[plugins.nvim-cmp]
+version = "scm"
+
 [plugins."telescope.nvim"]
 version = "scm"
 cmd = ["Telescope", "Telescope find_files", "Telescope live_grep", "Telescope oldfiles"]
-
-[plugins.nvim-cmp]
-git = "hrsh7th/nvim-cmp"
 
 [plugins.cmp-cmdline]
 version = "scm"
@@ -75,7 +75,7 @@ colorscheme = [
 ]
 
 [plugins.neorg]
-version = "8.8.0"
+version = "8.8.1"
 ft = 'norg'
 
 [plugins.neorg-telescope]
