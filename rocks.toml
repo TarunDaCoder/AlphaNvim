@@ -39,7 +39,7 @@ alpha-nvim= "scm"
 "rocks-lazy.nvim" = "scm"
 
 [plugins.nvim-cmp]
-version = "scm"
+git = "hrsh7th/nvim-cmp"
 
 [plugins."telescope.nvim"]
 version = "scm"
