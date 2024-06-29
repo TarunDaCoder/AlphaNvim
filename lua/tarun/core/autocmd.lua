@@ -12,7 +12,7 @@ cmd({ 'VimLeave' }, {
 	group = 'Shape',
 })
 
-cmd({ 'CursorHold' }, {
+cmd({ 'CursorHold', 'CursorHoldI', 'CursorMoved', 'CursorMovedI' }, {
 	desc = 'Open float when there is diagnostics',
 	group = 'Lsp',
 	callback = vim.diagnostic.open_float,
