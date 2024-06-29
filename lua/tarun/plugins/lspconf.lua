@@ -54,9 +54,22 @@ vim.diagnostic.config({
 	underline = true,
 	update_in_insert = false,
 	severity_sort = false,
+	float = { focusable = false, style = 'minimal', border = 'rounded', source = 'always', header = '', prefix = '' },
 })
 
 require('trouble').setup({
 	auto_close = true,
 	use_diagnostic_signs = true,
+})
+
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+	border = 'rounded',
+	title = 'Signature Help',
+	focusable = true,
+})
+
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
+	border = 'rounded',
+	focusable = true,
+	title = 'Hover',
 })
