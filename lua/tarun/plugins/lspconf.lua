@@ -47,9 +47,10 @@ for type, icon in pairs(signs) do
 end
 
 vim.diagnostic.config({
-	virtual_text = {
-		prefix = ' ',
-	},
+	-- virtual_text = {
+	-- 	prefix = ' ',
+	-- },
+	virtual_text = false,
 	signs = true,
 	underline = true,
 	update_in_insert = false,
@@ -73,3 +74,5 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
 	focusable = true,
 	title = 'Hover',
 })
+
+require('lsp_lines').setup()

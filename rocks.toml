@@ -37,6 +37,10 @@ nvim-autopairs= "scm"
 "which-key.nvim"= "2.1.0"
 alpha-nvim= "scm"
 "rocks-lazy.nvim" = "scm"
+"rocks-edit.nvim" = "scm"
+
+[plugins."lsp_lines.nvim"]
+git = "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
 
 [plugins.nvim-cmp]
 git = "hrsh7th/nvim-cmp"
