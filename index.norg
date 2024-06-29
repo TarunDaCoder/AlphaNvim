@@ -1,3 +1,13 @@
+@document.meta
+title: AlphaNvim Todo List
+description: This is a todo list for [AlphaNvim](https://github.com/TarunDaCoder/AlphaNvim)
+authors: [TarunDaCoder](https://github.com/TarunDaCoder)
+categories: todo, todolist, alphanvim, neovim, nvim
+created: 2024-06-29T11:36:08+0530
+updated: 2024-06-29T11:36:08+0530
+version: 1.1.1
+@end
+
 * TODO LIST
 ** (x) Fixes
     - (x) dap
