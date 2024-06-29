@@ -12,6 +12,12 @@ cmd({ 'VimLeave' }, {
 	group = 'Shape',
 })
 
+cmd({ 'CursorHold' }, {
+	desc = 'Open float when there is diagnostics',
+	group = 'Lsp',
+	callback = vim.diagnostic.open_float,
+})
+
 cmd({
 	'FileChangedShellPost',
 }, {
