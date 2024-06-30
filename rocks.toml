@@ -119,6 +119,7 @@ git = "OXY2DEV/markview.nvim"
 
 # Neovim config
 [config.options]
+relativenumber = true
 number = true
 splitbelow = true
 splitright = true
@@ -141,3 +142,4 @@ backspace = "2"
 swapfile = false
 laststatus = 3
 timeoutlen = 150
+signcolumn = 'auto:2'
