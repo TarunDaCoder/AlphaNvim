@@ -38,6 +38,9 @@ alpha-nvim= "scm"
 "rocks-lazy.nvim" = "scm"
 "rocks-edit.nvim" = "scm"
 
+[plugins.sus.nvim]
+opt = true
+
 [plugins.nvim-treesitter]
 git = "nvim-treesitter/nvim-treesitter"
 rev = "v0.9.2^{}"
