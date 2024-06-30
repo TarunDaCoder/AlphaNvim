@@ -119,7 +119,6 @@ git = "OXY2DEV/markview.nvim"
 
 # Neovim config
 [config.options]
-relativenumber = true
 number = true
 splitbelow = true
 splitright = true
