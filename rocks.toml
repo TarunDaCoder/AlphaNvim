@@ -29,7 +29,6 @@ nvim-surround = "2.1.5"
 "trouble.nvim" = "3.4.3"
 "mason.nvim"= "1.10.0"
 "mason-lspconfig.nvim"= "1.29.0"
-nvim-treesitter= "0.9.2"
 nvim-lspconfig= "0.1.8"
 "lspkind.nvim"= "scm"
 nvim-autopairs= "scm"
@@ -38,6 +37,10 @@ nvim-autopairs= "scm"
 alpha-nvim= "scm"
 "rocks-lazy.nvim" = "scm"
 "rocks-edit.nvim" = "scm"
+
+[plugins.nvim-treesitter]
+git = "nvim-treesitter/nvim-treesitter"
+rev = "v0.9.2^{}"
 
 [plugins."lsp_lines.nvim"]
 git = "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
