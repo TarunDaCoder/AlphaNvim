@@ -111,6 +111,10 @@ git = "supermaven-inc/supermaven-nvim"
 [plugins.nvim-emmet]
 git = "olrtg/nvim-emmet"
 
+[plugins."markview.nvim"]
+git = "OXY2DEV/markview.nvim"
+# ft = 'markdown'
+
 # Neovim config
 [config.options]
 relativenumber = true
