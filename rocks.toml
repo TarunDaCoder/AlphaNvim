@@ -38,6 +38,7 @@ alpha-nvim= "scm"
 "rocks-lazy.nvim" = "scm"
 "rocks-edit.nvim" = "scm"
 nvim-cmp= "scm"
+"image.nvim" = "1.3.0"
 
 [plugins."sus.nvim"]
 version = "master-1"
@@ -52,7 +53,7 @@ git = "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
 
 [plugins."telescope.nvim"]
 version = "scm"
-cmd = ["Telescope", "Telescope find_files", "Telescope live_grep", "Telescope oldfiles"]
+cmd = ["Telescope", "Telescope find_files", "Telescope live_grep", "Telescope oldfiles", "Telescope symbols"]
 
 [plugins.cmp-cmdline]
 version = "scm"
