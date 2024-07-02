@@ -1,3 +1,1 @@
-require('image').setup({
-	backend = 'ueberzug',
-})
+require('image').setup()
