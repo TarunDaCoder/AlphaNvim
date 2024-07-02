@@ -13,10 +13,12 @@ version: 1.1.1
     - (x) dap
     - (x) treesitter segfault
     - (x) which-key
+    - (x) image.nvim
+    -- Note: only works on kitty
 
 ** (x) Features
     - (x) add gradient bg
-    - ( ) add lazy loading
+    - ( ) add more lazy loaded plugins
 
 ** (x) Plugins
     - (x) toggleterm
