@@ -1,13 +1,6 @@
 require('colorizer').setup({
-	'css',
-	'html',
-	'javascript',
-	'json',
-	'lua',
-	'markdown',
-	'python',
-	'rust',
-	'toml',
-	'typescript',
-	'yaml',
+	user_default_options = {
+		mode = 'virtualtext',
+		css = true,
+	},
 })
