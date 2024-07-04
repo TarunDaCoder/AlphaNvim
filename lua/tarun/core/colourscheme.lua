@@ -1,7 +1,6 @@
 -- ONEDARK ========================
 require('onedarkpro').setup({
 	options = {
-		transparency = true,
 		cursorline = true,
 		highlight_inactive_windows = true,
 	},
