@@ -55,6 +55,7 @@ wk.register({
 		h = { ':Gitsigns preview_hunk<CR>', 'Preview hunk', opts },
 		n = { ':Gitsigns next_hunk<CR>', 'Next hunk', opts },
 		p = { ':Gitsigns prev_hunk<CR>', 'Previous hunk', opts },
+		l = { ':Gitsigns toggle_current_line_blame<CR>', 'Toggle current line blame', opts },
 	},
 	prefix = '<leader>',
 })
