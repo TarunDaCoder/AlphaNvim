@@ -15,11 +15,12 @@ wk.setup({
 
 wk.register({
 	t = {
-		name = 'Telescope',
+		name = ' 󰭎 Telescope',
 		f = { ':Telescope find_files<CR>', 'Find files', opts },
 		g = { ':Telescope live_grep<CR>', 'Live grep', opts },
 		h = { ':Telescope help_tags<CR>', 'Help tags', opts },
-		s = { ':Telescope highlights<CR>', 'Highlights', opts },
+		l = { ':Telescope highlights<CR>', 'Highlights', opts },
+		s = { ':Telescope symbols<CR>', 'Symbols', opts },
 		u = { ':Telescope undo<CR>', 'Undo changes', opts },
 		t = { ':Telescope<CR>', 'Telescope', opts },
 	},
@@ -28,7 +29,7 @@ wk.register({
 
 wk.register({
 	l = {
-		name = 'LSP',
+		name = '  LSP',
 		r = { vim.lsp.buf.rename, 'Rename', opts },
 		d = { vim.lsp.goto_definition, 'Goto definition', opts },
 		i = { vim.lsp.buf.implementation, 'Goto implementation', opts },
@@ -45,7 +46,7 @@ wk.register({
 
 wk.register({
 	g = {
-		name = 'Gitsigns',
+		name = '  Gitsigns',
 		s = { ':Gitsigns stage_hunk<CR>', 'Stage hunk', opts },
 		u = { ':Gitsigns undo_stage_hunk<CR>', 'Undo stage hunk', opts },
 		r = { ':Gitsigns reset_hunk<CR>', 'Reset hunk', opts },
@@ -63,7 +64,7 @@ wk.register({
 
 wk.register({
 	e = {
-		name = 'NvimTree',
+		name = ' 󰍉 NvimTree',
 		e = { ':NvimTreeToggle<CR>', 'Toggle', opts },
 		f = { ':NvimTreeFindFile<CR>', 'Find file', opts },
 		r = { ':NvimTreeRefresh<CR>', 'Refresh', opts },
