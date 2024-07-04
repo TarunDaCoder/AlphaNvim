@@ -9,7 +9,7 @@ wk.setup({
 	icons = {
 		breadcrumb = '➜',
 		separator = '»',
-		group = '+',
+		group = '',
 	},
 })
 
