@@ -11,13 +11,13 @@
 # List of Neovim plugins to install alongside their versions.
 # If the plugin name contains a dot then you must add quotes to the key name!
 [plugins]
-"rocks.nvim" = "2.32.1"
+"rocks.nvim" = "2.34.0"
 nvim-web-devicons = "0.100"
 "rocks-git.nvim" = "1.5.1"
 "plenary.nvim"= "scm"
 luasnip = "2.3.0"
-"rocks-config.nvim" = "2.1.1"
-"oil.nvim" = "2.10.0"
+"rocks-config.nvim" = "2.1.2"
+"oil.nvim" = "2.11.0"
 nvim-ts-autotag = "scm"
 nvim-surround = "2.1.5"
 "overseer.nvim" = "1.4.0"
@@ -37,11 +37,15 @@ alpha-nvim= "scm"
 "rocks-lazy.nvim" = "scm"
 "rocks-edit.nvim" = "scm"
 nvim-cmp= "scm"
-"image.nvim" = "1.3.0"
 friendly-snippets= "scm"
+
+[plugins."image.nvim"]
+version = "1.3.0"
+event = "DeferredUIEnter"
 
 [plugins."sus.nvim"]
 version = "master"
+event = "DeferredUIEnter"
 
 [plugins.nvim-treesitter]
 git = "nvim-treesitter/nvim-treesitter"
@@ -52,7 +56,8 @@ git = "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
 
 [plugins."telescope.nvim"]
 version = "scm"
-cmd = ["Telescope", "Telescope find_files", "Telescope live_grep", "Telescope oldfiles", "Telescope symbols"]
+# cmd = ["Telescope", "Telescope find_files", "Telescope live_grep", "Telescope oldfiles", "Telescope symbols"]
+event = "DeferredUIEnter"
 
 [plugins.cmp-cmdline]
 version = "scm"
@@ -72,24 +77,28 @@ version = "scm"
 
 [plugins.'nvim-tree.lua']
 version = "1.4.0"
-keys = {lhs = '<leader>ee', rhs = '<cmd>NvimTreeToggle<cr>', desc = 'Toggle NvimTree'}
+# keys = {lhs = '<leader>ee', rhs = '<cmd>NvimTreeToggle<cr>', desc = 'Toggle NvimTree'}
+event = "DeferredUIEnter"
 
 [plugins.'onedarkpro.nvim']
 version = "0.8.0"
-colorscheme = [
-    "onedark",
-    "onedark_vivid",
-    "onedark_dark",
-    "onelight",
-]
+# colorscheme = [
+#     "onedark",
+#     "onedark_vivid",
+#     "onedark_dark",
+#     "onelight",
+# ]
+event = "DeferredUIEnter"
 
 [plugins.neorg]
 version = "8.8.1"
 ft = 'norg'
+event = "DeferredUIEnter"
 
 [plugins.neorg-telescope]
 version = "1.1.0"
 ft = 'norg'
+event = "DeferredUIEnter"
 
 [plugins."gitsigns.nvim"]
 git = "lewis6991/gitsigns.nvim"
