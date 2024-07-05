@@ -123,7 +123,16 @@ git = "olrtg/nvim-emmet"
 [plugins."markview.nvim"]
 git = "OXY2DEV/markview.nvim"
 
-# Neovim config
+[plugins."neocomplete.nvim"]
+git = "max397574/neocomplete.nvim"
+
+[plugins.neocomplete-lsp]
+git = "max397574/neocomplete-lsp"
+
+[plugins."telescope-egrepify.nvim"]
+git = "fdschmidt93/telescope-egrepify.nvim"
+
+# Neovim options
 [config.options]
 relativenumber = true
 number = true
