@@ -1,1 +1,1 @@
-require("markview").setup()
+require('markview').setup()
