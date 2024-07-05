@@ -78,3 +78,20 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
 })
 
 require('lsp_lines').setup()
+
+vim.api.nvim_create_autocmd('LspAttach', {
+	callback = function(args)
+		local bufnr = args.buf
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
+		if not client then
+			return
+		end
+
+		if client.server_capabilities.completionProvider then
+			vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
+		end
+
+		local opts = { noremap = true, silent = true, buffer = bufnr }
+		vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+	end,
+})

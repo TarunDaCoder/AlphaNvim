@@ -38,6 +38,7 @@ alpha-nvim= "scm"
 "rocks-edit.nvim" = "scm"
 nvim-cmp= "scm"
 friendly-snippets= "scm"
+neorg-interim-ls = "1.0.1"
 
 [plugins."image.nvim"]
 version = "1.3.0"
