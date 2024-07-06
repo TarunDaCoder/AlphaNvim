@@ -10,19 +10,19 @@ version: 1.1.1
 
 * TODO LIST
 ** (x) Fixes
-    - (x) dap
-    - (x) treesitter segfault
-    - (x) which-key
-    - (x) image.nvim
-    -- Note: only works on kitty
+   - (x) dap
+   - (x) treesitter segfault
+   - (x) which-key
+   - (x) image.nvim
+   -- Note: only works on kitty
 
 ** (x) Features
-    - (x) add gradient bg
-    - ( ) add more lazy loaded plugins
+   - (x) add gradient bg
+   - ( ) add more lazy loaded plugins
 
 ** (x) Plugins
-    - (x) toggleterm
-    - (x) oil.nvim
-    - (x) nvim-ts-autotag
-    - (x) telescope-symbols.nvim
-    - (x) live-server
+   - (x) toggleterm
+   - (x) oil.nvim
+   - (x) nvim-ts-autotag
+   - (x) telescope-symbols.nvim
+   - (x) live-server
