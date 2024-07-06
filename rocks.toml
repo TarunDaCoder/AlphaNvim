@@ -123,6 +123,7 @@ git = "olrtg/nvim-emmet"
 
 [plugins."markview.nvim"]
 git = "OXY2DEV/markview.nvim"
+rev = "dev"
 
 [plugins."neocomplete.nvim"]
 git = "max397574/neocomplete.nvim"
