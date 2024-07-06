@@ -6,17 +6,6 @@
 -- 	return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s')
 -- end
 --
--- local border = {
--- 	{ '╭', 'CmpBorder' },
--- 	{ '─', 'CmpBorder' },
--- 	{ '╮', 'CmpBorder' },
--- 	{ '│', 'CmpBorder' },
--- 	{ '╯', 'CmpBorder' },
--- 	{ '─', 'CmpBorder' },
--- 	{ '╰', 'CmpBorder' },
--- 	{ '│', 'CmpBorder' },
--- }
---
 -- cmp.setup({
 -- 	snippet = {
 -- 		expand = function(args)
@@ -25,10 +14,10 @@
 -- 	},
 -- 	window = {
 -- 		completion = {
--- 			border = border,
+-- 			border = 'rounded',
 -- 		},
 -- 		documentation = {
--- 			border = border,
+-- 			border = 'rounded',
 -- 		},
 -- 	},
 -- 	mapping = cmp.mapping.preset.insert({
