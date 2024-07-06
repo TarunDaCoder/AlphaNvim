@@ -66,6 +66,7 @@ cmd('FileType', {
 		'checkhealth',
 		'help',
 		'lspinfo',
+		'Spectre_panel',
 	},
 	callback = function()
 		vim.keymap.set('n', 'q', vim.cmd.close, { desc = 'Close the current buffer', buffer = true })

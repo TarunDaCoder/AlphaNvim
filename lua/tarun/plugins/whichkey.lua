@@ -71,3 +71,13 @@ wk.register({
 	},
 	prefix = '<leader>',
 })
+
+wk.register({
+	s = {
+		name = '🔱 Spectre',
+		s = { ":lua require('spectre').toggle()<CR>", 'Find and replace', opts },
+		w = { ":lua require('spectre').open_visual()<CR>", 'Search current word', opts },
+		p = { ":lua require('spectre').open_file_search({select_word=true})<CR>", 'Search in current file', opts },
+	},
+	prefix = '<leader>',
+})
