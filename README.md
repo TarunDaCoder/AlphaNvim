@@ -19,7 +19,7 @@ nvim -u NORC -c "source https://raw.githubusercontent.com/nvim-neorocks/rocks.nv
 mv ~/.config/nvim ~/.config/nvim.bak
 mv ~/.local/share/nvim ~/.local/share/nvim.bak
 
-git clone https://github.com/TarunDaCoder/AlphaNvim ~/.config/nvim
+git clone https://github.com/TarunDaCoder/AlphaNvim.git ~/.config/nvim
 ```
 - Then, inside of neovim do `:Rocks sync`
 - And, ta-da! You now have `AlphaNvim` installed! 🎉
