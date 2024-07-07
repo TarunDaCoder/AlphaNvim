@@ -40,7 +40,6 @@ nvim-cmp= "scm"
 friendly-snippets= "scm"
 neorg-interim-ls = "1.0.1"
 nvim-spectre = "scm"
-"rocks-treesitter.nvim" = "scm"
 "headlines.nvim" = "scm"
 
 [plugins."image.nvim"]
