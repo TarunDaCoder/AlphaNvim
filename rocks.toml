@@ -42,6 +42,7 @@ neorg-interim-ls = "1.0.1"
 nvim-spectre = "scm"
 "headlines.nvim" = "scm"
 "otter.nvim" = "2.2.0"
+nvim-notify = "3.13.5"
 
 [plugins."image.nvim"]
 version = "1.3.0"
