@@ -109,8 +109,8 @@ end)
 
 vim.keymap.set('i', '<cr>', '<Plug>(NeocompleteConfirm)')
 vim.keymap.set('i', '<c-e>', '<Plug>(NeocompleteClose)')
-vim.keymap.set('i', '<c-j>', '<Plug>(NeocompleteSelectNext)')
-vim.keymap.set('i', '<c-k>', '<Plug>(NeocompleteSelectPrev)')
+vim.keymap.set('i', '<tab>', '<Plug>(NeocompleteSelectNext)')
+vim.keymap.set('i', '<s-tab>', '<Plug>(NeocompleteSelectPrev)')
 
 vim.api.nvim_create_autocmd('InsertLeave', {
 	callback = function()
