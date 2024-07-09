@@ -4,7 +4,7 @@ local opts = { noremap = true, silent = true }
 wk.setup({
 	window = {
 		border = 'rounded',
-		winblend = 10,
+		winblend = 0,
 	},
 	icons = {
 		breadcrumb = '➜',
