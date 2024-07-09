@@ -33,7 +33,7 @@ wk.register({
 		r = { vim.lsp.buf.rename, 'Rename', opts },
 		d = { vim.lsp.goto_definition, 'Goto definition', opts },
 		i = { vim.lsp.buf.implementation, 'Goto implementation', opts },
-		a = { vim.lsp.buf.code_action, 'Code action', opts },
+		a = { require('actions-preview').code_actions, 'Code Action', opts },
 		f = { vim.lsp.buf.formatting, 'Format', opts },
 		s = { vim.lsp.buf.signature_help, 'Signature help', opts },
 		D = { vim.lsp.buf.declaration, 'Go to declaration', opts },
