@@ -18,8 +18,11 @@ neorg.setup({
 				icon_preset = 'diamond',
 				icons = {
 					todo = {
+						undone = {
+							icon = '',
+						},
 						pending = {
-							icon = ' ',
+							icon = '󰏫',
 						},
 						uncertain = {
 							icon = '?',
@@ -28,10 +31,13 @@ neorg.setup({
 							icon = '',
 						},
 						on_hold = {
-							icon = '󰏦 ',
+							icon = '',
 						},
 						cancelled = {
-							icon = ' ',
+							icon = '',
+						},
+						done = {
+							icon = '',
 						},
 					},
 				},
