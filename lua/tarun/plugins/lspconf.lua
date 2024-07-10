@@ -8,7 +8,7 @@ require('mason-lspconfig').setup({
 -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 lspconfig.lua_ls.setup({
-	capabilties = capabilities,
+	-- capabilties = capabilities,
 	settings = {
 		Lua = {
 			diagnostics = {
@@ -35,21 +35,59 @@ local lang_servers = {
 
 for _, server in ipairs(lang_servers) do
 	lspconfig[server].setup({
-		capabilities = capabilities,
+		-- capabilities = capabilities,
 	})
 end
 
-local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
+local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '', Info = ' ' }
 
 vim.diagnostic.config({
-	-- virtual_text = {
-	-- 	prefix = ' ',
-	-- },
-	virtual_text = false,
+	virtual_text = {
+		prefix = function(diagnostic, i, total)
+			local icon, highlight
+			if diagnostic.severity == 1 then
+				icon = signs.Error
+				highlight = 'DiagnosticError'
+			elseif diagnostic.severity == 2 then
+				icon = signs.Warn
+				highlight = 'DiagnosticWarn'
+			elseif diagnostic.severity == 3 then
+				icon = signs.Info
+				highlight = 'DiagnosticInfo'
+			elseif diagnostic.severity == 4 then
+				icon = signs.Hint
+				highlight = 'DiagnosticHint'
+			end
+			return i .. '/' .. total .. ' ' .. icon .. '  ', highlight
+		end,
+	},
 	underline = true,
 	update_in_insert = false,
 	severity_sort = false,
-	float = { focusable = false, style = 'minimal', border = 'rounded', source = 'always', header = '', prefix = '' },
+	float = {
+		focusable = false,
+		style = 'minimal',
+		border = 'rounded',
+		source = 'always',
+		header = '',
+		prefix = function(diagnostic, i, total)
+			local icon, highlight
+			if diagnostic.severity == 1 then
+				icon = signs.Error
+				highlight = 'DiagnosticError'
+			elseif diagnostic.severity == 2 then
+				icon = signs.Warn
+				highlight = 'DiagnosticWarn'
+			elseif diagnostic.severity == 3 then
+				icon = signs.Info
+				highlight = 'DiagnosticInfo'
+			elseif diagnostic.severity == 4 then
+				icon = signs.Hint
+				highlight = 'DiagnosticHint'
+			end
+			return i .. '/' .. total .. ' ' .. icon .. '  ', highlight
+		end,
+	},
 	signs = {
 		text = {
 			[vim.diagnostic.severity.ERROR] = signs.Error,
@@ -77,7 +115,7 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
 	title = 'Hover',
 })
 
-require('lsp_lines').setup()
+-- require('lsp_lines').setup()
 
 vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(args)
