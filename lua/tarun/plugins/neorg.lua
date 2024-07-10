@@ -7,11 +7,11 @@ local neorg = require('neorg')
 neorg.setup({
 	load = {
 		['core.defaults'] = {},
-		['core.completion'] = {
-			config = {
-				engine = 'nvim-cmp',
-			},
-		},
+		-- ['core.completion'] = {
+		-- 	config = {
+		-- 		engine = 'nvim-cmp',
+		-- 	},
+		-- },
 		['core.concealer'] = {
 			config = {
 				markup_preset = 'conceal',
