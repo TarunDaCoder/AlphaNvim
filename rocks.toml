@@ -118,6 +118,10 @@ git = "max397574/neocomplete-lsp"
 [plugins."telescope-egrepify.nvim"]
 git = "fdschmidt93/telescope-egrepify.nvim"
 
+[plugins."neominimap.nvim"]
+git = "Isrothy/neominimap.nvim"
+rev = "v1.3.1"
+
 # Neovim options
 [config.options]
 relativenumber = true
