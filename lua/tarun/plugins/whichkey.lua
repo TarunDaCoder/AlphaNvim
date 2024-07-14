@@ -19,7 +19,7 @@ wk.add({
 })
 
 wk.add({
-	{ '<leader>l', group = '  LSP' },
+	{ '<leader>l', group = ' LSP', icon = ' ' },
 	{ '<leader>lD', vim.lsp.buf.declaration, desc = 'Go to declaration' },
 	{ '<leader>la', require('actions-preview').code_actions, desc = 'Code Action' },
 	{ '<leader>le', vim.diagnostic.open_float, desc = 'Show diagnostics' },
