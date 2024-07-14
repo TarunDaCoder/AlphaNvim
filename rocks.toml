@@ -124,10 +124,6 @@ rev = "main"
 git = "max397574/neocomplete-lsp"
 rev = "main"
 
-[plugins."telescope-egrepify.nvim"]
-git = "fdschmidt93/telescope-egrepify.nvim"
-rev = "a30396791c3f67b8f34d42dfc26db2f868ae9154"
-
 [plugins."neominimap.nvim"]
 git = "Isrothy/neominimap.nvim"
 rev = "v1.4.1"

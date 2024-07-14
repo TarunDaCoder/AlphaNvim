@@ -1,7 +1,6 @@
 local telescope = require('telescope')
 
 telescope.load_extension('undo')
-telescope.load_extension('egrepify')
 
 telescope.setup({
 	defaults = {
