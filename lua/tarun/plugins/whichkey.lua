@@ -2,82 +2,65 @@ local wk = require('which-key')
 local opts = { noremap = true, silent = true }
 
 wk.setup({
-	window = {
-		border = 'rounded',
-		winblend = 0,
-	},
-	icons = {
-		breadcrumb = '➜',
-		separator = '»',
-		group = '',
-	},
+	preset = 'helix',
+	delay = 50,
+	notify = true,
 })
 
-wk.register({
-	t = {
-		name = ' 󰭎 Telescope',
-		f = { ':Telescope find_files<CR>', 'Find files', opts },
-		g = { ':Telescope live_grep<CR>', 'Live grep', opts },
-		h = { ':Telescope help_tags<CR>', 'Help tags', opts },
-		l = { ':Telescope highlights<CR>', 'Highlights', opts },
-		s = { ':Telescope symbols<CR>', 'Symbols', opts },
-		u = { ':Telescope undo<CR>', 'Undo changes', opts },
-		t = { ':Telescope<CR>', 'Telescope', opts },
-	},
-	prefix = '<leader>',
+wk.add({
+	{ '<leader>t', group = ' Telescope' },
+	{ '<leader>tf', ':Telescope find_files<CR>', desc = 'Find files' },
+	{ '<leader>tg', ':Telescope live_grep<CR>', desc = 'Live grep' },
+	{ '<leader>th', ':Telescope help_tags<CR>', desc = 'Help tags' },
+	{ '<leader>tl', ':Telescope highlights<CR>', desc = 'Highlights' },
+	{ '<leader>ts', ':Telescope symbols<CR>', desc = 'Symbols' },
+	{ '<leader>tt', ':Telescope<CR>', desc = 'Telescope' },
+	{ '<leader>tu', ':Telescope undo<CR>', desc = 'Undo changes' },
 })
 
-wk.register({
-	l = {
-		name = '  LSP',
-		r = { vim.lsp.buf.rename, 'Rename', opts },
-		d = { vim.lsp.goto_definition, 'Goto definition', opts },
-		i = { vim.lsp.buf.implementation, 'Goto implementation', opts },
-		a = { require('actions-preview').code_actions, 'Code Action', opts },
-		f = { vim.lsp.buf.formatting, 'Format', opts },
-		s = { vim.lsp.buf.signature_help, 'Signature help', opts },
-		D = { vim.lsp.buf.declaration, 'Go to declaration', opts },
-		t = { vim.lsp.buf.type_definition, 'Type definition', opts },
-		e = { vim.diagnostic.open_float, 'Show diagnostics', opts },
-		h = { vim.lsp.buf.hover, 'Hover', opts },
-	},
-	prefix = '<leader>',
+wk.add({
+	{ '<leader>l', group = '  LSP' },
+	{ '<leader>lD', vim.lsp.buf.declaration, desc = 'Go to declaration' },
+	{ '<leader>la', require('actions-preview').code_actions, desc = 'Code Action' },
+	{ '<leader>le', vim.diagnostic.open_float, desc = 'Show diagnostics' },
+	{ '<leader>lh', vim.lsp.buf.hover, desc = 'Hover' },
+	{ '<leader>li', vim.lsp.buf.implementation, desc = 'Goto implementation' },
+	{ '<leader>lr', vim.lsp.buf.rename, desc = 'Rename' },
+	{ '<leader>ls', vim.lsp.buf.signature_help, desc = 'Signature help' },
+	{ '<leader>lt', vim.lsp.buf.type_definition, desc = 'Type definition' },
+	{ '<leader>ld', vim.lsp.buf.goto_definition, desc = 'Go to definition' },
+	{ '<leader>lf', vim.lsp.buf.formatting, desc = 'Format' },
 })
 
-wk.register({
-	g = {
-		name = '  Gitsigns',
-		s = { ':Gitsigns stage_hunk<CR>', 'Stage hunk', opts },
-		u = { ':Gitsigns undo_stage_hunk<CR>', 'Undo stage hunk', opts },
-		r = { ':Gitsigns reset_hunk<CR>', 'Reset hunk', opts },
-		t = { ':Gitsigns reset_buffer<CR>', 'Reset buffer', opts },
-		a = { ':Gitsigns stage_buffer<CR>', 'Stage buffer', opts },
-		b = { ':Gitsigns reset_buffer<CR>', 'Reset buffer', opts },
-		d = { ':Gitsigns diffthis<CR>', 'Diff this', opts },
-		h = { ':Gitsigns preview_hunk<CR>', 'Preview hunk', opts },
-		n = { ':Gitsigns next_hunk<CR>', 'Next hunk', opts },
-		p = { ':Gitsigns prev_hunk<CR>', 'Previous hunk', opts },
-		l = { ':Gitsigns toggle_current_line_blame<CR>', 'Toggle current line blame', opts },
-	},
-	prefix = '<leader>',
+wk.add({
+	{ '<leader>g', group = ' Gitsigns', icon = '' },
+	{ '<leader>ga', ':Gitsigns stage_buffer<CR>', desc = 'Stage buffer' },
+	{ '<leader>gb', ':Gitsigns reset_buffer<CR>', desc = 'Reset buffer' },
+	{ '<leader>gd', ':Gitsigns diffthis<CR>', desc = 'Diff this' },
+	{ '<leader>gh', ':Gitsigns preview_hunk<CR>', desc = 'Preview hunk' },
+	{ '<leader>gl', ':Gitsigns toggle_current_line_blame<CR>', desc = 'Toggle current line blame' },
+	{ '<leader>gn', ':Gitsigns next_hunk<CR>', desc = 'Next hunk' },
+	{ '<leader>gp', ':Gitsigns prev_hunk<CR>', desc = 'Previous hunk' },
+	{ '<leader>gr', ':Gitsigns reset_hunk<CR>', desc = 'Reset hunk' },
+	{ '<leader>gs', ':Gitsigns stage_hunk<CR>', desc = 'Stage hunk' },
+	{ '<leader>gt', ':Gitsigns reset_buffer<CR>', desc = 'Reset buffer' },
+	{ '<leader>gu', ':Gitsigns undo_stage_hunk<CR>', desc = 'Undo stage hunk' },
 })
 
-wk.register({
-	e = {
-		name = ' 󰍉 NvimTree',
-		e = { ':NvimTreeToggle<CR>', 'Toggle', opts },
-		f = { ':NvimTreeFindFile<CR>', 'Find file', opts },
-		r = { ':NvimTreeRefresh<CR>', 'Refresh', opts },
-	},
-	prefix = '<leader>',
+wk.add({
+	{ '<leader>e', group = ' NvimTree', icon = '󱁕' },
+	{ '<leader>ee', ':NvimTreeToggle<CR>', desc = 'Toggle' },
+	{ '<leader>ef', ':NvimTreeFindFile<CR>', desc = 'Find file' },
+	{ '<leader>er', ':NvimTreeRefresh<CR>', desc = 'Refresh' },
 })
 
-wk.register({
-	s = {
-		name = '🔱 Spectre',
-		s = { ":lua require('spectre').toggle()<CR>", 'Find and replace', opts },
-		w = { ":lua require('spectre').open_visual()<CR>", 'Search current word', opts },
-		p = { ":lua require('spectre').open_file_search({select_word=true})<CR>", 'Search in current file', opts },
+wk.add({
+	{ '<leader>s', group = ' Spectre', icon = '󰈞' },
+	{
+		'<leader>sp',
+		":lua require('spectre').open_file_search({select_word=true})<CR>",
+		desc = 'Search in current file',
 	},
-	prefix = '<leader>',
+	{ '<leader>ss', ":lua require('spectre').toggle()<CR>", desc = 'Find and replace' },
+	{ '<leader>sw', ":lua require('spectre').open_visual()<CR>", desc = 'Search current word' },
 })
