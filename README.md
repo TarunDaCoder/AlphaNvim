@@ -9,12 +9,7 @@ AlphaNvim is my own neovim configuration after [BobVim](https://github.com/Tarun
 
 
 ## Installation
-- First run the [rocks.nvim](https://github.com/nvim-neorocks/rocks.nvim) installation script. [rocks.nvim](https://github.com/nvim-neorocks/rocks.nvim) is the package manager I use.
-```sh
-nvim -u NORC -c "source https://raw.githubusercontent.com/nvim-neorocks/rocks.nvim/master/installer.lua"
-```
-
-- Then, run this command -
+- Run this command -
 ```sh
 mv ~/.config/nvim ~/.config/nvim.bak
 mv ~/.local/share/nvim ~/.local/share/nvim.bak
