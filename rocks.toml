@@ -158,3 +158,4 @@ swapfile = false
 laststatus = 3
 timeoutlen = 150
 signcolumn = 'auto:2'
+cmdheight = 0
