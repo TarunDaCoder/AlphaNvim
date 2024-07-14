@@ -31,6 +31,7 @@ local lang_servers = {
 	'tsserver',
 	'emmet_language_server',
 	'html',
+	'clangd',
 }
 
 for _, server in ipairs(lang_servers) do
@@ -130,7 +131,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		end
 
 		local opts = { noremap = true, silent = true, buffer = bufnr }
-		vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+		vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename' }, opts)
 	end,
 })
 

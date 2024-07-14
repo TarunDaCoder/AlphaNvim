@@ -8,7 +8,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Keymap to save file
-map('n', '<leader>w', ':w!<CR>', { desc = ' 󰈔 Save file' }, opts)
+map('n', '<leader>w', ':w!<CR>', { desc = 'Save file' }, opts)
 
 -- Normal mode --
 -- Better window navigation
