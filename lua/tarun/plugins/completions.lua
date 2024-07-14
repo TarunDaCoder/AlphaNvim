@@ -97,6 +97,7 @@
 -- 	},
 -- })
 
+-- Neocomplete config ================================================
 vim.keymap.set('i', '<c-n>', function()
 	vim.snippet.jump(1)
 end)
