@@ -11,18 +11,18 @@
 # List of Neovim plugins to install alongside their versions.
 # If the plugin name contains a dot then you must add quotes to the key name!
 [plugins]
-"rocks.nvim" = "2.35.0"
+"rocks.nvim" = "2.35.2"
 nvim-web-devicons = "0.100"
-"rocks-git.nvim" = "1.5.1"
+"rocks-git.nvim" = "2.0.0"
 "plenary.nvim"= "scm"
 luasnip = "2.3.0"
-"rocks-config.nvim" = "2.1.3"
+"rocks-config.nvim" = "2.1.4"
 "oil.nvim" = "2.11.0"
 nvim-ts-autotag = "scm"
 nvim-surround = "2.1.5"
 "overseer.nvim" = "1.4.0"
 "bufferline.nvim" = "4.6.1"
-"feline.nvim" = "1.6.2"
+"feline.nvim" = "1.6.3"
 "conform.nvim" = "6.0.0"
 "telescope-undo.nvim" = "scm"
 "trouble.nvim" = "3.5.1"
@@ -32,21 +32,23 @@ nvim-lspconfig= "0.1.8"
 "lspkind.nvim"= "scm"
 nvim-autopairs= "scm"
 "indent-blankline.nvim"= "3.7.1"
-"which-key.nvim"= "2.1.0"
+"which-key.nvim"= "3.3.0"
 alpha-nvim= "scm"
 "rocks-lazy.nvim" = "scm"
 "rocks-edit.nvim" = "scm"
-# nvim-cmp= "scm"
 friendly-snippets= "scm"
-neorg-interim-ls = "1.0.1"
+neorg-interim-ls = "1.1.0"
 nvim-spectre = "scm"
-"headlines.nvim" = "scm"
-"otter.nvim" = "2.2.0"
+"otter.nvim" = "2.2.1"
 nvim-notify = "3.13.5"
 "actions-preview.nvim" = "scm"
 "sus.nvim" = "1.0.0"
 rustaceanvim = "4.26.1"
 "todo-comments.nvim" = "1.3.0"
+
+# [plugins.nvim-cmp]
+# git = "hrsh7th/nvim-cmp"
+# rev = "main"
 
 [plugins."image.nvim"]
 version = "1.3.0"
@@ -57,6 +59,7 @@ rev = "v0.9.2^{}"
 
 [plugins."lsp_lines.nvim"]
 git = "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
+rev = "v3.0.0^{}"
 opt = true
 
 [plugins."telescope.nvim"]
@@ -75,7 +78,7 @@ version = "scm"
 # version = "scm"
 
 [plugins.'nvim-tree.lua']
-version = "1.4.0"
+version = "1.5.0"
 
 [plugins.'onedarkpro.nvim']
 version = "0.8.0"
@@ -92,35 +95,42 @@ rev = "v0.9.0"
 
 [plugins."nvim-colorizer.lua"]
 git = "NvChad/nvim-colorizer.lua"
+rev = "85855b38011114929f4058efc97af1059ab3e41d"
 
 [plugins."telescope-symbols.nvim"]
 git = "nvim-telescope/telescope-symbols.nvim"
+rev = "a6d0127a53d39b9fc2af75bd169d288166118aec"
 
 [plugins."live-server.nvim"]
 git = "barrett-ruth/live-server.nvim"
+rev = "84751fd8a754ceb3dff1f57159628cfc12171a7b"
 
 [plugins.supermaven-nvim]
 git = "supermaven-inc/supermaven-nvim"
+rev = "df3ecf7823a1a28fe47233c5502db513d95d5d6d"
 
 [plugins.nvim-emmet]
 git = "olrtg/nvim-emmet"
+rev = "cde4fb2968704aae5c18b7f8a9bc2508767bb78d"
 
 [plugins."markview.nvim"]
 git = "OXY2DEV/markview.nvim"
-rev = "dev"
 
 [plugins."neocomplete.nvim"]
 git = "max397574/neocomplete.nvim"
+rev = "main"
 
 [plugins.neocomplete-lsp]
 git = "max397574/neocomplete-lsp"
+rev = "main"
 
 [plugins."telescope-egrepify.nvim"]
 git = "fdschmidt93/telescope-egrepify.nvim"
+rev = "a30396791c3f67b8f34d42dfc26db2f868ae9154"
 
 [plugins."neominimap.nvim"]
 git = "Isrothy/neominimap.nvim"
-rev = "v1.3.1"
+rev = "v1.4.1"
 
 # Neovim options
 [config.options]
