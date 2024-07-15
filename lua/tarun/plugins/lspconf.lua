@@ -130,8 +130,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
 		end
 
-		local opts = { noremap = true, silent = true, buffer = bufnr }
-		vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename' }, opts)
+		require('which-key').add({
+			{ '<leader>lr', vim.lsp.buf.rename, desc = 'Rename', icon = '󰑕 ' },
+		})
 	end,
 })
 
