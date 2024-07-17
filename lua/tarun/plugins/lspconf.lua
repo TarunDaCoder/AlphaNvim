@@ -136,8 +136,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	end,
 })
 
-require('otter').setup({})
-
 require('actions-preview').setup({
 	telescope = {
 		sorting_strategy = 'ascending',
