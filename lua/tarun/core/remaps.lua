@@ -5,7 +5,7 @@ local map = vim.keymap.set
 -- Remap space as leader key
 map('', '<Space>', '<Nop>', opts)
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = ','
 
 -- Keymap to save file
 map('n', '<leader>w', ':w!<CR>', { desc = 'Save file' }, opts)
