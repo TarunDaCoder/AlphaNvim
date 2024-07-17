@@ -7,11 +7,13 @@ local neorg = require('neorg')
 neorg.setup({
 	load = {
 		['core.defaults'] = {},
-		-- ['core.completion'] = {
-		-- 	config = {
-		-- 		engine = 'nvim-cmp',
-		-- 	},
-		-- },
+		['core.completion'] = {
+			config = {
+				engine = {
+					module_name = 'external.lsp-completion',
+				},
+			},
+		},
 		['core.concealer'] = {
 			config = {
 				markup_preset = 'conceal',
@@ -31,7 +33,7 @@ neorg.setup({
 							icon = '',
 						},
 						on_hold = {
-							icon = '',
+							icon = '',
 						},
 						cancelled = {
 							icon = '',
@@ -47,13 +49,32 @@ neorg.setup({
 			config = {
 				workspaces = {
 					alphanvim_todos = '~/.config/nvim/',
-					neorg = '~/dev/neorg/',
+					notes = '~/dev/notes/',
 				},
 				autodetect = true,
 				autochdir = true,
 			},
 		},
 		['core.integrations.telescope'] = {},
-		['external.interim-ls'] = {},
+		-- ['external.interim-ls'] = {
+		-- 	config = {
+		-- 		completion_provider = {
+		-- 			enable = true,
+		-- 		},
+		-- 	},
+		-- },
+
+		['external.interim-ls'] = {
+			config = {
+				completion_provider = {
+					-- enable/disable the completion provider. On by default.
+					enable = true,
+
+					-- Try to complete categories. Requires benlubas/neorg-se
+					categories = false,
+				},
+			},
+		},
+		-- ['external.search'] = {},
 	},
 })
