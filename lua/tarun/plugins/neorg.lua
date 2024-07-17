@@ -56,14 +56,6 @@ neorg.setup({
 			},
 		},
 		['core.integrations.telescope'] = {},
-		-- ['external.interim-ls'] = {
-		-- 	config = {
-		-- 		completion_provider = {
-		-- 			enable = true,
-		-- 		},
-		-- 	},
-		-- },
-
 		['external.interim-ls'] = {
 			config = {
 				completion_provider = {
@@ -71,10 +63,14 @@ neorg.setup({
 					enable = true,
 
 					-- Try to complete categories. Requires benlubas/neorg-se
-					categories = false,
+					-- categories = true,
 				},
 			},
 		},
-		-- ['external.search'] = {},
+		-- ['external.search'] = {
+		-- 	config = {
+		-- 		index_on_start = true,
+		-- 	},
+		-- },
 	},
 })
