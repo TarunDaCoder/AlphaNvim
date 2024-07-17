@@ -7,14 +7,14 @@ wk.setup({
 })
 
 wk.add({
-	{ '<leader>t', group = ' Telescope' },
-	{ '<leader>tf', ':Telescope find_files<CR>', desc = 'Find files' },
-	{ '<leader>tg', ':Telescope live_grep<CR>', desc = 'Live grep', icon = '󰍉 ' },
-	{ '<leader>th', ':Telescope help_tags<CR>', desc = 'Help tags', icon = '󰋖 ' },
-	{ '<leader>tl', ':Telescope highlights<CR>', desc = 'Highlights', icon = '󰸱 ' },
-	{ '<leader>ts', ':Telescope symbols<CR>', desc = 'Symbols', icon = ' ' },
-	{ '<leader>tt', ':Telescope<CR>', desc = 'Telescope' },
-	{ '<leader>tu', ':Telescope undo<CR>', desc = 'Undo changes', icon = '󰕍 ' },
+	{ '<leader>f', group = ' Telescope' },
+	{ '<leader>ff', ':Telescope find_files<CR>', desc = 'Find files' },
+	{ '<leader>fg', ':Telescope live_grep<CR>', desc = 'Live grep', icon = '󰍉 ' },
+	{ '<leader>fh', ':Telescope help_tags<CR>', desc = 'Help tags', icon = '󰋖 ' },
+	{ '<leader>fl', ':Telescope highlights<CR>', desc = 'Highlights', icon = '󰸱 ' },
+	{ '<leader>fs', ':Telescope symbols<CR>', desc = 'Symbols', icon = ' ' },
+	{ '<leader>ft', ':Telescope<CR>', desc = 'Telescope' },
+	{ '<leader>fu', ':Telescope undo<CR>', desc = 'Undo changes', icon = '󰕍 ' },
 })
 
 wk.add({
