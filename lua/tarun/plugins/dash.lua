@@ -31,6 +31,7 @@ dashboard.section.buttons.val = {
 	dashboard.button('r', '' .. ' Recent files', ':Telescope oldfiles <CR>'),
 	dashboard.button('t', '' .. ' Find text', ':Telescope live_grep <CR>'),
 	dashboard.button('c', '' .. ' Config', ':e ~/.config/nvim/init.lua <CR>'),
+	dashboard.button('n', '󰎜' .. ' New Note', ':Neorg workspace notes <CR>'),
 	dashboard.button('q', '' .. ' Quit', ':qa<CR>'),
 }
 
@@ -50,5 +51,4 @@ dashboard.section.header.opts.hl = 'Include'
 dashboard.section.buttons.opts.hl = 'Keyword'
 
 dashboard.opts.opts.noautocmd = true
--- vim.cmd([[autocmd User AlphaReady echo 'ready']])
 alpha.setup(dashboard.opts)
