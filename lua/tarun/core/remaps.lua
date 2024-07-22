@@ -53,3 +53,7 @@ map('t', '<C-l>', '<C-\\><C-N><C-w>l', term_opts)
 -- Navigate buffers
 map('n', '<TAB>', ':BufferLineCycleNext<CR>', opts)
 map('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', opts)
+
+-- Cmdline and searchbox
+map('n', ':', '<cmd>FineCmdline<CR>', opts)
+map('n', '/', "<cmd>lua require('searchbox').incsearch()<CR>", opts)
