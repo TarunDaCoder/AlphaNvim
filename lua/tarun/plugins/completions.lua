@@ -118,3 +118,55 @@ vim.api.nvim_create_autocmd('InsertLeave', {
 		require('neocomplete').core.menu:close()
 	end,
 })
+
+local luasnip = require('luasnip')
+
+vim.keymap.set('i', '<c-f>', function()
+	if require('neocomplete').api.doc_is_open() then
+		require('neocomplete').api.scroll_docs(4)
+	elseif luasnip.choice_active() then
+		require('luasnip').change_choice(1)
+	else
+		vim.api.nvim_feedkeys(vim.keycode('<c-f>'), 'n', false)
+	end
+end)
+
+vim.keymap.set('i', '<c-d>', function()
+	if require('neocomplete').api.doc_is_open() then
+		require('neocomplete').api.scroll_docs(-4)
+	elseif luasnip.choice_active() then
+		require('luasnip').change_choice(-1)
+	else
+		vim.api.nvim_feedkeys(vim.keycode('<c-f>'), 'n', false)
+	end
+end)
+
+require('lspkind').init({
+	symbols_map = {
+		Class = '  ',
+		Color = '  ',
+		Constant = '  ',
+		Constructor = '  ',
+		Enum = ' 了',
+		EnumMember = '  ',
+		Event = '  ',
+		Field = ' 󰜢 ',
+		File = '  ',
+		Folder = '  ',
+		Function = '  ',
+		Interface = '  ',
+		Keyword = ' 󰌆 ',
+		Method = ' ƒ ',
+		Module = '  ',
+		Operator = ' 󰆕 ',
+		Property = '  ',
+		Reference = ' 󰈇 ',
+		Snippet = '  ',
+		Struct = '  ',
+		Text = '  ',
+		TypeParameter = '',
+		Unit = ' 󰑭 ',
+		Value = ' 󰎠 ',
+		Variable = '  ',
+	},
+})

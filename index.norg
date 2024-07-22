@@ -9,13 +9,14 @@ version: 1.1.1
 @end
 
 * TODO LIST
-- (x) Fixes
+- (-) Fixes
 -- (x) dap
 -- (x) treesitter segfault
 -- (x) which-key
 -- (x) image.nvim
 --- Note: only works on kitty
 -- (x) Tree-sitter error with html files
+-- (-) Neocomplete luasnip integration
 
 - (x) Features
 -- (x) add gradient bg
