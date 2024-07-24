@@ -4,4 +4,6 @@ require('gitsigns').setup({
 		border = 'rounded',
 		style = 'minimal',
 	},
+	signcolumn = false,
+	numhl = true,
 })
