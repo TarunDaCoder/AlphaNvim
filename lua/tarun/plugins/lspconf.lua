@@ -136,4 +136,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	end,
 })
 
-require('selabel').setup()
+require('selabel').setup({
+	win_opts = {
+		border = 'single',
+	},
+})
