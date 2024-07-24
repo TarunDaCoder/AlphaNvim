@@ -1,8 +1,11 @@
 local hl = vim.api.nvim_set_hl
 
 hl(0, 'FloatBorder', { bg = '#2d323b' })
-hl(0, 'NormalFloat', { bg = '#282c34' })
-hl(0, 'WhichKeyFloat', { bg = '#282c34' })
+hl(0, 'NormalFloat', { bg = '#2d323b' })
+hl(0, 'SignColumn', { bg = '#2d323b' })
+hl(0, 'LineNr', { bg = '#2d323b' })
+hl(0, 'LineNrAbove', { fg = '#485061' })
+hl(0, 'LineNrBelow', { fg = '#485061' })
 hl(0, 'Normal', { bg = '#2d323b' })
 
 hl(0, 'TelescopeNormal', { bg = '#2d323b' })
