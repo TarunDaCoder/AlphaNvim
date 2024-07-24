@@ -40,7 +40,6 @@ friendly-snippets= "scm"
 neorg-interim-ls = "1.2.0"
 nvim-spectre = "scm"
 nvim-notify = "3.13.5"
-"actions-preview.nvim" = "scm"
 "sus.nvim" = "1.0.0"
 rustaceanvim = "4.26.1"
 "todo-comments.nvim" = "1.3.0"
@@ -117,19 +116,23 @@ rev = "cde4fb2968704aae5c18b7f8a9bc2508767bb78d"
 git = "OXY2DEV/markview.nvim"
 rev = "316cafc79490f8b79c288bbe6638838d6d68e227"
 
-[plugins."neocomplete.nvim"]
-git = "max397574/neocomplete.nvim"
+[plugins."care.nvim"]
+git = "max397574/care.nvim"
 rev = "main"
 # opt = true
 
-[plugins.neocomplete-lsp]
-git = "max397574/neocomplete-lsp"
+[plugins.care-lsp]
+git = "max397574/care-lsp"
 rev = "main"
 # opt = true
 
 [plugins."neominimap.nvim"]
 git = "Isrothy/neominimap.nvim"
 rev = "v2.0.2"
+
+[plugins."selabel.nvim"]
+git = "Axlefublr/selabel.nvim"
+rev = "main"
 
 # Neovim options
 [config.options]
