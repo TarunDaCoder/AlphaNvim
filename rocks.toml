@@ -134,6 +134,9 @@ rev = "v2.0.2"
 git = "Axlefublr/selabel.nvim"
 rev = "main"
 
+[config]
+plugins_dir = 'tarun/plugins/'
+
 # Neovim options
 [config.options]
 relativenumber = true

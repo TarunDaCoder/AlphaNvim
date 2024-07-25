@@ -16,9 +16,6 @@ vim.loader.enable()
 -- Source core files
 require('tarun.core')
 
--- Source plugin configs
-require('tarun.plugins')
-
 -- Some secret stuff to reduce my strartup time
 local g = vim.g
 
