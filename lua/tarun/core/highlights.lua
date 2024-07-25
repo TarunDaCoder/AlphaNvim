@@ -8,6 +8,8 @@ hl(0, 'LineNrAbove', { fg = '#485061' })
 hl(0, 'LineNrBelow', { fg = '#485061' })
 hl(0, 'Normal', { bg = '#2d323b' })
 
+hl(0, 'NonText', { bg = '#2d323b', fg = '#4a505b' })
+
 hl(0, 'TelescopeNormal', { bg = '#2d323b' })
 hl(0, 'TelescopeBorder', { bg = '#2d323b' })
 
