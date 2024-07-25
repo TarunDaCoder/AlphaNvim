@@ -46,6 +46,7 @@ rustaceanvim = "4.26.1"
 neorg-se = "1.1.9"
 "fine-cmdline.nvim" = "scm"
 "searchbox.nvim" = "scm"
+"flash.nvim" = "2.1.0"
 
 # [plugins.nvim-cmp]
 # git = "hrsh7th/nvim-cmp"
@@ -105,8 +106,8 @@ rev = "a6d0127a53d39b9fc2af75bd169d288166118aec"
 [plugins."live-server.nvim"]
 git = "barrett-ruth/live-server.nvim"
 
-[plugins.supermaven-nvim]
-git = "supermaven-inc/supermaven-nvim"
+[plugins.neocodeium]
+git = "monkoose/neocodeium"
 
 [plugins.nvim-emmet]
 git = "olrtg/nvim-emmet"
@@ -164,3 +165,5 @@ laststatus = 3
 timeoutlen = 150
 signcolumn = 'auto:2'
 cmdheight = 0
+list = true
+listchars = 'tab:← ,multispace:·,eol:↩,'
