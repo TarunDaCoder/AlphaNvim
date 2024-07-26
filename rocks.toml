@@ -21,7 +21,6 @@ luasnip = "2.3.0"
 nvim-ts-autotag = "scm"
 nvim-surround = "2.1.5"
 "overseer.nvim" = "1.4.0"
-"bufferline.nvim" = "4.7.0"
 "feline.nvim" = "1.6.3"
 "conform.nvim" = "7.0.0"
 "telescope-undo.nvim" = "scm"
@@ -129,6 +128,10 @@ rev = "v2.4.1"
 [plugins."selabel.nvim"]
 git = "Axlefublr/selabel.nvim"
 rev = "main"
+
+[plugins."barbar.nvim"]
+git = "romgrk/barbar.nvim"
+rev = "v1.8.0^{}"
 
 [config]
 plugins_dir = 'tarun/plugins/'

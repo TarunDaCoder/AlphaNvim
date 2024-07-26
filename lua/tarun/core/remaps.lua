@@ -51,8 +51,9 @@ map('t', '<C-k>', '<C-\\><C-N><C-w>k', term_opts)
 map('t', '<C-l>', '<C-\\><C-N><C-w>l', term_opts)
 
 -- Navigate buffers
-map('n', '<TAB>', ':BufferLineCycleNext<CR>', opts)
-map('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', opts)
+map('n', '<TAB>', ':BufferNext<CR>', opts)
+map('n', '<S-TAB>', ':BufferPrevious<CR>', opts)
+map('n', '<c-w>', ':BufferClose<CR>', opts)
 
 -- Cmdline and searchbox
 map('n', ':', '<cmd>FineCmdline<CR>', opts)
