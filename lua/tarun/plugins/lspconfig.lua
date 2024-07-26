@@ -116,8 +116,6 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
 	title = 'Hover',
 })
 
--- require('lsp_lines').setup()
-
 vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(args)
 		local bufnr = args.buf
