@@ -164,4 +164,4 @@ timeoutlen = 150
 signcolumn = 'auto:2'
 cmdheight = 0
 list = true
-listchars = 'eol:↩,'
+listchars = 'tab:» ,nbsp:+,trail:·,eol:↩,'
