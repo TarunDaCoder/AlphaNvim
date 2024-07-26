@@ -24,7 +24,7 @@ git clone https://github.com/TarunDaCoder/AlphaNvim.git ~/.config/nvim
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) for completions
 - [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) is the tabline
 - [feline.nvim](https://github.com/freddiehaddad/feline.nvim) is the statusline
-    - [this](https://github.com/Hitesh-Aggarwal/feline_theme.nvim) is the feline theme i used
+- [this](https://github.com/Hitesh-Aggarwal/feline_theme.nvim) is the feline theme i used
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) is the fuzzy finder
 - [conform.nvim](https://github.com/stevearc/conform.nvim) for formatting
 - [overseer.nvim](https://github.com/stevearc/overseer.nvim) for code running
