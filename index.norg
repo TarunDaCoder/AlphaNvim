@@ -10,17 +10,17 @@ version: 1.1.1
 
 * TODO LIST
 - (-) Fixes
--- (x) dap
 -- (x) treesitter segfault
 -- (x) which-key
 -- (x) image.nvim
---- Note: only works on kitty
+--- NOTE: only works on kitty
 -- (x) Tree-sitter error with html files
-  -- (-) `care.nvim` luasnip integration
+-- (-) `care.nvim` luasnip integration
 
-- (x) Features
+- (-) Features
 -- (x) add gradient bg
--- ( ) add more lazy loaded plugins
+--- NOTE: Only on `wezterm`
+-- (-) add more lazy loaded plugins
 
 - (x) Plugins
 -- (x) toggleterm
