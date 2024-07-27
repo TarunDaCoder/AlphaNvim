@@ -138,6 +138,7 @@ git = "chrisgrieser/nvim-scissors"
 
 [config]
 plugins_dir = 'tarun/plugins/'
+auto_setup = true
 
 # Neovim options
 [config.options]
