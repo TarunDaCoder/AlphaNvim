@@ -140,32 +140,3 @@ vim.keymap.set('i', '<c-d>', function()
 		vim.api.nvim_feedkeys(vim.keycode('<c-f>'), 'n', false)
 	end
 end)
-require('lspkind').init({
-	symbols_map = {
-		Class = '  ',
-		Color = '  ',
-		Constant = '  ',
-		Constructor = '  ',
-		Enum = ' 了',
-		EnumMember = '  ',
-		Event = '  ',
-		Field = ' 󰜢 ',
-		File = '  ',
-		Folder = '  ',
-		Function = '  ',
-		Interface = '  ',
-		Keyword = ' 󰌆 ',
-		Method = ' ƒ ',
-		Module = '  ',
-		Operator = ' 󰆕 ',
-		Property = '  ',
-		Reference = ' 󰈇 ',
-		Snippet = '  ',
-		Struct = '  ',
-		Text = '  ',
-		TypeParameter = '',
-		Unit = ' 󰑭 ',
-		Value = ' 󰎠 ',
-		Variable = '  ',
-	},
-})
