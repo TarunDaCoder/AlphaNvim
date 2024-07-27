@@ -61,3 +61,9 @@ wk.add({
 	{ '<leader>ss', ":lua require('spectre').toggle()<CR>", desc = 'Find and replace' },
 	{ '<leader>sw', ":lua require('spectre').open_visual()<CR>", desc = 'Search current word' },
 })
+
+wk.add({
+	{ '<leader>n', group = 'Snippets', icon = ' ' },
+	{ '<leader>nn', ':ScissorsAddNewSnippet<CR>', desc = 'Add new snippet' },
+	{ '<leader>ne', ':ScissorsEditSnippet<CR>', desc = 'Edit snippet' },
+})
