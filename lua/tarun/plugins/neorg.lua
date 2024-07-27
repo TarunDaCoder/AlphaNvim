@@ -30,7 +30,7 @@ neorg.setup({
 							icon = '?',
 						},
 						urgent = {
-							icon = '',
+							icon = '!',
 						},
 						on_hold = {
 							icon = '',
