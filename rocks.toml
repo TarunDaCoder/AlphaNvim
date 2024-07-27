@@ -133,6 +133,9 @@ rev = "main"
 git = "romgrk/barbar.nvim"
 rev = "v1.8.0^{}"
 
+[plugins.nvim-scissors]
+git = "chrisgrieser/nvim-scissors"
+
 [config]
 plugins_dir = 'tarun/plugins/'
 
