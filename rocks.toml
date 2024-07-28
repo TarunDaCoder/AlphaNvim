@@ -105,7 +105,7 @@ rev = "cde4fb2968704aae5c18b7f8a9bc2508767bb78d"
 
 [plugins."markview.nvim"]
 git = "OXY2DEV/markview.nvim"
-rev = "316cafc79490f8b79c288bbe6638838d6d68e227"
+rev = "main"
 
 [plugins."care.nvim"]
 git = "max397574/care.nvim"
@@ -130,7 +130,7 @@ git = "chrisgrieser/nvim-scissors"
 
 [plugins.nvim-treesitter]
 git = "nvim-treesitter/nvim-treesitter"
-rev = "v0.9.2^{}"
+rev = "master"
 
 [config]
 plugins_dir = 'tarun/plugins/'
