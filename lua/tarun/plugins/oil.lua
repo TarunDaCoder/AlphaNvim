@@ -1,5 +1,6 @@
 return {
 	'stevearc/oil.nvim',
+	event = 'VeryLazy',
 	config = function()
 		local oil = require('oil')
 		local map = vim.keymap.set

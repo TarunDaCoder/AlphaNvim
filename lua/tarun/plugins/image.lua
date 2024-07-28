@@ -1,5 +1,6 @@
 return {
 	'3rd/image.nvim',
+	event = 'VeryLazy',
 	opts = {
 		markdown = {
 			only_render_image_at_cursor = true,
