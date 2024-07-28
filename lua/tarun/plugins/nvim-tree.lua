@@ -1,6 +1,9 @@
 return {
 	'nvim-tree/nvim-tree.lua',
-	event = 'VeryLazy',
+	keys = {
+		{ '<leader>ee', '<cmd>NvimTreeToggle<CR>', desc = 'Toggle' },
+		{ '<leader>ef', '<cmd>NvimTreeFindFile<CR>', desc = 'Find file' },
+	},
 	opts = {
 		filters = {
 			dotfiles = false,

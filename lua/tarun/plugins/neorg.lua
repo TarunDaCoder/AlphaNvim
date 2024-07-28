@@ -1,9 +1,9 @@
 return {
 	'nvim-neorg/neorg',
 	dependencies = {
-		'benlubas/neorg-se',
-		'benlubas/neorg-interim-ls',
-		'nvim-neorg/neorg-telescope',
+		{ 'benlubas/neorg-se', ft = 'norg' },
+		{ 'benlubas/neorg-interim-ls', ft = 'norg' },
+		{ 'nvim-neorg/neorg-telescope', ft = 'norg' },
 	},
 	ft = 'norg',
 	config = function()

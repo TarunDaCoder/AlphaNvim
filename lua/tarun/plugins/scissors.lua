@@ -1,9 +1,9 @@
 return {
 	'chrisgrieser/nvim-scissors',
 	dependencies = {
-		'L3MON4D3/LuaSnip',
+		{ 'L3MON4D3/LuaSnip', event = 'InsertEnter' },
 	},
-	event = 'VeryLazy',
+	event = 'InsertEnter',
 	config = function()
 		require('scissors').setup({
 			-- snippetDir = vim.fn.stdpath('config') .. '/snippets',

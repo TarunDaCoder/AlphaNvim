@@ -1,6 +1,7 @@
 return {
 	{
 		'freddiehaddad/feline.nvim',
+		event = 'VeryLazy',
 		dependencies = {
 			'nvim-tree/nvim-web-devicons',
 		},
@@ -248,5 +249,5 @@ return {
 			})
 		end,
 	},
-	{ 'romgrk/barbar.nvim', opts = {} },
+	{ 'romgrk/barbar.nvim', event = 'VeryLazy', opts = {} },
 }

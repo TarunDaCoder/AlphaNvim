@@ -51,8 +51,6 @@ return {
 
 		wk.add({
 			{ '<leader>e', group = ' NvimTree', icon = '󱁕' },
-			{ '<leader>ee', ':NvimTreeToggle<CR>', desc = 'Toggle' },
-			{ '<leader>ef', ':NvimTreeFindFile<CR>', desc = 'Find file' },
 		})
 
 		wk.add({

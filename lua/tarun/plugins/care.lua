@@ -99,30 +99,30 @@
 
 -- Care config ================================================
 return {
-    "max397574/care.nvim",
-    enabled = true,
-    event = "InsertEnter",
-    dependencies = { "max397574/care-lsp" },
-    config = function()
-        vim.keymap.set("i", "<c-n>", function()
-            vim.snippet.jump(1)
-        end)
-        vim.keymap.set("i", "<c-p>", function()
-            vim.snippet.jump(-1)
-        end)
-        vim.keymap.set("i", "<c-space>", function()
-            require("care").api.complete()
-        end)
+	'max397574/care.nvim',
+	enabled = true,
+	event = 'InsertEnter',
+	dependencies = { 'max397574/care-lsp', event = 'InsertEnter' },
+	config = function()
+		vim.keymap.set('i', '<c-n>', function()
+			vim.snippet.jump(1)
+		end)
+		vim.keymap.set('i', '<c-p>', function()
+			vim.snippet.jump(-1)
+		end)
+		vim.keymap.set('i', '<c-space>', function()
+			require('care').api.complete()
+		end)
 
-        vim.keymap.set("i", "<cr>", "<Plug>(CareConfirm)")
-        vim.keymap.set("i", "<c-e>", "<Plug>(CareClose)")
-        vim.keymap.set("i", "<c-j>", "<Plug>(CareSelectNext)")
-        vim.keymap.set("i", "<c-k>", "<Plug>(CareSelectPrev)")
+		vim.keymap.set('i', '<cr>', '<Plug>(CareConfirm)')
+		vim.keymap.set('i', '<c-e>', '<Plug>(CareClose)')
+		vim.keymap.set('i', '<c-j>', '<Plug>(CareSelectNext)')
+		vim.keymap.set('i', '<c-k>', '<Plug>(CareSelectPrev)')
 
-        vim.api.nvim_create_autocmd("InsertLeave", {
-            callback = function()
-                require("care").core.menu:close()
-            end,
-        })
-    end,
+		vim.api.nvim_create_autocmd('InsertLeave', {
+			callback = function()
+				require('care').core.menu:close()
+			end,
+		})
+	end,
 }

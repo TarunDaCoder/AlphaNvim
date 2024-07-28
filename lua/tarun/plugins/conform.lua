@@ -1,5 +1,6 @@
 return {
-	"stevearc/conform.nvim",
+	'stevearc/conform.nvim',
+	event = 'VeryLazy',
 	opts = {
 		format_on_save = {
 			timeout_ms = 500,
@@ -11,5 +12,5 @@ return {
 			javascript = { 'prettierd' },
 			html = { 'prettierd' },
 		},
-	}
+	},
 }
