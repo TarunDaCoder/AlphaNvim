@@ -56,8 +56,8 @@ map('n', '<S-TAB>', ':BufferPrevious<CR>', opts)
 map('n', '<c-w>', ':BufferClose<CR>', opts)
 
 -- Cmdline and searchbox
-map('n', ':', '<cmd>FineCmdline<CR>', opts)
-map('n', '/', "<cmd>lua require('searchbox').incsearch()<CR>", opts)
+-- map('n', ':', '<cmd>FineCmdline<CR>', opts)
+-- map('n', '/', "<cmd>lua require('searchbox').incsearch()<CR>", opts)
 
 map('i', '<A-f>', function()
 	require('neocodeium').accept()
