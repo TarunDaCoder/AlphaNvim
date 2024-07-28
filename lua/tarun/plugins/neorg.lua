@@ -5,6 +5,7 @@ return {
 		{ 'benlubas/neorg-interim-ls', ft = 'norg' },
 		{ 'nvim-neorg/neorg-telescope', ft = 'norg' },
 	},
+	version = '*',
 	ft = 'norg',
 	config = function()
 		vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {

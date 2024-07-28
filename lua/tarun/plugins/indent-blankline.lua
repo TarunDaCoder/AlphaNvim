@@ -1,6 +1,6 @@
 return {
 	'lukas-reineke/indent-blankline.nvim',
-	opts = {},
+	event = 'VeryLazy',
 	config = function()
 		local g = vim.g
 		g.indent_blankline_buftype_exclude = { 'terminal', 'nofile' }
