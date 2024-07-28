@@ -1,7 +1,8 @@
 require('scissors').setup({
-	snippetDir = vim.fn.stdpath('config') .. '/snippets',
+	-- snippetDir = vim.fn.stdpath('config') .. '/snippets',
+	snippetDir = '~/.config/nvim/snippets',
 })
 
 require('luasnip').setup({
-	paths = { '/home/tarun/.config/nvim/snippets' },
+	paths = { '~/.config/nvim/snippets' },
 })
