@@ -63,7 +63,7 @@ wk.add({
 })
 
 wk.add({
-	{ '<leader>n', group = 'Snippets', icon = ' ' },
+	{ '<leader>n', group = ' Snippets', icon = ' ' },
 	{ '<leader>nn', ':ScissorsAddNewSnippet<CR>', desc = 'Add new snippet' },
 	{ '<leader>ne', ':ScissorsEditSnippet<CR>', desc = 'Edit snippet' },
 })
