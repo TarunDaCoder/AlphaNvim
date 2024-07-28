@@ -46,7 +46,6 @@ neorg-se = "1.1.9"
 "fine-cmdline.nvim" = "scm"
 "searchbox.nvim" = "scm"
 "flash.nvim" = "2.1.0"
-nvim-treesitter= "scm"
 
 # [plugins.nvim-cmp]
 # git = "hrsh7th/nvim-cmp"
@@ -128,6 +127,10 @@ rev = "v1.8.0^{}"
 
 [plugins.nvim-scissors]
 git = "chrisgrieser/nvim-scissors"
+
+[plugins.nvim-treesitter]
+git = "nvim-treesitter/nvim-treesitter"
+rev = "v0.9.2^{}"
 
 [config]
 plugins_dir = 'tarun/plugins/'
