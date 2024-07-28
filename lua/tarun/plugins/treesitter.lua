@@ -1,6 +1,6 @@
 return {
 	'nvim-treesitter/nvim-treesitter',
-	version = '*',
+	version = '0.9.2^{}',
 	config = function()
 		require('nvim-treesitter.configs').setup({
 			ensure_installed = { 'lua', 'html', 'css', 'javascript', 'rust', 'toml', 'yaml', 'bash' },
