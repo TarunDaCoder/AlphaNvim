@@ -90,8 +90,7 @@ git = "lewis6991/gitsigns.nvim"
 rev = "v0.9.0"
 
 [plugins."nvim-colorizer.lua"]
-git = "NvChad/nvim-colorizer.lua"
-rev = "08bd34bf0ed79723f62764c7f9ca70516d461d0d"
+git = "nvchad/nvim-colorizer.lua"
 
 [plugins."telescope-symbols.nvim"]
 git = "nvim-telescope/telescope-symbols.nvim"
@@ -114,20 +113,17 @@ rev = "316cafc79490f8b79c288bbe6638838d6d68e227"
 
 [plugins."care.nvim"]
 git = "max397574/care.nvim"
-rev = "main"
-# opt = true
 
 [plugins.care-lsp]
 git = "max397574/care-lsp"
-rev = "main"
 
 [plugins."neominimap.nvim"]
-git = "Isrothy/neominimap.nvim"
-rev = "v2.4.1"
+git = "isrothy/neominimap.nvim"
+rev = "v2.4.2"
 
 [plugins."selabel.nvim"]
-git = "Axlefublr/selabel.nvim"
-rev = "main"
+git = "axlefublr/selabel.nvim"
+rev = "v0.0.1"
 
 [plugins."barbar.nvim"]
 git = "romgrk/barbar.nvim"
