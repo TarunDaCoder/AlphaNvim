@@ -1,5 +1,5 @@
 return {
-	{ 'VonHeikemen/fine-cmdline.nvim' },
-	{ 'VonHeikemen/searchbox.nvim' },
-	{ 'olimorris/onedarkpro.nvim' },
+	{ 'VonHeikemen/fine-cmdline.nvim', event = 'VeryLazy' },
+	{ 'VonHeikemen/searchbox.nvim', event = 'VeryLazy' },
+	{ 'olimorris/onedarkpro.nvim', lazy = true },
 }

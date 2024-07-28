@@ -132,11 +132,11 @@ return {
 			ensure_installed = { 'html', 'lua_ls', 'cssls', 'eslint', 'pyright', 'tsserver' },
 		},
 	},
-	{ 'folke/trouble.nvim', opts = {
+	{ 'folke/trouble.nvim', event = 'VeryLazy', opts = {
 		auto_close = true,
 		use_diagnostic_signs = true,
 	} },
-	{ 'Axlefublr/selabel.nvim', opts = {
+	{ 'Axlefublr/selabel.nvim', event = 'VeryLazy', opts = {
 		win_opts = {
 			border = 'single',
 		},
