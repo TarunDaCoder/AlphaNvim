@@ -34,12 +34,12 @@ version: 1.1.1
 - ( )  Completely refactor to `lazy.nvim`
 -- (-) Import all my plugins
 --- (x) indent-blankline
---- (-) sus.nvim
+--- (x) sus.nvim
 --- ( ) rustaceanvim
 --- ( ) todo-comments
 --- ( ) live-server.nvim
 --- ( ) telescope-symbols
 --- ( ) neocodeium
---- ( ) markview.nvim
+--- (-) markview.nvim
 --- ( ) emmet
 --- (x) fine-cmdline and searchbox
