@@ -112,10 +112,12 @@ rev = "main"
 [plugins."care.nvim"]
 git = "max397574/care.nvim"
 rev = "391c9c94e544d7914a2f8991128b24a9ee81b993"
+config = false
 
 [plugins.care-lsp]
 git = "max397574/care-lsp"
 rev = "f7857993ae28bdaa79f7b03f6398e177918a2e38"
+config = false
 
 [plugins."neominimap.nvim"]
 git = "isrothy/neominimap.nvim"
