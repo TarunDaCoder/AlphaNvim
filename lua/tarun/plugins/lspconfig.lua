@@ -1,7 +1,6 @@
 return {
 	{
 		'neovim/nvim-lspconfig',
-		event = 'VeryLazy',
 		config = function()
 			local lspconfig = require('lspconfig')
 			lspconfig.lua_ls.setup({
@@ -126,10 +125,9 @@ return {
 			})
 		end,
 	},
-	{ 'williamboman/mason.nvim', opts = {}, event = 'VeryLazy' },
+	{ 'williamboman/mason.nvim', opts = {} },
 	{
 		'williamboman/mason-lspconfig.nvim',
-		event = 'VeryLazy',
 		opts = {
 			ensure_installed = { 'html', 'lua_ls', 'cssls', 'eslint', 'pyright', 'tsserver' },
 		},
