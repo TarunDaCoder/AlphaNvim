@@ -24,5 +24,3 @@ o.laststatus = 3
 o.timeoutlen = 150
 o.signcolumn = 'auto:2'
 o.cmdheight = 0
-o.list = true
-o.listchars = 'tab:» ,nbsp:+,trail:·,eol:↩,'
