@@ -116,8 +116,8 @@ return {
 
 		vim.keymap.set('i', '<cr>', '<Plug>(CareConfirm)')
 		vim.keymap.set('i', '<c-e>', '<Plug>(CareClose)')
-		vim.keymap.set('i', '<c-j>', '<Plug>(CareSelectNext)')
-		vim.keymap.set('i', '<c-k>', '<Plug>(CareSelectPrev)')
+		vim.keymap.set('i', '<Tab>', '<Plug>(CareSelectNext)')
+		vim.keymap.set('i', '<S-Tab>', '<Plug>(CareSelectPrev)')
 
 		vim.api.nvim_create_autocmd('InsertLeave', {
 			callback = function()
