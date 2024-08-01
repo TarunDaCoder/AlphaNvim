@@ -112,6 +112,7 @@ local servers = {
 			'selene.toml',
 			'selene.yml',
 			'.git',
+			vim.uv.cwd(), -- equivalent of `single_file_mode` in lspconfig
 		}),
 		filetypes = { 'lua' },
 		capabilities = capabilities,
@@ -147,18 +148,22 @@ local servers = {
 			})
 		end,
 		settings = {
-			Lua = {},
+			Lua = {
+				telemetry = {
+					enable = false,
+				},
+			},
 		},
 	},
 	-- }}}
 	-- Zig {{{
-	-- zls = {
-	-- 	name = 'zls',
-	-- 	cmd = { 'zls' },
-	-- 	root_dir = vim.fs.root(0, { 'zls.json', 'build.zig', '.git' }),
-	-- 	filetypes = { 'zig', 'zir' },
-	-- 	capabilities = capabilities,
-	-- },
+	zls = {
+		name = 'zls',
+		cmd = { 'zls' },
+		root_dir = vim.fs.root(0, { 'zls.json', 'build.zig', '.git' }),
+		filetypes = { 'zig', 'zir' },
+		capabilities = capabilities,
+	},
 	-- }}}
 	-- C/C++ {{{
 	-- NOTE: the CORES environment variable is declared in my shell configuration
@@ -185,6 +190,7 @@ local servers = {
 			'compile_flags.txt',
 			'configure.ac',
 			'.git',
+			vim.uv.cwd(), -- equivalent of `single_file_mode` in lspconfig
 		}),
 		filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' },
 		capabilities = capabilities,
