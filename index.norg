@@ -36,10 +36,10 @@ version: 1.1.1
 --- (x) indent-blankline
 --- (x) sus.nvim
 --- ( ) rustaceanvim
---- ( ) todo-comments
---- ( ) live-server.nvim
---- ( ) telescope-symbols
---- ( ) neocodeium
---- (-) markview.nvim
---- ( ) emmet
+--- (-) todo-comments
+--- (x) live-server.nvim
+--- (x) telescope-symbols
+--- (x) neocodeium
+--- (x) markview.nvim
+--- (x) emmet
 --- (x) fine-cmdline and searchbox
