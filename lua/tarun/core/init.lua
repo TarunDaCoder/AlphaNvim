@@ -1,4 +1,5 @@
 require('tarun.core.lazy')
+require('tarun.core.lsp')
 require('tarun.core.autocmd')
 require('tarun.core.colourscheme')
 require('tarun.core.remaps')
