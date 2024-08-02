@@ -118,25 +118,3 @@ vim.api.nvim_create_autocmd('InsertLeave', {
 		require('care').core.menu:close()
 	end,
 })
-
-local luasnip = require('luasnip')
-
-vim.keymap.set('i', '<c-f>', function()
-	if require('care').api.doc_is_open() then
-		require('care').api.scroll_docs(4)
-	elseif luasnip.choice_active() then
-		require('luasnip').change_choice(1)
-	else
-		vim.api.nvim_feedkeys(vim.keycode('<c-f>'), 'n', false)
-	end
-end)
-
-vim.keymap.set('i', '<c-d>', function()
-	if require('care').api.doc_is_open() then
-		require('care').api.scroll_docs(-4)
-	elseif luasnip.choice_active() then
-		require('luasnip').change_choice(-1)
-	else
-		vim.api.nvim_feedkeys(vim.keycode('<c-f>'), 'n', false)
-	end
-end)
