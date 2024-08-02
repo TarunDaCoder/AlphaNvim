@@ -101,7 +101,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 local servers = {
 	-- Lua {{{
 	lua_ls = {
-		name = 'lua-language-server',
+		name = 'lua_ls',
 		cmd = { 'lua-language-server' },
 		root_dir = vim.fs.root(0, {
 			'.luarc.json',
@@ -112,6 +112,7 @@ local servers = {
 			'selene.toml',
 			'selene.yml',
 			'.git',
+			---@diagnostic disable-next-line undefined-field
 			vim.uv.cwd(), -- equivalent of `single_file_mode` in lspconfig
 		}),
 		filetypes = { 'lua' },
@@ -474,51 +475,120 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- Global commands (start, stop, etc) {{{
 -- Start {{{
-vim.api.nvim_create_user_command('LspStart', function()
-	vim.iter(servers)
-		:map(function(s)
-			return { [s] = servers[s].filetypes }
-		end)
-		:map(function(s)
-			for server, filetypes in pairs(s) do
-				-- Do not try to initialize the LSP if it is not installed
-				if
-					vim.iter(filetypes):find(vim.fn.expand('%:e'))
-					and vim.fn.executable(servers[server].cmd[1]) == 1
-				then
-					local active_clients_in_buffer = vim.iter(
-						vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
-					)
-						:map(function(client)
-							return client.name
-						end)
-						:totable()
-					-- Do not duplicate the server if there is already a server attached to the buffer
-					if not vim.iter(active_clients_in_buffer):find(servers[server].name) then
-						vim.notify('[core.lsp] Starting ' .. server .. ' ...')
-						---@diagnostic disable-next-line
-						vim.lsp.start(servers[server], { buffer = vim.api.nvim_get_current_buf() })
-					end
+-- Initializes all the possible clients for the current buffer if no arguments were passed
+local function start_lsp_client(name, filetypes)
+	-- Do not try to initialize the LSP if it is not installed
+	if vim.iter(filetypes):find(vim.fn.expand('%:e')) and vim.fn.executable(servers[name].cmd[1]) == 1 then
+		local active_clients_in_buffer = vim.iter(vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() }))
+			:map(function(client)
+				return client.name
+			end)
+			:totable()
+		-- Do not duplicate the server if there is already a server attached to the buffer
+		if not vim.iter(active_clients_in_buffer):find(servers[name].name) then
+			vim.notify('[core.lsp] Starting ' .. name .. ' ...')
+			---@diagnostic disable-next-line
+			vim.lsp.start(servers[name], { bufnr = vim.api.nvim_get_current_buf() })
+		end
+	end
+end
+
+vim.api.nvim_create_user_command('LspStart', function(args)
+	if #args.fargs < 1 then
+		vim.iter(servers)
+			:map(function(s)
+				return { [s] = servers[s].filetypes }
+			end)
+			:map(function(s)
+				for server, filetypes in pairs(s) do
+					start_lsp_client(server, filetypes)
 				end
-			end
-		end)
-		:totable()
-end, {})
+			end)
+			:totable()
+	else
+		for _, server in ipairs(args.fargs) do
+			---@diagnostic disable-next-line undefined-field
+			start_lsp_client(server, servers[server].filetypes)
+		end
+	end
+end, {
+	nargs = '*',
+	complete = function(args)
+		local server_names = vim.iter(servers)
+			:map(function(s)
+				return s
+			end)
+			:totable()
+		if #args < 1 then
+			return server_names
+		end
+
+		local match = vim.iter(server_names)
+			:filter(function(server)
+				if string.find(server, '^' .. args) then
+					return server
+					---@diagnostic disable-next-line missing-return
+				end
+			end)
+			:totable()
+		return match
+	end,
+})
 -- }}}
 
--- Stop (stops all attached servers in the current buffer at the moment) {{{
-vim.api.nvim_create_user_command('LspStop', function()
+-- Stop {{{
+-- Stops all the active clients in the current buffer if no arguments were passed
+vim.api.nvim_create_user_command('LspStop', function(args)
 	local active_clients_in_buffer = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
-	for _, client in ipairs(active_clients_in_buffer) do
-		vim.notify('[core.lsp] Shutting down ' .. client.name .. ' ...')
-		client.stop(true)
+
+	if #args.fargs < 1 then
+		for _, client in ipairs(active_clients_in_buffer) do
+			vim.notify('[core.lsp] Shutting down ' .. client.name .. ' ...')
+			client.stop(true)
+		end
+	else
+		for _, name in ipairs(args.fargs) do
+			for _, client in ipairs(active_clients_in_buffer) do
+				if name == client.name then
+					vim.notify('[core.lsp] Shutting down ' .. client.name .. ' ...')
+					client.stop(true)
+				end
+			end
+		end
 	end
-end, {})
+end, {
+	nargs = '*',
+	complete = function(args)
+		local active_clients_in_buffer = vim.iter(vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() }))
+			:map(function(s)
+				return s.name
+			end)
+			:totable()
+		if #args < 1 then
+			return active_clients_in_buffer
+		end
+
+		local match = vim.iter(active_clients_in_buffer)
+			:filter(function(client)
+				if string.find(client, '^' .. args) then
+					return client
+					---@diagnostic disable-next-line missing-return
+				end
+			end)
+			:totable()
+		return match
+	end,
+})
 -- }}}
 -- }}}
 
 -- Start LSP servers as soon as possible {{{
-vim.cmd.LspStart()
+for _, config in pairs(servers) do
+	vim.api.nvim_create_autocmd('FileType', {
+		pattern = config.filetypes,
+		command = 'LspStart',
+	})
+end
 -- }}}
 
 -- vim: fdm=marker:fdl=0
