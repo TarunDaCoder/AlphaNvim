@@ -14,7 +14,7 @@
 "rocks.nvim" = "2.36.1"
 nvim-web-devicons = "0.100"
 "rocks-git.nvim" = "2.0.1"
-"plenary.nvim"= "scm"
+"plenary.nvim" = "scm"
 luasnip = "2.3.0"
 "rocks-config.nvim" = "2.2.0"
 "oil.nvim" = "2.11.0"
@@ -25,17 +25,17 @@ nvim-surround = "2.1.5"
 "conform.nvim" = "7.0.0"
 "telescope-undo.nvim" = "scm"
 "trouble.nvim" = "3.6.0"
-"mason.nvim"= "1.10.0"
-"mason-lspconfig.nvim"= "1.29.0"
-nvim-lspconfig= "0.1.8"
-"lspkind.nvim"= "scm"
-nvim-autopairs= "scm"
-"indent-blankline.nvim"= "3.7.2"
-"which-key.nvim"= "3.13.2"
-alpha-nvim= "scm"
+"mason.nvim" = "1.10.0"
+"mason-lspconfig.nvim" = "1.29.0"
+nvim-lspconfig = "0.1.8"
+"lspkind.nvim" = "scm"
+nvim-autopairs = "scm"
+"indent-blankline.nvim" = "3.7.2"
+"which-key.nvim" = "3.13.2"
+alpha-nvim = "scm"
 "rocks-lazy.nvim" = "1.0.1"
 "rocks-edit.nvim" = "scm"
-friendly-snippets= "scm"
+friendly-snippets = "scm"
 neorg-interim-ls = "1.2.0"
 nvim-spectre = "scm"
 nvim-notify = "3.13.5"
@@ -46,24 +46,24 @@ neorg-se = "1.1.10"
 "fine-cmdline.nvim" = "scm"
 "searchbox.nvim" = "scm"
 "flash.nvim" = "2.1.0"
-nvim-treesitter= "scm"
+nvim-treesitter = "scm"
 nvim-ufo = "1.4.0"
 
-# [plugins.nvim-cmp]
-# git = "hrsh7th/nvim-cmp"
-# rev = "main"
-#
-# [plugins.cmp-cmdline]
-# version = "scm"
-#
-# [plugins.cmp-nvim-lsp]
-# version = "scm"
-#
-# [plugins.cmp-path]
-# version = "scm"
-#
-# [plugins.cmp_luasnip]
-# version = "scm"
+[plugins.nvim-cmp]
+git = "hrsh7th/nvim-cmp"
+rev = "main"
+
+[plugins.cmp-cmdline]
+version = "scm"
+
+[plugins.cmp-nvim-lsp]
+version = "scm"
+
+[plugins.cmp-path]
+version = "scm"
+
+[plugins.cmp_luasnip]
+version = "scm"
 
 [plugins."image.nvim"]
 git = '3rd/image.nvim'
