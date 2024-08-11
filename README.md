@@ -2,6 +2,8 @@
 ## The α Alpha of all neovim configs
 AlphaNvim is my own neovim configuration after [BobVim](https://github.com/TarunDaCoder/BobVim) which isn't really that blazing and isn't really that bloat ¯\\\_(ツ)_/¯
 
+## WARNING ⚠️ : This branch is a work in progress. I recommend using the [main](https://github.com/TarunDaCoder/AlphaNvim) branch instead.
+
 ## Screenshots
 ![Screenshot1](img/alphanvim_ss1.png)
 
