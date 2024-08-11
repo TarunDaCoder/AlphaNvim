@@ -8,7 +8,7 @@ grp('Buffer', {})
 
 cmd({ 'VimLeave' }, {
 	desc = 'Change cursor shape to line when leaving nvim',
-	command = [[set guicursor=a:ver90]],
+	command = [[set guicursor=a:ver90-blinkwait800]],
 	group = 'Shape',
 })
 
