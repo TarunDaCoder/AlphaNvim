@@ -16,7 +16,7 @@ vim.loader.enable()
 -- Source core files
 require('tarun.core')
 
--- Some secret stuff to reduce my strartup time
+-- Some secret stuff to reduce my startup time
 local g = vim.g
 
 g.loaded_gzip = 1
