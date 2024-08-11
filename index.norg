@@ -20,7 +20,7 @@ version: 1.1.1
 - (-) Features
 -- (x) add gradient bg
 --- NOTE: Only on `wezterm`
--- (=) add more lazy loaded plugins
+-- (=) lazy load plugins
 
 - (x) Plugins
 -- (x) toggleterm
