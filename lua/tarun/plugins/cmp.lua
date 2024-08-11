@@ -61,12 +61,8 @@ cmp.setup({
 		{ name = 'luasnip' }, -- For luasnip users.
 	}, {
 		{ name = 'neorg' },
-		{ name = 'supermaven' },
 	}),
 })
-
--- Set up friendly snippets with luasnip
-require('luasnip.loaders.from_vscode').lazy_load()
 
 cmp.setup.cmdline({ '/', '?' }, {
 	mapping = cmp.mapping.preset.cmdline(),
@@ -91,9 +87,6 @@ cmp.setup({
 		format = lspkind.cmp_format({
 			mode = 'symbol',
 			maxwidth = 50,
-			symbol_map = {
-				SuperMaven = ' ',
-			},
 		}),
 	},
 })
