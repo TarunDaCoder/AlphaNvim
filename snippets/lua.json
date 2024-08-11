@@ -1,1 +1,1 @@
-{"req":{"body":"require('{$0}')","prefix":"req"}}
+{"req":{"prefix":"req","body":"require('$0')"}}
