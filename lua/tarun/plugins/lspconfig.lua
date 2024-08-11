@@ -45,6 +45,7 @@ local lang_servers = {
 	'emmet_language_server',
 	'html',
 	'clangd',
+	'taplo',
 	-- 'harper_ls',
 }
 
