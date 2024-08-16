@@ -72,3 +72,19 @@ cmd('FileType', {
 		vim.keymap.set('n', 'q', vim.cmd.close, { desc = 'Close the current buffer', buffer = true })
 	end,
 })
+
+-- vim.api.nvim_create_autocmd({ 'CmdlineEnter' }, {
+-- 	pattern = 'Rocks install ',
+-- 	callback = function()
+-- 		vim.api.nvim_command('Rocks sync')
+-- 	end,
+-- })
+
+vim.api.nvim_create_user_command('RocksInstall', function(opts)
+	-- Install the plugin
+	vim.cmd('Rocks install ' .. opts.args)
+	-- Run the sync command
+	vim.cmd('Rocks sync')
+end, {
+	nargs = 1, -- Expects one argument
+})
