@@ -1,7 +1,5 @@
 local telescope = require('telescope')
 
-telescope.load_extension('undo')
-
 telescope.setup({
 	defaults = {
 		vimgrep_arguments = {
