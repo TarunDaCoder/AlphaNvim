@@ -16,7 +16,8 @@ version: 1.1.1
 --- NOTE: only works on kitty
 -- (x) Tree-sitter error with html files
 -- (=) `care.nvim` luasnip integration
-- ( ) Undefined global "vim"
+-- (x) Undefined global "vim"
+-- ( ) `LSP: No client with ID 1`
 
 - (-) Features
 -- (x) add gradient bg
