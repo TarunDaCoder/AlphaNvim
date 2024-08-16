@@ -15,116 +15,131 @@
 nvim-web-devicons = "0.100"
 "rocks-git.nvim" = "2.0.1"
 "plenary.nvim" = "scm"
-luasnip = "2.3.0"
+luasnip = { version = "2.3.0", event = 'InsertEnter' }
 "rocks-config.nvim" = "2.2.0"
-"oil.nvim" = "2.11.0"
 nvim-ts-autotag = "scm"
 nvim-surround = "2.1.5"
 "overseer.nvim" = "1.4.0"
-"feline.nvim" = "1.6.3"
-"conform.nvim" = "7.0.0"
-"telescope-undo.nvim" = "scm"
+"feline.nvim" = { version = "1.6.3", event = 'BufEnter' }
+"conform.nvim" = { version = "7.0.0", event = 'BufWritePre' }
 "trouble.nvim" = "3.6.0"
 "mason.nvim" = "1.10.0"
 "mason-lspconfig.nvim" = "1.29.0"
 nvim-lspconfig = "0.1.8"
 "lspkind.nvim" = "scm"
-nvim-autopairs = "scm"
-"indent-blankline.nvim" = "3.7.2"
-"which-key.nvim" = "3.13.2"
+nvim-autopairs = { version = "scm", event = 'DeferredUIEnter' }
+"which-key.nvim" = { version = "3.13.2", event = 'DeferredUIEnter' }
 alpha-nvim = "scm"
 "rocks-lazy.nvim" = "1.0.1"
 "rocks-edit.nvim" = "scm"
-friendly-snippets = "scm"
-neorg-interim-ls = "1.2.0"
-nvim-spectre = "scm"
+friendly-snippets = { version = "scm", event = 'InsertEnter' }
+neorg-interim-ls = { version = "1.2.0" }
+nvim-spectre = { version = "scm", event = 'DeferredUIEnter' }
 nvim-notify = "3.13.5"
-"sus.nvim" = "1.0.0"
-rustaceanvim = "5.2.0"
-"todo-comments.nvim" = "1.3.0"
-neorg-se = "1.1.10"
-"fine-cmdline.nvim" = "scm"
-"searchbox.nvim" = "scm"
-"flash.nvim" = "2.1.0"
+"sus.nvim" = { version = "1.0.0", event = 'DeferredUIEnter' }
+rustaceanvim = { version = "5.2.0", ft = 'rs' }
+"todo-comments.nvim" = { version = "1.3.0", event = 'DeferredUIEnter' }
+neorg-se = { version = "1.1.10" }
+"flash.nvim" = { version = "2.1.0", keys = { lhs = 's', rhs = '<cmd>lua require("flash").jump()<CR>', desc = 'Flash' } }
 nvim-treesitter = "scm"
-nvim-ufo = "1.4.0"
+nvim-ufo = { version = "1.4.0", event = 'DeferredUIEnter' }
+"lazydev.nvim" = { version = "1.8.0", ft = 'lua' }
+"indentmini.nvim" = { version = "scm", event = 'DeferredUIEnter' }
+# "care.nvim" = { version = "scm", config = false, opt = true }
+"care.nvim" = { version = "scm", config = false }
+
+# "oil.nvim" = "2.11.0"
+
+[plugins."oil.nvim"]
+version = '2.11.0'
+keys = [{ lhs = '-', rhs = ':Oil<CR>', desc = 'Oil' }]
 
 [plugins.nvim-cmp]
-git = "hrsh7th/nvim-cmp"
-rev = "main"
+version = "scm"
+opt = true
 
 [plugins.cmp-cmdline]
 version = "scm"
+opt = true
 
 [plugins.cmp-nvim-lsp]
 version = "scm"
+opt = true
 
 [plugins.cmp-path]
 version = "scm"
+opt = true
 
 [plugins.cmp_luasnip]
 version = "scm"
+opt = true
 
 [plugins."image.nvim"]
 git = '3rd/image.nvim'
 # version = "1.3.0"
 rev = 'master'
+ft = ['markdown', 'norg']
 
 [plugins."telescope.nvim"]
 version = "scm"
 
 [plugins.'nvim-tree.lua']
 version = "1.6.0"
+event = 'DeferredUIEnter'
 
 [plugins.'onedarkpro.nvim']
 version = "0.8.0"
+colorscheme = ['onedark', 'onedark_vivd', 'onelight', 'onedark_dark']
 
 [plugins.neorg]
 version = "9.1.1"
+# ft = 'norg'
 
 [plugins.neorg-telescope]
 version = "1.2.2"
+# ft = 'norg'
 
 [plugins."gitsigns.nvim"]
 git = "lewis6991/gitsigns.nvim"
 rev = "v0.9.0"
+event = 'DeferredUIEnter'
 
 [plugins."nvim-colorizer.lua"]
 git = "nvchad/nvim-colorizer.lua"
-rev = "194ec600488f7c7229668d0e80bd197f3a2b84ff"
+rev = "master"
+event = 'DeferredUIEnter'
 
 [plugins."telescope-symbols.nvim"]
 git = "nvim-telescope/telescope-symbols.nvim"
-rev = "a6d0127a53d39b9fc2af75bd169d288166118aec"
+rev = "master"
+event = 'DeferredUIEnter'
 
 [plugins."live-server.nvim"]
 git = "barrett-ruth/live-server.nvim"
-rev = "5fc8abb727827a09d0ce1b7757d0a4c7b5802b09"
+rev = "main"
+ft = ['html', 'css', 'js']
 
 [plugins.neocodeium]
 git = "monkoose/neocodeium"
-rev = "4a46f6438bcdb21c562f83036bce75c719834072"
+rev = "main"
 config = false
 
 [plugins.nvim-emmet]
 git = "olrtg/nvim-emmet"
-rev = "cde4fb2968704aae5c18b7f8a9bc2508767bb78d"
+rev = "main"
+# event = 'DeferredUIEnter'
+ft = ['html', 'css', 'js']
 
 [plugins."markview.nvim"]
 git = "OXY2DEV/markview.nvim"
 rev = "main"
-
-[plugins."care.nvim"]
-git = "max397574/care.nvim"
-rev = "391c9c94e544d7914a2f8991128b24a9ee81b993"
-config = false
-opt = true
+ft = 'markdown'
 
 [plugins.care-lsp]
 git = "max397574/care-lsp"
-rev = "f7857993ae28bdaa79f7b03f6398e177918a2e38"
+rev = "main"
 config = false
-opt = true
+# opt = true
 
 [plugins."neominimap.nvim"]
 git = "isrothy/neominimap.nvim"
@@ -140,7 +155,18 @@ rev = "v1.9.1^{}"
 
 [plugins.nvim-scissors]
 git = "chrisgrieser/nvim-scissors"
-rev = "58672a4329040a6e8c83f06b1355dd141c127699"
+rev = "main"
+event = 'InsertEnter'
+
+[plugins.neorg_extras]
+git = "juniorsundar/neorg_extras"
+rev = "v0.1.0"
+
+[plugins."dress.nvim"]
+git = "axlefublr/dress.nvim"
+
+[plugins."wife.nvim"]
+git = "axlefublr/wife.nvim"
 
 [config]
 plugins_dir = 'tarun/plugins/'

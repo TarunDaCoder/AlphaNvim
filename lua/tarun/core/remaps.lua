@@ -9,6 +9,7 @@ vim.g.maplocalleader = ','
 
 -- Keymap to save file
 map('n', '<leader>w', ':w!<CR>', { desc = 'Save file' }, opts)
+map('n', '<leader>q', ':wq!<CR>', { desc = 'Save file and quit' }, opts)
 
 -- Normal mode --
 -- Better window navigation
@@ -55,10 +56,12 @@ map('n', '<TAB>', ':BufferNext<CR>', opts)
 map('n', '<S-TAB>', ':BufferPrevious<CR>', opts)
 map('n', '<c-w>', ':BufferClose<CR>', opts)
 
--- Cmdline and searchbox
-map('n', ':', '<cmd>FineCmdline<CR>', opts)
-map('n', '/', "<cmd>lua require('searchbox').incsearch()<CR>", opts)
+-- Wife (No, not the real kind, the plugin)
+map('n', 'cm', function()
+	require('wife').interactive_shell()
+end)
 
+-- NeoCodeium
 map('i', '<A-f>', function()
 	require('neocodeium').accept()
 end)
