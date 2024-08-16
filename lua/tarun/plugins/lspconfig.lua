@@ -27,6 +27,8 @@ lspconfig.lua_ls.setup({
 	},
 })
 
+require('lazydev').setup()
+
 -- lspconfig.harper_ls.setup({
 -- 	settings = {
 -- 		['harper-ls'] = {
@@ -46,7 +48,7 @@ local lang_servers = {
 	'html',
 	'clangd',
 	'taplo',
-	-- 'harper_ls',
+	'marksman',
 }
 
 for _, server in ipairs(lang_servers) do
