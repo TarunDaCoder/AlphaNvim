@@ -1,1 +1,1 @@
-{"req":{"prefix":"req","body":"require('$0')"}}
+{"setup":{"body":"require('$1').setup($2)","prefix":"setup"},"autocmd":{"body":["vim.api.nvim_create_autocmd({ $1 }, {","    $2","})"],"prefix":"autocmd"},"map":{"body":"vim.api.nvim_set_keymap($0)","prefix":"map"},"req":{"body":"require('$0')","prefix":"req"}}
