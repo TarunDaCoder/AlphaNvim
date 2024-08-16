@@ -67,3 +67,8 @@ wk.add({
 	{ '<leader>nn', ':ScissorsAddNewSnippet<CR>', desc = 'Add new snippet' },
 	{ '<leader>ne', ':ScissorsEditSnippet<CR>', desc = 'Edit snippet' },
 })
+
+wk.add({
+	{ '<leader>w', ':w!<CR>', desc = 'Save file' },
+	{ '<leader>q', ':wqa!<CR>', desc = 'Save and quit' },
+})

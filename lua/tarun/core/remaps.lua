@@ -7,9 +7,8 @@ map('', '<Space>', '<Nop>', opts)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
--- Keymap to save file
-map('n', '<leader>w', ':w!<CR>', { desc = 'Save file' }, opts)
-map('n', '<leader>q', ':wq!<CR>', { desc = 'Save file and quit' }, opts)
+-- Flash
+map('n', 's', ':lua require("flash").jump()<CR>', opts)
 
 -- Normal mode --
 -- Better window navigation
