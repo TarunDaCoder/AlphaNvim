@@ -27,8 +27,6 @@ lspconfig.lua_ls.setup({
 	},
 })
 
-require('lazydev').setup()
-
 -- lspconfig.harper_ls.setup({
 -- 	settings = {
 -- 		['harper-ls'] = {
