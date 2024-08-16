@@ -15,12 +15,13 @@ version: 1.1.1
 -- (x) image.nvim
 --- NOTE: only works on kitty
 -- (x) Tree-sitter error with html files
--- (-) `care.nvim` luasnip integration
+-- (=) `care.nvim` luasnip integration
+- ( ) Undefined global "vim"
 
 - (-) Features
 -- (x) add gradient bg
 --- NOTE: Only on `wezterm`
--- (=) lazy load plugins
+-- (-) lazy load plugins
 
 - (x) Plugins
 -- (x) toggleterm
