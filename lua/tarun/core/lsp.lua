@@ -422,9 +422,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		local wk = require('which-key')
 
 		wk.add({
-			-- { '<leader>l', group = ' LSP', icon = ' ' },
 			{ 'gD', vim.lsp.buf.declaration, desc = 'Go to declaration', icon = ' ' },
-			-- { '<leader>la', vim.lsp.buf.code_action, desc = 'Code Action' },
 			{ '<leader>lf', vim.diagnostic.open_float, desc = 'Show diagnostics' },
 			{ 'K', vim.lsp.buf.hover, desc = 'Hover', icon = '󰉪 ' },
 			{ 'gi', vim.lsp.buf.implementation, desc = 'Goto implementation', icon = ' ' },
