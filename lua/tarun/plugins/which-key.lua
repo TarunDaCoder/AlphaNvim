@@ -18,19 +18,6 @@ wk.add({
 })
 
 wk.add({
-	{ '<leader>l', group = ' LSP', icon = ' ' },
-	{ '<leader>lD', vim.lsp.buf.declaration, desc = 'Go to declaration', icon = ' ' },
-	{ '<leader>la', vim.lsp.buf.code_action, desc = 'Code Action' },
-	{ '<leader>le', vim.diagnostic.open_float, desc = 'Show diagnostics' },
-	{ '<leader>lh', vim.lsp.buf.hover, desc = 'Hover', icon = '󰉪 ' },
-	{ '<leader>li', vim.lsp.buf.implementation, desc = 'Goto implementation', icon = ' ' },
-	{ '<leader>ls', vim.lsp.buf.signature_help, desc = 'Signature help', icon = '󰋖 ' },
-	{ '<leader>lt', vim.lsp.buf.type_definition, desc = 'Type definition', icon = ' ' },
-	{ '<leader>ld', vim.lsp.buf.goto_definition, desc = 'Go to definition', icon = ' ' },
-	{ '<leader>lf', vim.lsp.buf.formatting, desc = 'Format' },
-})
-
-wk.add({
 	{ '<leader>g', group = ' Gitsigns', icon = '' },
 	{ '<leader>ga', ':Gitsigns stage_buffer<CR>', desc = 'Stage buffer' },
 	{ '<leader>gb', ':Gitsigns reset_buffer<CR>', desc = 'Reset buffer' },
