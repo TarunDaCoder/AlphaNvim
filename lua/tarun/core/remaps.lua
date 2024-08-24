@@ -79,3 +79,9 @@ end)
 map('i', '<A-c>', function()
 	require('neocodeium').clear()
 end)
+
+-- Remap arrow keys to use C-hjkl
+map('i', '<C-h>', '<Left>', opts)
+map('i', '<C-j>', '<Down>', opts)
+map('i', '<C-k>', '<Up>', opts)
+map('i', '<C-l>', '<Right>', opts)
