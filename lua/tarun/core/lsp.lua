@@ -7,11 +7,14 @@
 --- Code:
 
 -- -- I don't need to do anything if I'm not editing a file that I have an LSP configured for
-if not vim.iter({ 'c', 'cpp', 'zig', 'lua', 'javascript', 'typescript', 'css', 'html' }):find(vim.fn.expand('%:e')) then
+if
+	not vim.iter({ 'c', 'cpp', 'zig', 'lua', 'javascript', 'typescript', 'css', 'html', 'toml' })
+		:find(vim.fn.expand('%:e'))
+then
 	return
 end
 
--- Diagnostics {{{
+-- Diagnostics
 local severity = vim.diagnostic.severity
 vim.diagnostic.config({
 	underline = {
@@ -46,9 +49,8 @@ vim.diagnostic.config({
 		show_header = false,
 	},
 })
--- }}}
 
--- Improve LSPs UI {{{
+-- Improve LSPs UI
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
 	vim.lsp.handlers.signature_help,
 	{ border = 'rounded', close_events = { 'CursorMoved', 'BufHidden', 'InsertCharPre' } }
@@ -85,21 +87,19 @@ local completion_kinds = vim.lsp.protocol.CompletionItemKind
 for i, kind in ipairs(completion_kinds) do
 	completion_kinds[i] = icons[kind] and icons[kind] .. kind or kind
 end
--- }}}
 
--- Lsp capabilities {{{
+-- Lsp capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.foldingRange = {
 	dynamicRegistration = true,
 	lineFoldingOnly = true,
 }
 capabilities.textDocument.completion.completionItem.snippetSupport = true
--- }}}
 
--- Servers definition {{{
+-- Servers definition
 ---@type table<string, vim.lsp.ClientConfig>
 local servers = {
-	-- Lua {{{
+	-- Lua
 	lua_ls = {
 		name = 'lua_ls',
 		cmd = { 'lua-language-server' },
@@ -156,8 +156,7 @@ local servers = {
 			},
 		},
 	},
-	-- }}}
-	-- Zig {{{
+	-- Zig
 	zls = {
 		name = 'zls',
 		cmd = { 'zls' },
@@ -165,8 +164,7 @@ local servers = {
 		filetypes = { 'zig', 'zir' },
 		capabilities = capabilities,
 	},
-	-- }}}
-	-- C/C++ {{{
+	-- C/C++
 	-- NOTE: the CORES environment variable is declared in my shell configuration
 	clangd = {
 		name = 'clangd',
@@ -191,13 +189,13 @@ local servers = {
 			'compile_flags.txt',
 			'configure.ac',
 			'.git',
+			---@diagnostic disable-next-line undefined-field
 			vim.uv.cwd(), -- equivalent of `single_file_mode` in lspconfig
 		}),
 		filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' },
 		capabilities = capabilities,
 	},
-	-- }}}
-	-- TSServer {{{
+	-- TSServer
 	tsserver = {
 		name = 'tsserver',
 		cmd = { 'typescript-language-server', '--stdio' },
@@ -215,8 +213,7 @@ local servers = {
 			hostInfo = 'neovim',
 		},
 	},
-	-- }}}
-	-- EslintLS {{{
+	-- EslintLS
 	-- NOTE: install with 'npm i -g vscode-langservers-extracted'
 	eslint = {
 		name = 'eslint',
@@ -267,8 +264,7 @@ local servers = {
 			},
 		},
 	},
-	-- }}}
-	-- CSSLS {{{
+	-- CSSLS
 	-- NOTE: install with 'npm i -g vscode-langservers-extracted'
 	cssls = {
 		name = 'cssls',
@@ -280,8 +276,7 @@ local servers = {
 			provideFormatter = true,
 		},
 	},
-	-- }}}
-	-- TailwindCSS {{{
+	-- TailwindCSS
 	-- NOTE: install with 'npm install -g @tailwindcss/language-server'
 	tailwind = {
 		name = 'tailwindcss',
@@ -374,8 +369,7 @@ local servers = {
 			},
 		},
 	},
-	-- }}}
-	-- HTML {{{
+	-- HTML
 	-- NOTE: installed with 'npm i -g vscode-langservers-extracted'
 	html = {
 		name = 'html',
@@ -392,23 +386,22 @@ local servers = {
 			provideFormatter = true,
 		},
 	},
-	-- }}}
-	-- Harper {{{
-	-- harper = {
-	-- 	name = 'harper',
-	-- 	cmd = { 'harper-ls' },
+	-- Taplo
+	-- taplo = {
+	-- 	name = 'taplo',
+	-- 	cmd = { 'taplo', 'fmt' },
+	-- 	root_dir = vim.fs.root(0, {
+	-- 		'taplo.toml',
+	-- 		'.git',
+	-- 		---@diagnostic disable-next-line undefined-field
+	-- 		vim.uv.cwd(),
+	-- 	}),
+	-- 	filetypes = 'toml',
 	-- 	capabilities = capabilities,
-	-- 	filetypes = { 'all' },
-	-- 	root_dir = vim.fs.root(0, vim.uv.cwd()),
-	-- 	codeActions = {
-	-- 		forceStable = true,
-	-- 	},
 	-- },
-	-- }}}
 }
--- }}}
 
--- Create keybindings, commands and autocommands on LSP attach {{{
+-- Create keybindings, commands and autocommands on LSP attach
 vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(ev)
 		local bufnr = ev.buf
@@ -423,51 +416,36 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			vim.bo[bufnr].tagfunc = 'v:lua.vim.lsp.tagfunc'
 		end
 
-		--- Keybindings
-		local kbd = vim.keymap.set
-		-- Show documentation
-		kbd('n', '<leader>lh', vim.lsp.buf.hover, { buffer = bufnr, desc = 'Hover documentation' })
-		-- Open code actions
-		kbd('n', '<leader>la', vim.lsp.buf.code_action, { buffer = bufnr, desc = 'Code actions' })
-		-- Rename symbol under cursor
-		kbd('n', '<leader>lr', vim.lsp.buf.rename, { buffer = bufnr, desc = 'Rename' })
-		-- Show line diagnostics
-		kbd('n', '<leader>ldl', function()
-			vim.diagnostic.open_float({
-				focusable = false,
-				close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter', 'FocusLost' },
-				border = 'rounded',
-				source = 'if_many',
-				prefix = ' ',
-				scope = 'cursor',
-			})
-		end, { buffer = bufnr, desc = 'Show line diagnostics' })
-		-- Go to diagnostics
-		kbd('n', '<leader>ldp', vim.diagnostic.goto_prev, { buffer = bufnr, desc = 'Goto next diagnostic' })
-		kbd('n', '<leader>ldn', vim.diagnostic.goto_next, { buffer = bufnr, desc = 'Goto prev diagnostic' })
-		-- Go to definition
-		kbd('n', '<leader>lgd', vim.lsp.buf.definition, { buffer = bufnr, desc = 'Goto definition' })
-		-- Go to declaration
-		kbd('n', '<leader>lgD', vim.lsp.buf.declaration, { buffer = bufnr, desc = 'Goto declaration' })
+		-- Keybinds
+		local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
-		--- Autocommands
-		vim.api.nvim_create_augroup('Lsp', { clear = true })
-		-- Display line diagnostics on hover
-		vim.api.nvim_create_autocmd('CursorHold', {
-			group = 'Lsp',
-			buffer = bufnr,
-			callback = function()
-				local opts = {
-					focusable = false,
-					close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter', 'FocusLost' },
-					border = 'rounded',
-					source = 'always',
-					prefix = ' ',
-					scope = 'line',
-				}
-				vim.diagnostic.open_float(opts)
-			end,
+		local wk = require('which-key')
+
+		wk.add({
+			-- { '<leader>l', group = ' LSP', icon = ' ' },
+			{ 'gD', vim.lsp.buf.declaration, desc = 'Go to declaration', icon = ' ' },
+			-- { '<leader>la', vim.lsp.buf.code_action, desc = 'Code Action' },
+			{ '<leader>lf', vim.diagnostic.open_float, desc = 'Show diagnostics' },
+			{ 'K', vim.lsp.buf.hover, desc = 'Hover', icon = '󰉪 ' },
+			{ 'gi', vim.lsp.buf.implementation, desc = 'Goto implementation', icon = ' ' },
+			{ '<leader>ls', vim.lsp.buf.signature_help, desc = 'Signature help', icon = '󰋖 ' },
+			{ '<space>D', vim.lsp.buf.type_definition, desc = 'Type definition', icon = ' ' },
+			{ 'gd', vim.lsp.buf.goto_definition, desc = 'Go to definition', icon = ' ' },
+			{ '<leader>fo', vim.lsp.buf.formatting, desc = 'Format' },
+			{ 'gr', vim.lsp.buf.references, desc = 'References', bufopts },
+			{
+				'<space>ca',
+				function()
+					if vim.bo[bufnr].filetype == 'rust' then
+						vim.cmd.RustLsp('codeAction')
+					else
+						vim.lsp.buf.code_action()
+					end
+				end,
+				desc = 'Code Action',
+			},
 		})
+
 		-- Fix all eslint offenses on save in JavaScript/TypeScript files
 		---@diagnostic disable-next-line need-check-nil
 		if client.name == 'eslint' then
@@ -483,10 +461,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.api.nvim_create_user_command('LspFormat', vim.lsp.buf.format, { desc = 'Format current buffer using LSP' })
 	end,
 })
--- }}}
 
--- Global commands (start, stop, etc) {{{
--- Start {{{
+-- Global commands (start, stop, etc)
+-- Start
 -- Initializes all the possible clients for the current buffer if no arguments were passed
 local function start_lsp_client(name, filetypes)
 	-- Do not try to initialize the LSP if it is not installed
@@ -546,9 +523,8 @@ end, {
 		return match
 	end,
 })
--- }}}
 
--- Stop {{{
+-- Stop
 -- Stops all the active clients in the current buffer if no arguments were passed
 vim.api.nvim_create_user_command('LspStop', function(args)
 	local active_clients_in_buffer = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
@@ -591,17 +567,64 @@ end, {
 		return match
 	end,
 })
--- }}}
--- }}}
 
--- Start LSP servers as soon as possible {{{
+-- Restart
+vim.api.nvim_create_user_command('LspRestart', function(args)
+	local active_clients_in_buffer = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
+
+	local using_fargs = #args.fargs > 0
+	for _, client in ipairs(using_fargs and args.fargs or active_clients_in_buffer) do
+		if using_fargs then
+			-- NOTE: I don't think I'll ever have more than one instance of the same client in a buffer
+			client = vim.lsp.get_clients({ name = client.name })[1]
+		end
+		if not client.is_stopped() then
+			vim.notify('[core.lsp] Restarting ' .. client.name .. ', it could take a bit of time ...')
+			local server = client.name
+			client.stop(true)
+			-- We defer the initialization to wait for the client to completely stop
+			vim.defer_fn(function()
+				---@diagnostic disable-next-line
+				vim.lsp.start(servers[server], { bufnr = vim.api.nvim_get_current_buf() })
+			end, 500)
+		end
+	end
+end, {
+	nargs = '*',
+	complete = function(args)
+		local active_clients_in_buffer = vim.iter(vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() }))
+			:map(function(s)
+				return s.name
+			end)
+			:totable()
+		if #args < 1 then
+			return active_clients_in_buffer
+		end
+
+		local match = vim.iter(active_clients_in_buffer)
+			:filter(function(client)
+				if string.find(client, '^' .. args) then
+					return client
+					---@diagnostic disable-next-line missing-return
+				end
+			end)
+			:totable()
+		return match
+	end,
+})
+
+-- Log
+vim.api.nvim_create_user_command('LspLog', function()
+	vim.cmd.vsplit(vim.lsp.log.get_filename())
+end, {})
+
+-- Start LSP servers as soon as possible
 for _, config in pairs(servers) do
 	vim.api.nvim_create_autocmd('FileType', {
 		pattern = config.filetypes,
 		command = 'LspStart',
 	})
 end
--- }}}
 
 -- vim: fdm=marker:fdl=0
 --- lsp.lua ends here

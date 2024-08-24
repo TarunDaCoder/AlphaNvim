@@ -5,6 +5,63 @@ require('mason-lspconfig').setup({
 	ensure_installed = { 'html', 'lua_ls', 'cssls', 'eslint', 'pyright', 'tsserver' },
 })
 
+local on_attach = function(client, bufnr)
+	-- Mappings.
+	-- See `:help vim.lsp.*` for documentation on any of the below functions
+	local bufopts = { noremap = true, silent = true, buffer = bufnr }
+
+	local wk = require('which-key')
+
+	wk.add({
+		-- { '<leader>l', group = ' LSP', icon = ' ' },
+		{ 'gD', vim.lsp.buf.declaration, desc = 'Go to declaration', icon = ' ' },
+		-- { '<leader>la', vim.lsp.buf.code_action, desc = 'Code Action' },
+		{ '<leader>lf', vim.diagnostic.open_float, desc = 'Show diagnostics' },
+		{ 'K', vim.lsp.buf.hover, desc = 'Hover', icon = '󰉪 ' },
+		{ 'gi', vim.lsp.buf.implementation, desc = 'Goto implementation', icon = ' ' },
+		{ '<leader>ls', vim.lsp.buf.signature_help, desc = 'Signature help', icon = '󰋖 ' },
+		{ '<space>D', vim.lsp.buf.type_definition, desc = 'Type definition', icon = ' ' },
+		{ 'gd', vim.lsp.buf.goto_definition, desc = 'Go to definition', icon = ' ' },
+		{ '<leader>fo', vim.lsp.buf.formatting, desc = 'Format' },
+		{ 'gr', vim.lsp.buf.references, desc = 'References', bufopts },
+		{
+			'<space>ca',
+			function()
+				if vim.bo[bufnr].filetype == 'rust' then
+					vim.cmd.RustLsp('codeAction')
+				else
+					vim.lsp.buf.code_action()
+				end
+			end,
+			desc = 'Code Action',
+		},
+	})
+
+	-- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+	-- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+	-- vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+	-- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+	-- vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+	-- vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+	-- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+	-- vim.keymap.set('n', '<space>ca', function()
+	-- 	if vim.bo[bufnr].filetype == 'rust' then
+	-- 		vim.cmd.RustLsp('codeAction')
+	-- 	else
+	-- 		vim.lsp.buf.code_action()
+	-- 	end
+	-- end, bufopts)
+	-- vim.keymap.set('n', '<space>fo', vim.lsp.buf.format, bufopts)
+
+	if client.server_capabilities.inlayHintProvider then
+		vim.lsp.inlay_hint.enable(true, {
+			bufnr = bufnr,
+		})
+	end
+
+	client.id = 1
+end
+
 -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 lspconfig.lua_ls.setup({
@@ -52,6 +109,7 @@ local lang_servers = {
 for _, server in ipairs(lang_servers) do
 	lspconfig[server].setup({
 		-- capabilities = capabilities,
+		on_attach = on_attach,
 	})
 end
 
@@ -144,7 +202,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		end
 
 		require('which-key').add({
-			{ '<leader>lr', vim.lsp.buf.rename, desc = 'Rename', icon = '󰑕 ' },
+			{ '<leader>rn', vim.lsp.buf.rename, desc = 'Rename', icon = '󰑕 ' },
 		})
 	end,
 })
