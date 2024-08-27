@@ -387,18 +387,18 @@ local servers = {
 		},
 	},
 	-- Taplo
-	-- taplo = {
-	-- 	name = 'taplo',
-	-- 	cmd = { 'taplo', 'fmt' },
-	-- 	root_dir = vim.fs.root(0, {
-	-- 		'taplo.toml',
-	-- 		'.git',
-	-- 		---@diagnostic disable-next-line undefined-field
-	-- 		vim.uv.cwd(),
-	-- 	}),
-	-- 	filetypes = 'toml',
-	-- 	capabilities = capabilities,
-	-- },
+	taplo = {
+		name = 'taplo',
+		cmd = { 'taplo', 'lsp', 'stdio' },
+		root_dir = vim.fs.root(0, {
+			'taplo.toml',
+			'.git',
+			---@diagnostic disable-next-line undefined-field
+			vim.uv.cwd(), -- equivalent of `single_file_mode` in lspconfig
+		}),
+		filetypes = { 'toml' },
+		capabilities = capabilities,
+	},
 }
 
 -- Create keybindings, commands and autocommands on LSP attach
