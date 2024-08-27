@@ -9,7 +9,7 @@ version: 1.1.1
 @end
 
 * TODO LIST
-- (-) Fixes
+- (x) Fixes
 -- (x) treesitter segfault
 -- (x) which-key
 -- (x) image.nvim
@@ -17,7 +17,8 @@ version: 1.1.1
 -- (x) Tree-sitter error with html files
 -- (=) `care.nvim` luasnip integration
 -- (x) Undefined global "vim"
--- ( ) `LSP: No client with ID 1`
+-- (_) `LSP: No client with ID 1`
+--- temp fix: use lsp.lua instead of lspconfig
 
 - (-) Features
 -- (x) add gradient bg
