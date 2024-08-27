@@ -8,7 +8,7 @@
 
 -- -- I don't need to do anything if I'm not editing a file that I have an LSP configured for
 if
-	not vim.iter({ 'c', 'cpp', 'zig', 'lua', 'javascript', 'typescript', 'css', 'html', 'toml' })
+	not vim.iter({ 'c', 'cpp', 'zig', 'lua', 'javascript', 'typescript', 'css', 'html', 'toml', 'python' })
 		:find(vim.fn.expand('%:e'))
 then
 	return
@@ -397,6 +397,18 @@ local servers = {
 			vim.uv.cwd(), -- equivalent of `single_file_mode` in lspconfig
 		}),
 		filetypes = { 'toml' },
+		capabilities = capabilities,
+	},
+	-- TODO: Fix this
+	-- Pyright
+	pyright = {
+		name = 'pyright',
+		cmd = { 'pyright-langserver', '--stdio' },
+		root_dir = vim.fs.root(0, {
+			---@diagnostic disable-next-line undefined-field
+			vim.uv.cwd(), -- equivalent of `single_file_mode` in lspconfig
+		}),
+		filetypes = { 'python' },
 		capabilities = capabilities,
 	},
 }
