@@ -26,3 +26,5 @@ hl(0, 'TelescopeResultsTitle', { fg = '#252931', bg = '#98c379' })
 hl(0, 'StatusLine', { bg = '#2d323b' })
 
 hl(0, 'FoldColumn', { bg = '#2d323b', fg = '#495162' })
+
+hl(0, '@neorg.todo_items.on_hold.norg', { fg = '#2bbac5', bg = 'none' })
