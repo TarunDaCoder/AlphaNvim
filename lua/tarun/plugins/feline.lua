@@ -47,7 +47,7 @@ local c = {
 		end,
 		left_sep = 'block',
 		right_sep = 'block',
-		icon = ' ',
+		icon = '  ',
 	},
 	gitBranch = {
 		provider = 'git_branch',
