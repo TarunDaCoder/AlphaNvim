@@ -6,11 +6,13 @@
 --
 --- Code:
 
+-- Log
+vim.api.nvim_create_user_command('LspLog', function()
+	vim.cmd.vsplit(vim.lsp.log.get_filename())
+end, {})
+
 -- -- I don't need to do anything if I'm not editing a file that I have an LSP configured for
-if
-	not vim.iter({ 'c', 'cpp', 'zig', 'lua', 'javascript', 'typescript', 'css', 'html', 'toml', 'python' })
-		:find(vim.fn.expand('%:e'))
-then
+if not vim.iter({ 'c', 'cpp', 'zig', 'lua', 'js', 'ts', 'css', 'html', 'toml', 'py' }):find(vim.fn.expand('%:e')) then
 	return
 end
 
@@ -47,6 +49,7 @@ vim.diagnostic.config({
 		source = 'if_many',
 		border = 'rounded',
 		show_header = false,
+		focusable = false,
 	},
 })
 
@@ -156,6 +159,7 @@ local servers = {
 			},
 		},
 	},
+
 	-- Zig
 	zls = {
 		name = 'zls',
@@ -164,6 +168,7 @@ local servers = {
 		filetypes = { 'zig', 'zir' },
 		capabilities = capabilities,
 	},
+
 	-- C/C++
 	-- NOTE: the CORES environment variable is declared in my shell configuration
 	clangd = {
@@ -195,11 +200,19 @@ local servers = {
 		filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' },
 		capabilities = capabilities,
 	},
+
 	-- TSServer
 	tsserver = {
 		name = 'tsserver',
 		cmd = { 'typescript-language-server', '--stdio' },
-		root_dir = vim.fs.root(0, { 'tsconfig.json', 'jsconfig.json', 'package.json', '.git' }),
+		root_dir = vim.fs.root(0, {
+			'tsconfig.json',
+			'jsconfig.json',
+			'package.json',
+			'.git',
+			---@diagnostic disable-next-line undefined-field
+			vim.uv.cwd(),
+		}),
 		filetypes = {
 			'javascript',
 			'javascriptreact',
@@ -213,6 +226,7 @@ local servers = {
 			hostInfo = 'neovim',
 		},
 	},
+
 	-- EslintLS
 	-- NOTE: install with 'npm i -g vscode-langservers-extracted'
 	eslint = {
@@ -242,7 +256,7 @@ local servers = {
 				},
 			},
 			codeActionOnSave = {
-				enable = false,
+				enable = true,
 				mode = 'all',
 			},
 			experimental = {
@@ -264,6 +278,7 @@ local servers = {
 			},
 		},
 	},
+
 	-- CSSLS
 	-- NOTE: install with 'npm i -g vscode-langservers-extracted'
 	cssls = {
@@ -276,99 +291,104 @@ local servers = {
 			provideFormatter = true,
 		},
 	},
-	-- TailwindCSS
-	-- NOTE: install with 'npm install -g @tailwindcss/language-server'
-	tailwind = {
-		name = 'tailwindcss',
-		cmd = { 'tailwindcss-language-server', '--stdio' },
-		root_dir = vim.fs.root(0, {
-			'tailwind.config.js',
-			'tailwind.config.cjs',
-			'tailwind.config.mjs',
-			'tailwind.config.ts',
-			'postcss.config.js',
-			'postcss.config.cjs',
-			'postcss.config.mjs',
-			'postcss.config.ts',
-			'package.json',
-			'node_modules',
-			'.git',
-		}),
-		filetypes = {
-			'aspnetcorerazor',
-			'astro',
-			'astro-markdown',
-			'blade',
-			'clojure',
-			'django-html',
-			'htmldjango',
-			'edge',
-			'eelixir',
-			'elixir',
-			'ejs',
-			'erb',
-			'eruby',
-			'gohtml',
-			'gohtmltmpl',
-			'haml',
-			'handlebars',
-			'hbs',
-			'html',
-			'htmlangular',
-			'html-eex',
-			'heex',
-			'jade',
-			'leaf',
-			'liquid',
-			'markdown',
-			'mdx',
-			'mustache',
-			'njk',
-			'nunjucks',
-			'php',
-			'razor',
-			'slim',
-			'twig',
-			'css',
-			'less',
-			'postcss',
-			'sass',
-			'scss',
-			'stylus',
-			'sugarss',
-			'javascript',
-			'javascriptreact',
-			'reason',
-			'rescript',
-			'typescript',
-			'typescriptreact',
-			'vue',
-			'svelte',
-			'templ',
-		},
-		capabilities = capabilities,
-		settings = {
-			tailwindCSS = {
-				classAttributes = { 'class', 'className', 'class:list', 'classList', 'ngClass' },
-				includeLanguages = {
-					eelixir = 'html-eex',
-					eruby = 'erb',
-					htmlangular = 'html',
-					templ = 'html',
-				},
-				lint = {
-					cssConflict = 'warning',
-					invalidApply = 'error',
-					invalidConfigPath = 'error',
-					invalidScreen = 'error',
-					invalidTailwindDirective = 'error',
-					invalidVariant = 'error',
-					recommendedVariantOrder = 'warning',
-				},
-				validate = true,
-			},
-		},
-	},
+
+	-- NOTE: I don't think i'll ever use this
+
+	-- -- TailwindCSS
+	-- -- NOTE: install with 'npm install -g @tailwindcss/language-server'
+
+	-- tailwind = {
+	-- 	name = 'tailwindcss',
+	-- 	cmd = { 'tailwindcss-language-server', '--stdio' },
+	-- 	root_dir = vim.fs.root(0, {
+	-- 		'tailwind.config.js',
+	-- 		'tailwind.config.cjs',
+	-- 		'tailwind.config.mjs',
+	-- 		'tailwind.config.ts',
+	-- 		'postcss.config.js',
+	-- 		'postcss.config.cjs',
+	-- 		'postcss.config.mjs',
+	-- 		'postcss.config.ts',
+	-- 		'package.json',
+	-- 		'node_modules',
+	-- 		'.git',
+	-- 	}),
+	-- 	filetypes = {
+	-- 		'aspnetcorerazor',
+	-- 		'astro',
+	-- 		'astro-markdown',
+	-- 		'blade',
+	-- 		'clojure',
+	-- 		'django-html',
+	-- 		'htmldjango',
+	-- 		'edge',
+	-- 		'ex',
+	-- 		'elixir',
+	-- 		'ejs',
+	-- 		'erb',
+	-- 		'eruby',
+	-- 		'gohtml',
+	-- 		'gohtmltmpl',
+	-- 		'haml',
+	-- 		'handlebars',
+	-- 		'hbs',
+	-- 		'html',
+	-- 		'htmlangular',
+	-- 		'html-eex',
+	-- 		'heex',
+	-- 		'jade',
+	-- 		'leaf',
+	-- 		'liquid',
+	-- 		'markdown',
+	-- 		'mdx',
+	-- 		'mustache',
+	-- 		'njk',
+	-- 		'nunjucks',
+	-- 		'php',
+	-- 		'razor',
+	-- 		'slim',
+	-- 		'twig',
+	-- 		'css',
+	-- 		'less',
+	-- 		'postcss',
+	-- 		'sass',
+	-- 		'scss',
+	-- 		'stylus',
+	-- 		'sugarss',
+	-- 		'javascript',
+	-- 		'javascriptreact',
+	-- 		'reason',
+	-- 		'rescript',
+	-- 		'typescript',
+	-- 		'typescriptreact',
+	-- 		'vue',
+	-- 		'svelte',
+	-- 		'templ',
+	-- 	},
+	-- 	capabilities = capabilities,
+	-- 	settings = {
+	-- 		tailwindCSS = {
+	-- 			classAttributes = { 'class', 'className', 'class:list', 'classList', 'ngClass' },
+	-- 			includeLanguages = {
+	-- 				eelixir = 'html-eex',
+	-- 				eruby = 'erb',
+	-- 				htmlangular = 'html',
+	-- 				templ = 'html',
+	-- 			},
+	-- 			lint = {
+	-- 				cssConflict = 'warning',
+	-- 				invalidApply = 'error',
+	-- 				invalidConfigPath = 'error',
+	-- 				invalidScreen = 'error',
+	-- 				invalidTailwindDirective = 'error',
+	-- 				invalidVariant = 'error',
+	-- 				recommendedVariantOrder = 'warning',
+	-- 			},
+	-- 			validate = true,
+	-- 		},
+	-- 	},
+	-- },
+
 	-- HTML
 	-- NOTE: installed with 'npm i -g vscode-langservers-extracted'
 	html = {
@@ -378,7 +398,7 @@ local servers = {
 		filetypes = { 'html', 'templ' },
 		capabilities = capabilities,
 		init_options = {
-			configurationSection = { 'html', 'css', 'javascript' },
+			configurationSection = { 'html', 'css', 'js' },
 			embeddedLanguages = {
 				css = true,
 				javascript = true,
@@ -386,6 +406,7 @@ local servers = {
 			provideFormatter = true,
 		},
 	},
+
 	-- Taplo
 	taplo = {
 		name = 'taplo',
@@ -399,12 +420,13 @@ local servers = {
 		filetypes = { 'toml' },
 		capabilities = capabilities,
 	},
-	-- TODO: Fix this
-	-- Pyright
-	pyright = {
-		name = 'pyright',
-		cmd = { 'pyright-langserver', '--stdio' },
+
+	-- Basedpyright
+	basedpyright = {
+		name = 'basedpyright',
+		cmd = { 'basedpyright-langserver', '--stdio' },
 		root_dir = vim.fs.root(0, {
+			'.git',
 			---@diagnostic disable-next-line undefined-field
 			vim.uv.cwd(), -- equivalent of `single_file_mode` in lspconfig
 		}),
@@ -458,13 +480,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 		-- Fix all eslint offenses on save in JavaScript/TypeScript files
 		---@diagnostic disable-next-line need-check-nil
-		if client.name == 'eslint' then
-			vim.api.nvim_create_autocmd('BufWritePre', {
-				group = 'Lsp',
-				buffer = bufnr,
-				command = 'EslintFixAll',
-			})
-		end
+		-- if client.name == 'eslint' then
+		-- 	vim.api.nvim_create_autocmd('BufWritePre', {
+		-- 		group = 'Lsp',
+		-- 		buffer = bufnr,
+		-- 		command = 'EslintFixAll',
+		-- 	})
+		-- end
 
 		--- Commands
 		-- Format
@@ -477,7 +499,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- Initializes all the possible clients for the current buffer if no arguments were passed
 local function start_lsp_client(name, filetypes)
 	-- Do not try to initialize the LSP if it is not installed
-	if vim.iter(filetypes):find(vim.fn.expand('%:e')) and vim.fn.executable(servers[name].cmd[1]) == 1 then
+	if
+		vim.iter(filetypes):find(vim.api.nvim_get_option_value('filetype', { buf = 0 }))
+		and vim.fn.executable(servers[name].cmd[1]) == 1
+	then
 		local active_clients_in_buffer = vim.iter(vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() }))
 			:map(function(client)
 				return client.name
@@ -485,7 +510,7 @@ local function start_lsp_client(name, filetypes)
 			:totable()
 		-- Do not duplicate the server if there is already a server attached to the buffer
 		if not vim.iter(active_clients_in_buffer):find(servers[name].name) then
-			vim.notify('[core.lsp] Starting ' .. name .. ' ...')
+			vim.notify('[core.lsp] Starting ' .. name .. ', it could take a bit of time ...')
 			---@diagnostic disable-next-line
 			vim.lsp.start(servers[name], { bufnr = vim.api.nvim_get_current_buf() })
 		end
@@ -623,11 +648,6 @@ end, {
 	end,
 })
 
--- Log
-vim.api.nvim_create_user_command('LspLog', function()
-	vim.cmd.vsplit(vim.lsp.log.get_filename())
-end, {})
-
 -- Start LSP servers as soon as possible
 for _, config in pairs(servers) do
 	vim.api.nvim_create_autocmd('FileType', {
@@ -637,4 +657,5 @@ for _, config in pairs(servers) do
 end
 
 -- vim: fdm=marker:fdl=0
+
 --- lsp.lua ends here
