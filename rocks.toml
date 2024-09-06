@@ -48,8 +48,7 @@ nvim-ufo = { version = "1.4.0", event = 'DeferredUIEnter' }
 "image.nvim" = "1.3.0"
 nvim-dap = "scm"
 "care.nvim" = { version = "scm", config = false, opt = true }
-
-# "oil.nvim" = "2.11.0"
+"helpview.nvim" = "1.1.0"
 
 [plugins."oil.nvim"]
 version = "2.12.1"
@@ -117,7 +116,6 @@ ft = ['html', 'css', 'js']
 [plugins.neocodeium]
 git = "monkoose/neocodeium"
 rev = "main"
-config = false
 
 [plugins.nvim-emmet]
 git = "olrtg/nvim-emmet"
@@ -197,7 +195,7 @@ ignorecase = true
 termguicolors = true
 updatetime = 100
 conceallevel = 2
-# foldlevel = 99
+foldlevel = 99
 fileformat = "unix"
 background = "dark"
 backspace = "2"
