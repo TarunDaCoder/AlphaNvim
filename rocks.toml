@@ -37,7 +37,7 @@ neorg-interim-ls = { version = "1.2.0" }
 nvim-spectre = { version = "scm", event = 'DeferredUIEnter' }
 nvim-notify = "3.13.5"
 "sus.nvim" = { version = "1.0.0", event = 'DeferredUIEnter' }
-rustaceanvim = { version = "5.2.3", ft = 'rs' }
+rustaceanvim = "5.2.3"
 "todo-comments.nvim" = { version = "1.3.0", event = 'DeferredUIEnter' }
 neorg-se = { version = "1.1.10" }
 "flash.nvim" = { version = "2.1.0" }
@@ -47,7 +47,7 @@ nvim-ufo = { version = "1.4.0", event = 'DeferredUIEnter' }
 "indentmini.nvim" = { version = "scm", event = 'DeferredUIEnter' }
 "image.nvim" = "1.3.0"
 nvim-dap = "scm"
-"care.nvim" = { version = "scm", config = false, opt = true }
+"care.nvim" = { version = "scm", config = false, opt = false }
 "helpview.nvim" = "1.1.0"
 
 [plugins."oil.nvim"]
@@ -56,23 +56,23 @@ keys = [{ lhs = '-', rhs = ':Oil<CR>', desc = 'Oil' }]
 
 [plugins.nvim-cmp]
 version = "scm"
-opt = false
+opt = true
 
 [plugins.cmp-cmdline]
 version = "scm"
-opt = false
+opt = true
 
 [plugins.cmp-nvim-lsp]
 version = "scm"
-opt = false
+opt = true
 
 [plugins.cmp-path]
 version = "scm"
-opt = false
+opt = true
 
 [plugins.cmp_luasnip]
 version = "scm"
-opt = false
+opt = true
 
 [plugins."telescope.nvim"]
 version = "scm"
@@ -132,7 +132,7 @@ config = false
 [plugins.care-lsp]
 git = "max397574/care-lsp"
 rev = "main"
-opt = true
+opt = false
 config = false
 
 [plugins."neominimap.nvim"]
@@ -172,6 +172,10 @@ config = false
 [plugins."lsp_lines.nvim"]
 git = "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
 rev = "v3.0.0^{}"
+
+[plugins.harpoon]
+git = "theprimeagen/harpoon"
+rev = "harpoon2"
 
 [config]
 plugins_dir = 'tarun/plugins/'
