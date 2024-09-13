@@ -1,5 +1,5 @@
 require('notify').setup({
-	render = 'default',
+	render = 'compact',
 })
 
 vim.notify = require('notify')
