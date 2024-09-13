@@ -12,7 +12,10 @@ vim.api.nvim_create_user_command('LspLog', function()
 end, {})
 
 -- -- I don't need to do anything if I'm not editing a file that I have an LSP configured for
-if not vim.iter({ 'c', 'cpp', 'zig', 'lua', 'js', 'ts', 'css', 'html', 'toml', 'py' }):find(vim.fn.expand('%:e')) then
+if
+	not vim.iter({ 'c', 'cpp', 'zig', 'lua', 'js', 'ts', 'css', 'toml', 'py', 'rust', 'html' })
+		:find(vim.fn.expand('%:e'))
+then
 	return
 end
 
@@ -389,24 +392,7 @@ local servers = {
 	-- 	},
 	-- },
 
-	-- HTML
-	-- NOTE: installed with 'npm i -g vscode-langservers-extracted'
-	html = {
-		name = 'html',
-		cmd = { 'vscode-html-language-server', '--stdio' },
-		root_dir = vim.fs.root(0, { 'package.json', '.git' }),
-		filetypes = { 'html', 'templ' },
-		capabilities = capabilities,
-		init_options = {
-			configurationSection = { 'html', 'css', 'js' },
-			embeddedLanguages = {
-				css = true,
-				javascript = true,
-			},
-			provideFormatter = true,
-		},
-	},
-
+	-- FIX: Need to fix this
 	-- Taplo
 	taplo = {
 		name = 'taplo',
@@ -432,6 +418,42 @@ local servers = {
 		}),
 		filetypes = { 'python' },
 		capabilities = capabilities,
+	},
+
+	-- FIX: Multiple instances of html and emmet-ls start when i open html files
+	-- HTML
+	-- NOTE: installed with 'npm i -g vscode-langservers-extracted'
+	html = {
+		name = 'html',
+		cmd = { 'vscode-html-language-server', '--stdio' },
+		root_dir = vim.fs.root(0, { 'package.json', '.git' }),
+		filetypes = { 'html', 'templ' },
+		capabilities = capabilities,
+		init_options = {
+			configurationSection = { 'html', 'css', 'js' },
+			embeddedLanguages = {
+				css = true,
+				javascript = true,
+			},
+			provideFormatter = true,
+		},
+	},
+
+	-- FIX: Multiple instances of html and emmet-ls start when i open html files
+	-- Emmet
+	emmet = {
+		name = 'emmet-ls',
+		cmd = { 'emmet-language-server', '--stdio' },
+		root_dir = vim.fs.root(0, {
+			'.git',
+			---@diagnostic disable-next-line undefined-field
+			vim.uv.cwd(), -- equivalent of `single_file_mode` in lspconfig
+		}),
+		filetypes = {
+			'html',
+			'css',
+			'javascript',
+		},
 	},
 }
 
@@ -495,171 +517,165 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 -- Global commands (start, stop, etc)
--- NOTE: rust-analyzer is handled by rustaceanvim so we ignore it here
-if vim.fn.expand('%:e') ~= 'rs' then
-	-- Start
-	-- Initializes all the possible clients for the current buffer if no arguments were passed
-	local function start_lsp_client(name, filetypes)
-		-- Do not try to initialize the LSP if it is not installed
-		if
-			vim.iter(filetypes):find(vim.api.nvim_get_option_value('filetype', { buf = 0 }))
-			and vim.fn.executable(servers[name].cmd[1]) == 1
-		then
-			local active_clients_in_buffer = vim.iter(vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() }))
-				:map(function(client)
-					return client.name
-				end)
-				:totable()
-			-- Do not duplicate the server if there is already a server attached to the buffer
-			if not vim.iter(active_clients_in_buffer):find(servers[name].name) then
-				vim.notify('[core.lsp] Starting ' .. name .. ', it could take a bit of time ...')
-				---@diagnostic disable-next-line
-				vim.lsp.start(servers[name], { bufnr = vim.api.nvim_get_current_buf() })
-			end
+-- Start
+-- Initializes all the possible clients for the current buffer if no arguments were passed
+local function start_lsp_client(name, filetypes)
+	-- Do not try to initialize the LSP if it is not installed
+	if
+		vim.iter(filetypes):find(vim.api.nvim_get_option_value('filetype', { buf = 0 }))
+		and vim.fn.executable(servers[name].cmd[1]) == 1
+	then
+		local active_clients_in_buffer = vim.iter(vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() }))
+			:map(function(client)
+				return client.name
+			end)
+			:totable()
+		-- Do not duplicate the server if there is already a server attached to the buffer
+		if not vim.iter(active_clients_in_buffer):find(servers[name].name) then
+			vim.notify('[core.lsp] Starting ' .. name .. ', it could take a bit of time ...')
+			---@diagnostic disable-next-line
+			vim.lsp.start(servers[name], { bufnr = vim.api.nvim_get_current_buf() })
 		end
 	end
+end
 
-	vim.api.nvim_create_user_command('LspStart', function(args)
-		if #args.fargs < 1 then
-			vim.iter(servers)
-				:map(function(s)
-					return { [s] = servers[s].filetypes }
-				end)
-				:map(function(s)
-					for server, filetypes in pairs(s) do
-						start_lsp_client(server, filetypes)
-					end
-				end)
-				:totable()
-		else
-			for _, server in ipairs(args.fargs) do
-				---@diagnostic disable-next-line undefined-field
-				start_lsp_client(server, servers[server].filetypes)
-			end
+vim.api.nvim_create_user_command('LspStart', function(args)
+	if #args.fargs < 1 then
+		vim.iter(servers)
+			:map(function(s)
+				return { [s] = servers[s].filetypes }
+			end)
+			:map(function(s)
+				for server, filetypes in pairs(s) do
+					start_lsp_client(server, filetypes)
+				end
+			end)
+			:totable()
+	else
+		for _, server in ipairs(args.fargs) do
+			---@diagnostic disable-next-line undefined-field
+			start_lsp_client(server, servers[server].filetypes)
 		end
-	end, {
-		nargs = '*',
-		complete = function(args)
-			local server_names = vim.iter(servers)
-				:map(function(s)
-					return s
-				end)
-				:totable()
-			if #args < 1 then
-				return server_names
-			end
+	end
+end, {
+	nargs = '*',
+	complete = function(args)
+		local server_names = vim.iter(servers)
+			:map(function(s)
+				return s
+			end)
+			:totable()
+		if #args < 1 then
+			return server_names
+		end
 
-			local match = vim.iter(server_names)
-				:filter(function(server)
-					if string.find(server, '^' .. args) then
-						return server
-						---@diagnostic disable-next-line missing-return
-					end
-				end)
-				:totable()
-			return match
-		end,
-	})
+		local match = vim.iter(server_names)
+			:filter(function(server)
+				if string.find(server, '^' .. args) then
+					return server
+					---@diagnostic disable-next-line missing-return
+				end
+			end)
+			:totable()
+		return match
+	end,
+})
 
-	-- Stop
-	-- Stops all the active clients in the current buffer if no arguments were passed
-	vim.api.nvim_create_user_command('LspStop', function(args)
-		local active_clients_in_buffer = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
+-- Stop
+-- Stops all the active clients in the current buffer if no arguments were passed
+vim.api.nvim_create_user_command('LspStop', function(args)
+	local active_clients_in_buffer = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
 
-		if #args.fargs < 1 then
+	if #args.fargs < 1 then
+		for _, client in ipairs(active_clients_in_buffer) do
+			vim.notify('[core.lsp] Shutting down ' .. client.name .. ' ...')
+			client.stop(true)
+		end
+	else
+		for _, name in ipairs(args.fargs) do
 			for _, client in ipairs(active_clients_in_buffer) do
-				vim.notify('[core.lsp] Shutting down ' .. client.name .. ' ...')
-				client.stop(true)
-			end
-		else
-			for _, name in ipairs(args.fargs) do
-				for _, client in ipairs(active_clients_in_buffer) do
-					if name == client.name then
-						vim.notify('[core.lsp] Shutting down ' .. client.name .. ' ...')
-						client.stop(true)
-					end
+				if name == client.name then
+					vim.notify('[core.lsp] Shutting down ' .. client.name .. ' ...')
+					client.stop(true)
 				end
 			end
 		end
-	end, {
-		nargs = '*',
-		complete = function(args)
-			local active_clients_in_buffer = vim.iter(vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() }))
-				:map(function(s)
-					return s.name
-				end)
-				:totable()
-			if #args < 1 then
-				return active_clients_in_buffer
-			end
-
-			local match = vim.iter(active_clients_in_buffer)
-				:filter(function(client)
-					if string.find(client, '^' .. args) then
-						return client
-						---@diagnostic disable-next-line missing-return
-					end
-				end)
-				:totable()
-			return match
-		end,
-	})
-
-	-- Restart
-	vim.api.nvim_create_user_command('LspRestart', function(args)
-		local active_clients_in_buffer = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
-
-		local using_fargs = #args.fargs > 0
-		for _, client in ipairs(using_fargs and args.fargs or active_clients_in_buffer) do
-			if using_fargs then
-				-- NOTE: I don't think I'll ever have more than one instance of the same client in a buffer
-				client = vim.lsp.get_clients({ name = client.name })[1]
-			end
-			if not client.is_stopped() then
-				vim.notify('[core.lsp] Restarting ' .. client.name .. ', it could take a bit of time ...')
-				local server = client.name
-				client.stop(true)
-				-- We defer the initialization to wait for the client to completely stop
-				vim.defer_fn(function()
-					---@diagnostic disable-next-line
-					vim.lsp.start(servers[server], { bufnr = vim.api.nvim_get_current_buf() })
-				end, 500)
-			end
+	end
+end, {
+	nargs = '*',
+	complete = function(args)
+		local active_clients_in_buffer = vim.iter(vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() }))
+			:map(function(s)
+				return s.name
+			end)
+			:totable()
+		if #args < 1 then
+			return active_clients_in_buffer
 		end
-	end, {
-		nargs = '*',
-		complete = function(args)
-			local active_clients_in_buffer = vim.iter(vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() }))
-				:map(function(s)
-					return s.name
-				end)
-				:totable()
-			if #args < 1 then
-				return active_clients_in_buffer
-			end
 
-			local match = vim.iter(active_clients_in_buffer)
-				:filter(function(client)
-					if string.find(client, '^' .. args) then
-						return client
-						---@diagnostic disable-next-line missing-return
-					end
-				end)
-				:totable()
-			return match
-		end,
-	})
-end
+		local match = vim.iter(active_clients_in_buffer)
+			:filter(function(client)
+				if string.find(client, '^' .. args) then
+					return client
+					---@diagnostic disable-next-line missing-return
+				end
+			end)
+			:totable()
+		return match
+	end,
+})
+
+-- Restart
+vim.api.nvim_create_user_command('LspRestart', function(args)
+	local active_clients_in_buffer = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
+
+	local using_fargs = #args.fargs > 0
+	for _, client in ipairs(using_fargs and args.fargs or active_clients_in_buffer) do
+		if using_fargs then
+			-- NOTE: I don't think I'll ever have more than one instance of the same client in a buffer
+			client = vim.lsp.get_clients({ name = client.name })[1]
+		end
+		if not client.is_stopped() then
+			vim.notify('[core.lsp] Restarting ' .. client.name .. ', it could take a bit of time ...')
+			local server = client.name
+			client.stop(true)
+			-- We defer the initialization to wait for the client to completely stop
+			vim.defer_fn(function()
+				---@diagnostic disable-next-line
+				vim.lsp.start(servers[server], { bufnr = vim.api.nvim_get_current_buf() })
+			end, 500)
+		end
+	end
+end, {
+	nargs = '*',
+	complete = function(args)
+		local active_clients_in_buffer = vim.iter(vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() }))
+			:map(function(s)
+				return s.name
+			end)
+			:totable()
+		if #args < 1 then
+			return active_clients_in_buffer
+		end
+
+		local match = vim.iter(active_clients_in_buffer)
+			:filter(function(client)
+				if string.find(client, '^' .. args) then
+					return client
+					---@diagnostic disable-next-line missing-return
+				end
+			end)
+			:totable()
+		return match
+	end,
+})
 
 -- Start LSP servers as soon as possible
--- NOTE: rust-analyzer is handled by rustaceanvim so we ignore it here
-if vim.fn.expand('%:e') ~= 'rs' then
-	for _, config in pairs(servers) do
-		vim.api.nvim_create_autocmd('FileType', {
-			pattern = config.filetypes,
-			command = 'LspStart',
-		})
-	end
+for _, config in pairs(servers) do
+	vim.api.nvim_create_autocmd('FileType', {
+		pattern = config.filetypes,
+		command = 'LspStart',
+	})
 end
 
 -- vim: fdm=marker:fdl=0
