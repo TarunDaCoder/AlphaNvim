@@ -30,12 +30,6 @@ vim.keymap.set('i', '<c-d>', function()
 	end
 end)
 
--- require('care').setup({
--- 	ui = {
--- 		ghost_text = { enabled = false },
--- 	},
--- })
-
 vim.api.nvim_create_autocmd('InsertLeave', {
 	callback = function()
 		require('care').core.menu:close()
