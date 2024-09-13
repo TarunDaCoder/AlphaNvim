@@ -1,29 +1,31 @@
--- Onedark {{{
-require('onedarkpro').setup({
-	options = {
-		cursorline = true,
-		highlight_inactive_windows = true,
-		transparency = false,
-	},
-	plugins = {
-		all = true,
+-- Catppuccin {{{
+require('catppuccin').setup({
+	flavour = 'mocha',
+	integrations = {
+		alpha = true,
+		notify = true,
+		barbar = true,
+		overseer = true,
+		telescope = {
+			enabled = true,
+			style = 'nvchad',
+		},
+		lsp_trouble = true,
+		which_key = true,
 	},
 	styles = {
-		types = 'NONE',
-		methods = 'NONE',
-		numbers = 'NONE',
-		strings = 'NONE',
-		comments = 'italic',
-		keywords = 'bold,italic',
-		constants = 'NONE',
-		functions = 'italic',
-		operators = 'NONE',
-		variables = 'NONE',
-		parameters = 'NONE',
-		conditionals = 'italic',
-		virtual_text = 'bold,italic',
+		comments = { 'italic' },
+		functions = { 'italic' },
+		keywords = { 'italic' },
+		strings = {},
+		variables = {},
+		numbers = {},
+		booleans = {},
+		properties = {},
+		types = {},
+		operators = {},
 	},
 })
 
-vim.cmd([[colorscheme onedark_vivid]])
+vim.cmd.colorscheme('catppuccin')
 -- }}}
