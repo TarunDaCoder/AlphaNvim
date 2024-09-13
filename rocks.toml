@@ -1,31 +1,22 @@
-# This is your rocks.nvim plugins declaration file.
-# Here is a small yet pretty detailed example on how to use it:
-#
-# [plugins]
-# nvim-treesitter = "semver_version"  # e.g. "1.0.0"
+[treesitter]
+auto_highlight = "all"
+auto_install = "prompt"
 
-# List of non-Neovim rocks.
-# This includes things like `toml` or other lua packages.
 [rocks]
 
-# List of Neovim plugins to install alongside their versions.
-# If the plugin name contains a dot then you must add quotes to the key name!
 [plugins]
 "rocks.nvim" = "2.40.0"
 nvim-web-devicons = "0.100"
 "rocks-git.nvim" = "2.2.0"
 "plenary.nvim" = "scm"
 luasnip = { version = "2.3.0", event = 'InsertEnter' }
-"rocks-config.nvim" = "2.2.0"
+"rocks-config.nvim" = "2.3.1"
 nvim-ts-autotag = "scm"
 nvim-surround = "2.1.5"
 "overseer.nvim" = "1.4.0"
 "feline.nvim" = { version = "1.6.3", event = 'BufEnter' }
-"conform.nvim" = { version = "8.0.0", event = 'BufWritePre' }
+"conform.nvim" = { version = "8.1.0", event = 'BufWritePre' }
 "trouble.nvim" = "3.6.0"
-"mason.nvim" = "1.10.0"
-# "mason-lspconfig.nvim" = "1.30.0"
-# nvim-lspconfig = "0.1.8"
 "lspkind.nvim" = "scm"
 nvim-autopairs = { version = "scm", event = 'DeferredUIEnter' }
 "which-key.nvim" = { version = "3.13.2", event = 'DeferredUIEnter' }
@@ -33,25 +24,35 @@ alpha-nvim = "scm"
 "rocks-lazy.nvim" = "1.0.1"
 "rocks-edit.nvim" = "scm"
 friendly-snippets = { version = "scm", event = 'InsertEnter' }
-neorg-interim-ls = { version = "1.2.0" }
+neorg-interim-ls = { version = "1.2.1" }
 nvim-spectre = { version = "scm", event = 'DeferredUIEnter' }
 nvim-notify = "3.13.5"
 "sus.nvim" = { version = "1.0.0", event = 'DeferredUIEnter' }
-rustaceanvim = "5.2.3"
+rustaceanvim = "5.4.2"
 "todo-comments.nvim" = { version = "1.3.0", event = 'DeferredUIEnter' }
 neorg-se = { version = "1.1.10" }
 "flash.nvim" = { version = "2.1.0" }
-nvim-treesitter = "scm"
+# nvim-treesitter = "scm"
 nvim-ufo = { version = "1.4.0", event = 'DeferredUIEnter' }
 "lazydev.nvim" = { version = "1.8.0" }
 "indentmini.nvim" = { version = "scm", event = 'DeferredUIEnter' }
 "image.nvim" = "1.3.0"
 nvim-dap = "scm"
-"care.nvim" = { version = "scm", config = false, opt = false }
 "helpview.nvim" = "1.1.0"
+"foldtext.nvim" = "1.0.0"
+"markview.nvim" = "23.1.0"
+"care.nvim" = "scm"
+"rocks-treesitter.nvim" = "1.1.2"
+tree-sitter-toml = "scm"
+tree-sitter-lua = "scm"
+tree-sitter-norg-meta = "0.1.0"
+nvim-treesitter-legacy-api = "0.9.2"
+tree-sitter-html = "scm"
+tree-sitter-zig = "scm"
+tree-sitter-html_tags = "scm"
 
 [plugins."oil.nvim"]
-version = "2.12.1"
+version = "2.12.2"
 keys = [{ lhs = '-', rhs = ':Oil<CR>', desc = 'Oil' }]
 
 [plugins.nvim-cmp]
@@ -60,7 +61,7 @@ opt = true
 
 [plugins.cmp-cmdline]
 version = "scm"
-opt = true
+# opt = true
 
 [plugins.cmp-nvim-lsp]
 version = "scm"
@@ -68,11 +69,11 @@ opt = true
 
 [plugins.cmp-path]
 version = "scm"
-opt = true
+# opt = true
 
 [plugins.cmp_luasnip]
 version = "scm"
-opt = true
+# opt = true
 
 [plugins."telescope.nvim"]
 version = "scm"
@@ -83,7 +84,7 @@ event = 'DeferredUIEnter'
 
 [plugins.'onedarkpro.nvim']
 version = "1.0.0"
-colorscheme = ['onedark', 'onedark_vivd', 'onelight', 'onedark_dark']
+# colorscheme = ['onedark', 'onedark_vivd', 'onelight', 'onedark_dark']
 
 [plugins.neorg]
 version = "9.1.1"
@@ -116,28 +117,17 @@ ft = ['html', 'css', 'js']
 [plugins.neocodeium]
 git = "monkoose/neocodeium"
 rev = "main"
+# opt = true
 
 [plugins.nvim-emmet]
 git = "olrtg/nvim-emmet"
 rev = "main"
-# event = 'DeferredUIEnter'
 ft = ['html', 'css', 'js']
-
-[plugins."markview.nvim"]
-git = "OXY2DEV/markview.nvim"
-rev = "main"
-ft = 'markdown'
-config = false
-
-[plugins.care-lsp]
-git = "max397574/care-lsp"
-rev = "main"
-opt = false
-config = false
 
 [plugins."neominimap.nvim"]
 git = "isrothy/neominimap.nvim"
 rev = "v3.6.0"
+opt = true
 
 [plugins."selabel.nvim"]
 git = "axlefublr/selabel.nvim"
@@ -160,10 +150,6 @@ rev = "v0.3.1"
 git = "axlefublr/dress.nvim"
 rev = "4c293b1d2688dbe06d0533dcbd98c3ad7f2534b7"
 
-[plugins."wife.nvim"]
-git = "axlefublr/wife.nvim"
-rev = "11c6b6ae42cf10266e13d3ff108ff302394358b7"
-
 [plugins."diagram.nvim"]
 git = "3rd/diagram.nvim"
 rev = "feaab9bf6b5e895a8eca18947214c2787410648d"
@@ -173,9 +159,13 @@ config = false
 git = "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
 rev = "v3.0.0^{}"
 
-[plugins.harpoon]
-git = "theprimeagen/harpoon"
-rev = "harpoon2"
+[plugins.care-cmp]
+git = "max397574/care-cmp"
+rev = 'main'
+
+[plugins.nvim]
+git = "catppuccin/nvim"
+rev = "v1.9.0"
 
 [config]
 plugins_dir = 'tarun/plugins/'
