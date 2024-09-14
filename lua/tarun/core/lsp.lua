@@ -12,10 +12,7 @@ vim.api.nvim_create_user_command('LspLog', function()
 end, {})
 
 -- -- I don't need to do anything if I'm not editing a file that I have an LSP configured for
-if
-	not vim.iter({ 'c', 'cpp', 'zig', 'lua', 'js', 'ts', 'css', 'toml', 'py', 'rust', 'html' })
-		:find(vim.fn.expand('%:e'))
-then
+if not vim.iter({ 'c', 'cpp', 'zig', 'lua', 'js', 'ts', 'css', 'py', 'rust', 'html' }):find(vim.fn.expand('%:e')) then
 	return
 end
 
@@ -204,6 +201,7 @@ local servers = {
 		capabilities = capabilities,
 	},
 
+	-- FIX: Multiple instances of lsp servers start up
 	-- TSServer
 	tsserver = {
 		name = 'tsserver',
@@ -230,6 +228,7 @@ local servers = {
 		},
 	},
 
+	-- FIX: Multiple instances of lsp servers start up
 	-- EslintLS
 	-- NOTE: install with 'npm i -g vscode-langservers-extracted'
 	eslint = {
@@ -295,118 +294,6 @@ local servers = {
 		},
 	},
 
-	-- NOTE: I don't think i'll ever use this
-
-	-- -- TailwindCSS
-	-- -- NOTE: install with 'npm install -g @tailwindcss/language-server'
-
-	-- tailwind = {
-	-- 	name = 'tailwindcss',
-	-- 	cmd = { 'tailwindcss-language-server', '--stdio' },
-	-- 	root_dir = vim.fs.root(0, {
-	-- 		'tailwind.config.js',
-	-- 		'tailwind.config.cjs',
-	-- 		'tailwind.config.mjs',
-	-- 		'tailwind.config.ts',
-	-- 		'postcss.config.js',
-	-- 		'postcss.config.cjs',
-	-- 		'postcss.config.mjs',
-	-- 		'postcss.config.ts',
-	-- 		'package.json',
-	-- 		'node_modules',
-	-- 		'.git',
-	-- 	}),
-	-- 	filetypes = {
-	-- 		'aspnetcorerazor',
-	-- 		'astro',
-	-- 		'astro-markdown',
-	-- 		'blade',
-	-- 		'clojure',
-	-- 		'django-html',
-	-- 		'htmldjango',
-	-- 		'edge',
-	-- 		'ex',
-	-- 		'elixir',
-	-- 		'ejs',
-	-- 		'erb',
-	-- 		'eruby',
-	-- 		'gohtml',
-	-- 		'gohtmltmpl',
-	-- 		'haml',
-	-- 		'handlebars',
-	-- 		'hbs',
-	-- 		'html',
-	-- 		'htmlangular',
-	-- 		'html-eex',
-	-- 		'heex',
-	-- 		'jade',
-	-- 		'leaf',
-	-- 		'liquid',
-	-- 		'markdown',
-	-- 		'mdx',
-	-- 		'mustache',
-	-- 		'njk',
-	-- 		'nunjucks',
-	-- 		'php',
-	-- 		'razor',
-	-- 		'slim',
-	-- 		'twig',
-	-- 		'css',
-	-- 		'less',
-	-- 		'postcss',
-	-- 		'sass',
-	-- 		'scss',
-	-- 		'stylus',
-	-- 		'sugarss',
-	-- 		'javascript',
-	-- 		'javascriptreact',
-	-- 		'reason',
-	-- 		'rescript',
-	-- 		'typescript',
-	-- 		'typescriptreact',
-	-- 		'vue',
-	-- 		'svelte',
-	-- 		'templ',
-	-- 	},
-	-- 	capabilities = capabilities,
-	-- 	settings = {
-	-- 		tailwindCSS = {
-	-- 			classAttributes = { 'class', 'className', 'class:list', 'classList', 'ngClass' },
-	-- 			includeLanguages = {
-	-- 				eelixir = 'html-eex',
-	-- 				eruby = 'erb',
-	-- 				htmlangular = 'html',
-	-- 				templ = 'html',
-	-- 			},
-	-- 			lint = {
-	-- 				cssConflict = 'warning',
-	-- 				invalidApply = 'error',
-	-- 				invalidConfigPath = 'error',
-	-- 				invalidScreen = 'error',
-	-- 				invalidTailwindDirective = 'error',
-	-- 				invalidVariant = 'error',
-	-- 				recommendedVariantOrder = 'warning',
-	-- 			},
-	-- 			validate = true,
-	-- 		},
-	-- 	},
-	-- },
-
-	-- FIX: Need to fix this
-	-- Taplo
-	taplo = {
-		name = 'taplo',
-		cmd = { 'taplo', 'lsp', 'stdio' },
-		root_dir = vim.fs.root(0, {
-			'taplo.toml',
-			'.git',
-			---@diagnostic disable-next-line undefined-field
-			vim.uv.cwd(), -- equivalent of `single_file_mode` in lspconfig
-		}),
-		filetypes = { 'toml' },
-		capabilities = capabilities,
-	},
-
 	-- Basedpyright
 	basedpyright = {
 		name = 'basedpyright',
@@ -420,7 +307,7 @@ local servers = {
 		capabilities = capabilities,
 	},
 
-	-- FIX: Multiple instances of html and emmet-ls start when i open html files
+	-- FIX: Multiple instances of lsp servers
 	-- HTML
 	-- NOTE: installed with 'npm i -g vscode-langservers-extracted'
 	html = {
@@ -500,7 +387,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			},
 		})
 
-		-- Fix all eslint offenses on save in JavaScript/TypeScript files
+		-- NOTE: Fix all eslint offenses on save in JavaScript/TypeScript files
 		---@diagnostic disable-next-line need-check-nil
 		-- if client.name == 'eslint' then
 		-- 	vim.api.nvim_create_autocmd('BufWritePre', {
