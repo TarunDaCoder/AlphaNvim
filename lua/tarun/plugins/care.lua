@@ -102,7 +102,6 @@ return {
 	'max397574/care.nvim',
 	enabled = true,
 	event = 'InsertEnter',
-	dependencies = { 'max397574/care-lsp', event = 'InsertEnter' },
 	config = function()
 		vim.keymap.set('i', '<c-n>', function()
 			vim.snippet.jump(1)
