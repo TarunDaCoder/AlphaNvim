@@ -6,10 +6,4 @@ return {
 	{ 'OXY2DEV/markview.nvim', ft = 'markdown', opts = {} },
 	{ 'monkoose/neocodeium', event = 'VeryLazy', opts = {} },
 	{ 'barrett-ruth/live-server.nvim', event = 'VeryLazy', opts = {} },
-	{
-		'olrtg/nvim-emmet',
-		keys = {
-			{ 'n', '<leader>xe', require('nvim-emmet').wrap_with_abbreviation, { desc = 'Emmet' } },
-		},
-	},
 }
