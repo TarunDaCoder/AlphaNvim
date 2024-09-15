@@ -30,3 +30,6 @@ local hl = vim.api.nvim_set_hl
 hl(0, '@neorg.todo_items.on_hold.norg', { fg = '#89B4FB', bg = 'none' })
 
 hl(0, '@care.type.File', { fg = '#F5E0DD', bg = 'none' })
+
+hl(0, 'IndentLine', { fg = '#63667c', bg = 'none' })
+hl(0, 'IndentLineCurrent', { fg = '#04a5e5', bg = 'none' })
