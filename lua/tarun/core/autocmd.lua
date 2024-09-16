@@ -12,11 +12,12 @@ cmd({ 'VimLeave' }, {
 	group = 'Shape',
 })
 
-cmd({ 'CursorHold', 'CursorHoldI', 'CursorMoved', 'CursorMovedI' }, {
-	desc = 'Open float when there is diagnostics',
-	group = 'Lsp',
-	callback = vim.diagnostic.open_float,
-})
+-- NOTE: Remove this for now
+-- cmd({ 'CursorHold', 'CursorHoldI', 'CursorMoved', 'CursorMovedI' }, {
+-- 	desc = 'Open float when there is diagnostics',
+-- 	group = 'Lsp',
+-- 	callback = vim.diagnostic.open_float,
+-- })
 
 cmd({
 	'FileChangedShellPost',
@@ -71,20 +72,4 @@ cmd('FileType', {
 	callback = function()
 		vim.keymap.set('n', 'q', vim.cmd.close, { desc = 'Close the current buffer', buffer = true })
 	end,
-})
-
--- vim.api.nvim_create_autocmd({ 'CmdlineEnter' }, {
--- 	pattern = 'Rocks install ',
--- 	callback = function()
--- 		vim.api.nvim_command('Rocks sync')
--- 	end,
--- })
-
-vim.api.nvim_create_user_command('RocksInstall', function(opts)
-	-- Install the plugin
-	vim.cmd('Rocks install ' .. opts.args)
-	-- Run the sync command
-	vim.cmd('Rocks sync')
-end, {
-	nargs = 1, -- Expects one argument
 })
