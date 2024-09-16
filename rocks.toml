@@ -25,7 +25,6 @@ alpha-nvim = "scm"
 "rocks-edit.nvim" = "scm"
 friendly-snippets = { version = "scm", event = 'InsertEnter' }
 neorg-interim-ls = { version = "1.2.1" }
-nvim-spectre = { version = "scm", event = 'DeferredUIEnter' }
 nvim-notify = { version = "3.13.5" }
 "sus.nvim" = { version = "1.0.0", event = 'DeferredUIEnter' }
 rustaceanvim = { version = "5.4.2", ft = 'rust' }
@@ -49,6 +48,12 @@ tree-sitter-norg-meta = "0.1.0"
 tree-sitter-html = "scm"
 tree-sitter-zig = "scm"
 tree-sitter-html_tags = "scm"
+tree-sitter-regex = "scm"
+tree-sitter-javascript = "scm"
+tree-sitter-typescript = "scm"
+tree-sitter-ecma = "scm"
+tree-sitter-rust = "scm"
+tree-sitter-tmux = "0.0.11"
 
 [plugins."oil.nvim"]
 version = "2.12.2"
@@ -112,7 +117,7 @@ ft = ['html', 'css', 'js']
 git = "monkoose/neocodeium"
 rev = "main"
 event = 'InsertEnter'
-# opt = true
+opt = true
 
 [plugins."neominimap.nvim"]
 git = "isrothy/neominimap.nvim"
@@ -167,6 +172,13 @@ rev = 'main'
 git = "catppuccin/nvim"
 rev = "v1.9.0"
 
+[plugins.nvim-rip-substitute]
+git = "chrisgrieser/nvim-rip-substitute"
+cmd = "RipSubstitute"
+keys = [
+  { lhs = '<leader>r', rhs = ':RipSubstitute<CR>', desc = 'Search and Replace' },
+]
+
 [config]
 plugins_dir = 'tarun/plugins/'
 auto_setup = true
@@ -196,5 +208,5 @@ backspace = "2"
 swapfile = false
 laststatus = 3
 timeoutlen = 150
-signcolumn = 'auto:2'
+signcolumn = 'yes:2'
 cmdheight = 0
