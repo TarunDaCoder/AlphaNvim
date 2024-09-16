@@ -12,7 +12,7 @@ vim.api.nvim_create_user_command('LspLog', function()
 end, {})
 
 -- -- I don't need to do anything if I'm not editing a file that I have an LSP configured for
-if not vim.iter({ 'c', 'cpp', 'zig', 'lua', 'js', 'ts', 'css', 'py', 'rust', 'html' }):find(vim.fn.expand('%:e')) then
+if not vim.iter({ 'c', 'cpp', 'zig', 'lua', 'js', 'ts', 'css', 'py', 'rs', 'html' }):find(vim.fn.expand('%:e')) then
 	return
 end
 
