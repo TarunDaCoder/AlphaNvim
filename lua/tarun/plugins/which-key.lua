@@ -39,14 +39,7 @@ wk.add({
 })
 
 wk.add({
-	{ '<leader>s', group = ' Spectre', icon = '󰛔 ' },
-	{
-		'<leader>sp',
-		":lua require('spectre').open_file_search({select_word=true})<CR>",
-		desc = 'Search in current file',
-	},
-	{ '<leader>ss', ":lua require('spectre').toggle()<CR>", desc = 'Find and replace' },
-	{ '<leader>sw', ":lua require('spectre').open_visual()<CR>", desc = 'Search current word' },
+	{ '<leadeer>r', ':RipSubstitute', desc = 'Search and Replace', icon = '󰍉 ' },
 })
 
 wk.add({

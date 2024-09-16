@@ -32,7 +32,7 @@ git clone https://github.com/TarunDaCoder/AlphaNvim.git ~/.config/nvim
 - [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [which-key.nvim](https://github.com/folke/which-key.nvim)
 - [alpha-nvim](https://github.com/goolord/alpha-nvim) dashboard
-- [nvim-spectre](https://github.com/nvim-pack/nvim-spectre) quick find and replace
+- [nvim-rip-substitute](https://github.com/chrisgrieser/nvim-rip-substitute) for quick search and replace
 - [image.nvim](https://github.com/3rd/image.nvim) for image previewing
 - [sus.nvim](https://github.com/TarunDaCoder/sus.nvim) for a little bit of fun
 - and many more...
