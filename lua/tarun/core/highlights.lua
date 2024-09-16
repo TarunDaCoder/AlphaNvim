@@ -28,8 +28,9 @@ local hl = vim.api.nvim_set_hl
 -- hl(0, 'FoldColumn', { bg = '#2d323b', fg = '#495162' })
 --
 hl(0, '@neorg.todo_items.on_hold.norg', { fg = '#89B4FB', bg = 'none' })
+hl(0, '@neorg.todo_items.urgent.norg', { fg = '#f38ba9', bg = 'none' })
 
 hl(0, '@care.type.File', { fg = '#F5E0DD', bg = 'none' })
 
 hl(0, 'IndentLine', { fg = '#63667c', bg = 'none' })
-hl(0, 'IndentLineCurrent', { fg = '#04a5e5', bg = 'none' })
+hl(0, 'IndentLineCurrent', { fg = '#91d7e3', bg = 'none' })
