@@ -59,18 +59,16 @@ neorg.setup({
 		['external.interim-ls'] = {
 			config = {
 				completion_provider = {
-					-- enable/disable the completion provider. On by default.
 					enable = true,
-
-					-- Try to complete categories. Requires benlubas/neorg-se
-					-- categories = true,
+					categories = true,
 				},
 			},
 		},
-		-- ['external.search'] = {
-		-- 	config = {
-		-- 		index_on_start = true,
-		-- 	},
-		-- },
+		['core.ui'] = {},
+		['external.search'] = {
+			config = {
+				index_on_start = true,
+			},
+		},
 	},
 })
