@@ -39,7 +39,7 @@ wk.add({
 })
 
 wk.add({
-	{ '<leadeer>r', ':RipSubstitute', desc = 'Search and Replace', icon = '󰍉 ' },
+	{ '<leader>s', ':RipSubstitute', desc = 'Search and Replace', icon = '󰍉 ' },
 })
 
 wk.add({
