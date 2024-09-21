@@ -33,13 +33,11 @@ wk.add({
 })
 
 wk.add({
-	{ '<leader>e', group = ' NvimTree', icon = '󱁕' },
-	{ '<leader>ee', ':NvimTreeToggle<CR>', desc = 'Toggle' },
-	{ '<leader>ef', ':NvimTreeFindFile<CR>', desc = 'Find file' },
+	{ '<leader>e', ':NvimTreeToggle<CR>', desc = 'File Explorer' },
 })
 
 wk.add({
-	{ '<leader>s', ':RipSubstitute', desc = 'Search and Replace', icon = '󰍉 ' },
+	{ '<leader>s', ':RipSubstitute<CR>', desc = 'Search and Replace', icon = '󰍉 ' },
 })
 
 wk.add({
