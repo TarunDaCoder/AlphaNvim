@@ -38,7 +38,6 @@ g.loaded_netrwPlugin = 1
 g.loaded_netrwSettings = 1
 g.loaded_ftplugin = 1
 g.did_load_ftplugin = 1
-
 g.loaded_python3_provider = 1
 g.loaded_python_provider = 1
 g.loaded_ruby_provider = 1
