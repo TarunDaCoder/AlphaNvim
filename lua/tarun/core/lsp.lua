@@ -1,18 +1,12 @@
---- lsp.lua - Language Server Protocol integration
---
--- Author:  NTBBloodbath <bloodbathalchemist@protonmail.com>
--- URL:     https://github.com/NTBBloodbath/nvim
--- License: GPLv3
---
---- Code:
-
 -- Log
 vim.api.nvim_create_user_command('LspLog', function()
 	vim.cmd.vsplit(vim.lsp.log.get_filename())
 end, {})
 
 -- -- I don't need to do anything if I'm not editing a file that I have an LSP configured for
-if not vim.iter({ 'c', 'cpp', 'zig', 'lua', 'js', 'ts', 'css', 'py', 'rs', 'html' }):find(vim.fn.expand('%:e')) then
+if
+	not vim.iter({ 'c', 'cpp', 'zig', 'lua', 'js', 'ts', 'css', 'py', 'rs', 'html', 'toml' }):find(vim.fn.expand('%:e'))
+then
 	return
 end
 
@@ -310,20 +304,32 @@ local servers = {
 	-- FIX: Multiple instances of lsp servers
 	-- HTML
 	-- NOTE: installed with 'npm i -g vscode-langservers-extracted'
-	html = {
-		name = 'html',
-		cmd = { 'vscode-html-language-server', '--stdio' },
-		root_dir = vim.fs.root(0, { 'package.json', '.git' }),
-		filetypes = { 'html', 'templ' },
-		capabilities = capabilities,
-		init_options = {
-			configurationSection = { 'html', 'css', 'js' },
-			embeddedLanguages = {
-				css = true,
-				javascript = true,
-			},
-			provideFormatter = true,
-		},
+	-- html = {
+	-- 	name = 'html',
+	-- 	cmd = { 'vscode-html-language-server', '--stdio' },
+	-- 	root_dir = vim.fs.root(0, { 'package.json', '.git' }),
+	-- 	filetypes = { 'html', 'templ' },
+	-- 	capabilities = capabilities,
+	-- 	init_options = {
+	-- 		configurationSection = { 'html', 'css', 'js' },
+	-- 		embeddedLanguages = {
+	-- 			css = true,
+	-- 			javascript = true,
+	-- 		},
+	-- 		provideFormatter = true,
+	-- 	},
+	-- },
+
+	-- Superhtml
+	superhtml = {
+		name = 'superhtml',
+		cmd = { 'superhtml', 'lsp' },
+		root_dir = vim.fs.root(0, {
+			'.git',
+			---@diagnostic disable-next-line undefined-field
+			vim.uv.cwd(), -- equivalent of `single_file_mode` in lspconfig
+		}),
+		filetypes = { 'html', 'shtml', 'htm' },
 	},
 
 	-- FIX: Multiple instances of html and emmet-ls start when i open html files
@@ -365,29 +371,34 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		local wk = require('which-key')
 
 		wk.add({
-			{ 'gD', vim.lsp.buf.declaration, desc = 'Go to declaration', icon = ' ' },
+			{ '<leader>l', group = ' LSP', icon = ' ' },
 			{ '<leader>lf', vim.diagnostic.open_float, desc = 'Show diagnostics' },
+			{ '<leader>ls', vim.lsp.buf.signature_help, desc = 'Signature help', icon = '󰋖 ' },
+			{ 'gD', vim.lsp.buf.declaration, desc = 'Go to declaration', icon = ' ' },
 			{ 'K', vim.lsp.buf.hover, desc = 'Hover', icon = '󰉪 ' },
 			{ 'gi', vim.lsp.buf.implementation, desc = 'Goto implementation', icon = ' ' },
-			{ '<leader>ls', vim.lsp.buf.signature_help, desc = 'Signature help', icon = '󰋖 ' },
-			{ '<space>D', vim.lsp.buf.type_definition, desc = 'Type definition', icon = ' ' },
+			{ '<leader>D', vim.lsp.buf.type_definition, desc = 'Type definition', icon = ' ' },
 			{ 'gd', vim.lsp.buf.goto_definition, desc = 'Go to definition', icon = ' ' },
 			{ '<leader>fo', vim.lsp.buf.formatting, desc = 'Format' },
 			{ 'gr', vim.lsp.buf.references, desc = 'References', bufopts },
 			{
-				'<space>ca',
+				'<leader>la',
 				function()
 					if vim.bo[bufnr].filetype == 'rust' then
 						vim.cmd.RustLsp('codeAction')
 					else
-						vim.lsp.buf.code_action()
+						require('tiny-code-action').code_action()
 					end
 				end,
 				desc = 'Code Action',
 			},
 		})
 
-		-- NOTE: Fix all eslint offenses on save in JavaScript/TypeScript files
+		-- Enable this plugin
+		require('tiny-code-action').setup()
+
+		-- FIX: This dodesn't work for some reason
+		--Fix all eslint offenses on save in JavaScript/TypeScript files
 		---@diagnostic disable-next-line need-check-nil
 		-- if client.name == 'eslint' then
 		-- 	vim.api.nvim_create_autocmd('BufWritePre', {
