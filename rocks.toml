@@ -5,42 +5,8 @@ auto_install = "prompt"
 [rocks]
 
 [plugins]
-"rocks.nvim" = "2.40.0"
-nvim-web-devicons = "0.100"
-"rocks-git.nvim" = "2.2.0"
-"plenary.nvim" = "scm"
-luasnip = { version = "2.3.0", event = 'InsertEnter' }
-"rocks-config.nvim" = "2.3.1"
-nvim-ts-autotag = "scm"
-nvim-surround = { version = "2.1.5", event = "InsertEnter" }
-"overseer.nvim" = { version = "1.4.0", event = "DeferredUIEnter" }
-"feline.nvim" = { version = "1.6.3", event = 'BufEnter' }
-"conform.nvim" = { version = "8.1.0", event = 'BufWritePre' }
-"trouble.nvim" = { version = "3.6.0", event = "DeferredUIEnter" }
-"lspkind.nvim" = { version = "scm", event = "InsertEnter" }
-nvim-autopairs = { version = "scm", event = 'InsertEnter' }
-"which-key.nvim" = { version = "3.13.2", event = 'DeferredUIEnter' }
-alpha-nvim = "scm"
-"rocks-lazy.nvim" = "1.0.1"
-"rocks-edit.nvim" = "scm"
-friendly-snippets = { version = "scm", event = 'InsertEnter' }
-neorg-interim-ls = { version = "1.2.1" }
-nvim-notify = { version = "3.13.5" }
-"sus.nvim" = { version = "1.0.0", event = 'DeferredUIEnter' }
-rustaceanvim = { version = "5.4.2", ft = 'rust' }
-"todo-comments.nvim" = { version = "1.3.0", event = 'DeferredUIEnter' }
-neorg-se = { version = "1.1.10" }
-"flash.nvim" = { version = "2.1.0" }
-nvim-ufo = { version = "1.4.0", event = 'DeferredUIEnter' }
-"lazydev.nvim" = { version = "1.8.0" }
-"indentmini.nvim" = { version = "scm", event = 'DeferredUIEnter' }
-"image.nvim" = { version = "1.3.0", ft = ['markdown', 'norg'] }
-nvim-dap = "scm"
-"helpview.nvim" = { version = "1.1.0", event = 'DeferredUIEnter' }
-"markview.nvim" = { version = "23.1.0", ft = 'markdown' }
-
 # Treesitter
-"rocks-treesitter.nvim" = "1.1.2"
+"rocks-treesitter.nvim" = "1.1.3"
 nvim-treesitter-legacy-api = "0.9.2"
 tree-sitter-toml = "scm"
 tree-sitter-lua = "scm"
@@ -53,31 +19,55 @@ tree-sitter-javascript = "scm"
 tree-sitter-typescript = "scm"
 tree-sitter-ecma = "scm"
 tree-sitter-rust = "scm"
-tree-sitter-tmux = "0.0.11"
+tree-sitter-tmux = "scm"
+tree-sitter-diff = "scm"
+tree-sitter-fish = "scm"
+
+"rocks.nvim" = "2.40.2"
+nvim-web-devicons = "0.100"
+"rocks-git.nvim" = "2.3.1"
+"plenary.nvim" = "scm"
+luasnip = { version = "2.3.0", event = 'InsertEnter' }
+"rocks-config.nvim" = "3.0.0"
+nvim-ts-autotag = "scm"
+nvim-surround = { version = "2.1.5", event = "InsertEnter" }
+"overseer.nvim" = { version = "1.4.0", event = "DeferredUIEnter" }
+"feline.nvim" = { version = "1.6.3", event = 'BufEnter' }
+"conform.nvim" = { version = "8.1.0", event = 'BufWritePre' }
+"trouble.nvim" = { version = "3.6.0", event = "DeferredUIEnter" }
+"lspkind.nvim" = { version = "scm", event = "InsertEnter" }
+nvim-autopairs = { version = "scm", event = 'InsertEnter' }
+"which-key.nvim" = { version = "3.13.3", event = 'DeferredUIEnter' }
+alpha-nvim = "scm"
+"rocks-lazy.nvim" = "1.1.0"
+"rocks-edit.nvim" = "scm"
+friendly-snippets = { version = "scm", event = 'InsertEnter' }
+neorg-interim-ls = { version = "1.2.1" }
+nvim-notify = { version = "3.13.5" }
+"sus.nvim" = { version = "1.0.0", event = 'DeferredUIEnter' }
+rustaceanvim = { version = "5.8.0", ft = 'rust' }
+"todo-comments.nvim" = { version = "1.4.0", event = 'DeferredUIEnter' }
+neorg-se = { version = "1.1.10" }
+"flash.nvim" = { version = "2.1.0" }
+nvim-ufo = { version = "1.4.0", event = 'DeferredUIEnter' }
+"lazydev.nvim" = { version = "1.8.0" }
+"indentmini.nvim" = { version = "scm", event = 'DeferredUIEnter' }
+"image.nvim" = { version = "1.3.0", ft = ['markdown', 'norg'] }
+nvim-dap = "scm"
+"helpview.nvim" = { version = "1.1.0", event = 'DeferredUIEnter' }
+"markview.nvim" = { version = "23.1.0", ft = 'markdown' }
+"mason.nvim" = "1.10.0"
+cmp-buffer = "scm"
 
 [plugins."oil.nvim"]
 version = "2.12.2"
 keys = [{ lhs = '-', rhs = ':Oil<CR>', desc = 'Oil' }]
 
-[plugins.nvim-cmp]
-version = "scm"
-opt = true
-
-[plugins.cmp-cmdline]
-version = "scm"
-# opt = true
-
-[plugins.cmp-nvim-lsp]
-version = "scm"
-opt = true
-
 [plugins.cmp-path]
 version = "scm"
-# opt = true
 
 [plugins.cmp_luasnip]
 version = "scm"
-# opt = true
 
 [plugins."telescope.nvim"]
 version = "scm"
@@ -101,7 +91,7 @@ event = 'DeferredUIEnter'
 [plugins."nvim-colorizer.lua"]
 git = "nvchad/nvim-colorizer.lua"
 rev = "master"
-event = 'DeferredUIEnter'
+config = "tarun.plugins.colorizer"
 
 [plugins."telescope-symbols.nvim"]
 git = "nvim-telescope/telescope-symbols.nvim"
@@ -116,19 +106,6 @@ ft = ['html', 'css', 'js']
 [plugins.neocodeium]
 git = "monkoose/neocodeium"
 rev = "main"
-event = 'InsertEnter'
-opt = true
-
-[plugins."neominimap.nvim"]
-git = "isrothy/neominimap.nvim"
-rev = "v3.6.0"
-event = 'DeferredUIEnter'
-opt = true
-
-[plugins."selabel.nvim"]
-git = "axlefublr/selabel.nvim"
-rev = "v0.0.1"
-event = 'DeferredUIEnter'
 
 [plugins."barbar.nvim"]
 git = "romgrk/barbar.nvim"
@@ -174,10 +151,21 @@ rev = "v1.9.0"
 
 [plugins.nvim-rip-substitute]
 git = "chrisgrieser/nvim-rip-substitute"
-cmd = "RipSubstitute"
-keys = [
-  { lhs = '<leader>r', rhs = ':RipSubstitute<CR>', desc = 'Search and Replace' },
+rev = "main"
+
+[plugins."tiny-code-action.nvim"]
+git = "rachartier/tiny-code-action.nvim"
+rev = "25874e2f2197fe5ae939b824f0f983c9a062ad7e"
+
+[bundles.completion] 
+items = [
+    "care.nvim",
+    "cmp-path",
+    "care-cmp",
+    "cmp_luasnip",
+    "cmp-buffer",
 ]
+config = "tarun.plugins.care"
 
 [config]
 plugins_dir = 'tarun/plugins/'
