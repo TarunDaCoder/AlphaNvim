@@ -1,6 +1,7 @@
 -- Catppuccin {{{
 require('catppuccin').setup({
-	flavour = 'mocha',
+	flavour = 'macchiato',
+	transparent_background = false,
 	integrations = {
 		alpha = true,
 		notify = true,
