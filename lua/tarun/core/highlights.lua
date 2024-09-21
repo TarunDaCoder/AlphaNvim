@@ -8,7 +8,7 @@ local hl = vim.api.nvim_set_hl
 -- hl(0, 'LineNrBelow', { fg = '#485061' })
 -- hl(0, 'Normal', { bg = '#2d323b' })
 --
--- hl(0, 'CmpSel', { bg = '#485061' })
+hl(0, 'CmpSel', { bg = '#485061' })
 --
 -- hl(0, 'NonText', { bg = '#2d323b', fg = '#4a505b' })
 --
@@ -26,7 +26,11 @@ local hl = vim.api.nvim_set_hl
 -- hl(0, 'StatusLine', { bg = '#2d323b' })
 --
 -- hl(0, 'FoldColumn', { bg = '#2d323b', fg = '#495162' })
---
+
+hl(0, 'WhichKeyNormal', { bg = '#202334' })
+hl(0, 'WhichKeyBorder', { bg = '#202334' })
+hl(0, 'WhichKeyTitle', { bg = '#202334' })
+
 hl(0, '@neorg.todo_items.on_hold.norg', { fg = '#89B4FB', bg = 'none' })
 hl(0, '@neorg.todo_items.urgent.norg', { fg = '#f38ba9', bg = 'none' })
 
