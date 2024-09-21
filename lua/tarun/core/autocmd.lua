@@ -73,3 +73,8 @@ cmd('FileType', {
 		vim.keymap.set('n', 'q', vim.cmd.close, { desc = 'Close the current buffer', buffer = true })
 	end,
 })
+
+cmd('FileType', {
+	pattern = '*',
+	command = [[ColorizerAttachToBuffer]],
+})
