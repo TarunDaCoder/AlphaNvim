@@ -121,12 +121,6 @@ git = "axlefublr/dress.nvim"
 rev = "4c293b1d2688dbe06d0533dcbd98c3ad7f2534b7"
 event = 'DeferredUIEnter'
 
-[plugins."diagram.nvim"]
-git = "3rd/diagram.nvim"
-rev = "feaab9bf6b5e895a8eca18947214c2787410648d"
-ft = ['markdown', 'norg']
-config = false
-
 [plugins."lsp_lines.nvim"]
 git = "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
 event = 'LspAttach'
