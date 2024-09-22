@@ -21,7 +21,7 @@ git clone https://github.com/TarunDaCoder/AlphaNvim.git ~/.config/nvim
 ```
 
 - Then, inside of neovim do `:Rocks sync`
-> [!INFO]
+> [!NOTE]
 > Doing `:Rocks sync` might take a while the first time you run it as `rocks.nvim` is a bit slow.
 - And, ta-da! You now have `AlphaNvim` installed! 🎉
 
