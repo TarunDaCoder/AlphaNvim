@@ -151,16 +151,6 @@ git = "brianhuster/live-preview.nvim"
 rev = "e92c6099bc0177378e8a9dfa169de24b109a5ad9"
 ft = ['markdown', 'html', 'css', 'javscript']
 
-[bundles.completion] 
-items = [
-    "care.nvim",
-    "cmp-path",
-    "care-cmp",
-    "cmp_luasnip",
-    "cmp-buffer",
-]
-config = "tarun.plugins.care"
-
 [config]
 plugins_dir = 'tarun/plugins/'
 auto_setup = true
