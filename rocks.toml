@@ -45,7 +45,7 @@ friendly-snippets = { version = "scm", event = 'InsertEnter' }
 neorg-interim-ls = { version = "1.2.1" }
 nvim-notify = { version = "3.13.5" }
 "sus.nvim" = { version = "1.0.0", event = 'DeferredUIEnter' }
-rustaceanvim = { version = "5.8.0", ft = 'rust' }
+rustaceanvim = { version = "5.8.1", ft = 'rust' }
 "todo-comments.nvim" = { version = "1.4.0", event = 'DeferredUIEnter' }
 neorg-se = { version = "1.1.10" }
 "flash.nvim" = { version = "2.1.0" }
@@ -97,11 +97,6 @@ config = "tarun.plugins.colorizer"
 git = "nvim-telescope/telescope-symbols.nvim"
 rev = "master"
 event = 'DeferredUIEnter'
-
-[plugins."live-server.nvim"]
-git = "barrett-ruth/live-server.nvim"
-rev = "main"
-ft = ['html', 'css', 'js']
 
 [plugins.neocodeium]
 git = "monkoose/neocodeium"
@@ -156,6 +151,11 @@ rev = "main"
 [plugins."tiny-code-action.nvim"]
 git = "rachartier/tiny-code-action.nvim"
 rev = "25874e2f2197fe5ae939b824f0f983c9a062ad7e"
+
+[plugins."live-preview.nvim"]
+git = "brianhuster/live-preview.nvim"
+rev = "e92c6099bc0177378e8a9dfa169de24b109a5ad9"
+ft = ['markdown', 'html', 'css', 'javscript']
 
 [bundles.completion] 
 items = [
