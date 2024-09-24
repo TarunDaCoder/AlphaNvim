@@ -43,9 +43,9 @@ alpha-nvim = "scm"
 "rocks-edit.nvim" = "scm"
 friendly-snippets = { version = "scm", event = 'InsertEnter' }
 neorg-interim-ls = { version = "1.2.1" }
-nvim-notify = { version = "3.13.5" }
+nvim-notify = { version = "3.14.0" }
 "sus.nvim" = { version = "1.0.0", event = 'DeferredUIEnter' }
-rustaceanvim = { version = "5.8.1", ft = 'rust' }
+rustaceanvim = { version = "5.9.0", ft = 'rust' }
 "todo-comments.nvim" = { version = "1.4.0", event = 'DeferredUIEnter' }
 neorg-se = { version = "1.1.10" }
 "flash.nvim" = { version = "2.1.0" }
@@ -58,6 +58,7 @@ nvim-dap = "scm"
 "markview.nvim" = { version = "23.1.0", ft = 'markdown' }
 "mason.nvim" = "1.10.0"
 cmp-buffer = "scm"
+tree-sitter-bash = "0.0.18"
 
 [plugins."oil.nvim"]
 version = "2.12.2"
