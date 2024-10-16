@@ -35,3 +35,32 @@ vim.api.nvim_create_autocmd('InsertLeave', {
 		require('care').core.menu:close()
 	end,
 })
+
+require('care').setup({
+	ui = {
+		menu = {
+			format_entry = function(entry, data)
+				return {
+
+					require('care.presets.components').Padding(1),
+					require('care.presets.components').Label(entry, data, true),
+					require('care.presets.components').Padding(1),
+					require('care.presets.components').KindIcon(entry, 'blended'),
+					require('care.presets.components').Padding(1),
+				}
+			end,
+
+			border = {
+				{ '▄' },
+				{ '▄' },
+				{ '▄' },
+				{ '█' },
+				{ '▀' },
+				{ '▀' },
+				{ '▀' },
+				{ '█' },
+			},
+			scrollbar = {},
+		},
+	},
+})
