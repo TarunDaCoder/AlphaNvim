@@ -387,7 +387,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
 					if vim.bo[bufnr].filetype == 'rust' then
 						vim.cmd.RustLsp('codeAction')
 					else
-						require('tiny-code-action').code_action()
+						-- require('tiny-code-action').code_action()
+            vim.lsp.buf.code_action()
 					end
 				end,
 				desc = 'Code Action',
@@ -395,7 +396,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		})
 
 		-- Enable this plugin
-		require('tiny-code-action').setup()
+		-- require('tiny-code-action').setup()
 
 		-- FIX: This dodesn't work for some reason
 		--Fix all eslint offenses on save in JavaScript/TypeScript files

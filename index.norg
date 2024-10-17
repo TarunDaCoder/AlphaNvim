@@ -15,7 +15,7 @@ version: 1.1.1
 -- (x) image.nvim
 --- NOTE: only works on kitty
 -- (x) Tree-sitter error with html files
--- (=) `care.nvim` luasnip integration
+-- (x) `care.nvim` luasnip integration
 -- (x) Undefined global "vim"
 -- (_) `LSP: No client with ID 1`
 --- temp fix: use lsp.lua instead of lspconfig

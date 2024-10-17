@@ -60,7 +60,9 @@ require('care').setup({
 				{ '▀' },
 				{ '█' },
 			},
-			scrollbar = {},
+			scrollbar = {
+				enabled = false,
+			},
 		},
 	},
 })

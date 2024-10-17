@@ -8,7 +8,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
 -- Flash
-map('n', 's', ':lua require("flash").jump()<CR>', opts)
+-- map('n', 's', ':lua require("flash").jump()<CR>', opts)
 
 -- Normal mode --
 -- Better window navigation
