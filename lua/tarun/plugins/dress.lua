@@ -1,5 +1,5 @@
 require('dress').setup({
-	win_opts = {
-		border = 'single',
-	},
+    win_opts = {
+        border = 'single',
+    },
 })
