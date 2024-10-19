@@ -41,7 +41,7 @@ vim.diagnostic.config({
 	severity_sort = true,
 	float = {
 		source = 'if_many',
-		border = 'rounded',
+		border = { '▄', '▄', '▄', '█', '▀', '▀', '▀', '█' },
 		show_header = false,
 		focusable = false,
 	},
@@ -348,6 +348,99 @@ local servers = {
 			'javascript',
 		},
 	},
+
+	-- TailwindCSS
+	tailwind = {
+		name = 'tailwindcss',
+		cmd = { 'tailwindcss-language-server', '--stdio' },
+		root_dir = vim.fs.root(0, {
+			'tailwind.config.js',
+			'tailwind.config.cjs',
+			'tailwind.config.mjs',
+			'tailwind.config.ts',
+			'postcss.config.js',
+			'postcss.config.cjs',
+			'postcss.config.mjs',
+			'postcss.config.ts',
+			'package.json',
+			'node_modules',
+			'.git',
+		}),
+		filetypes = {
+			'aspnetcorerazor',
+			'astro',
+			'astro-markdown',
+			'blade',
+			'clojure',
+			'django-html',
+			'htmldjango',
+			'edge',
+			'eelixir',
+			'elixir',
+			'ejs',
+			'erb',
+			'eruby',
+			'gohtml',
+			'gohtmltmpl',
+			'haml',
+			'handlebars',
+			'hbs',
+			'html',
+			'htmlangular',
+			'html-eex',
+			'heex',
+			'jade',
+			'leaf',
+			'liquid',
+			'markdown',
+			'mdx',
+			'mustache',
+			'njk',
+			'nunjucks',
+			'php',
+			'razor',
+			'slim',
+			'twig',
+			'css',
+			'less',
+			'postcss',
+			'sass',
+			'scss',
+			'stylus',
+			'sugarss',
+			'javascript',
+			'javascriptreact',
+			'reason',
+			'rescript',
+			'typescript',
+			'typescriptreact',
+			'vue',
+			'svelte',
+			'templ',
+		},
+		capabilities = capabilities,
+		settings = {
+			tailwindCSS = {
+				classAttributes = { 'class', 'className', 'class:list', 'classList', 'ngClass' },
+				includeLanguages = {
+					eelixir = 'html-eex',
+					eruby = 'erb',
+					htmlangular = 'html',
+					templ = 'html',
+				},
+				lint = {
+					cssConflict = 'warning',
+					invalidApply = 'error',
+					invalidConfigPath = 'error',
+					invalidScreen = 'error',
+					invalidTailwindDirective = 'error',
+					invalidVariant = 'error',
+					recommendedVariantOrder = 'warning',
+				},
+				validate = true,
+			},
+		},
+	},
 }
 
 -- Create keybindings, commands and autocommands on LSP attach
@@ -387,8 +480,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 					if vim.bo[bufnr].filetype == 'rust' then
 						vim.cmd.RustLsp('codeAction')
 					else
-						-- require('tiny-code-action').code_action()
-            vim.lsp.buf.code_action()
+						require('tiny-code-action').code_action()
 					end
 				end,
 				desc = 'Code Action',
@@ -396,7 +488,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		})
 
 		-- Enable this plugin
-		-- require('tiny-code-action').setup()
+		require('tiny-code-action').setup()
 
 		-- FIX: This dodesn't work for some reason
 		--Fix all eslint offenses on save in JavaScript/TypeScript files
