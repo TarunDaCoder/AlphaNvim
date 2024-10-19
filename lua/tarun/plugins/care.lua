@@ -49,19 +49,21 @@ require('care').setup({
 					require('care.presets.components').Padding(1),
 				}
 			end,
-
-			border = {
-				{ '▄' },
-				{ '▄' },
-				{ '▄' },
-				{ '█' },
-				{ '▀' },
-				{ '▀' },
-				{ '▀' },
-				{ '█' },
-			},
+			border = { '▄', '▄', '▄', '█', '▀', '▀', '▀', '█' },
 			scrollbar = {
 				enabled = false,
+			},
+		},
+		docs_view = {
+			border = {
+				{ '▄', '@care.border' },
+				{ '▄', '@care.border' },
+				{ '▄', '@care.border' },
+				{ '█', '@care.border' },
+				{ '▀', '@care.border' },
+				{ '▀', '@care.border' },
+				{ '▀', '@care.border' },
+				{ '█', '@care.border' },
 			},
 		},
 	},
