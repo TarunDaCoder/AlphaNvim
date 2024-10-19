@@ -365,6 +365,8 @@ local servers = {
 			'package.json',
 			'node_modules',
 			'.git',
+			---@diagnostic disable-next-line undefined-field
+			vim.uv.cwd(), -- equivalent of `single_file_mode` in lspconfig
 		}),
 		filetypes = {
 			'aspnetcorerazor',
