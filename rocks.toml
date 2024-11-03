@@ -25,6 +25,8 @@ tree-sitter-fish = "scm"
 tree-sitter-bash = "0.0.30"
 tree-sitter-json = "0.0.29"
 tree-sitter-cpp = "0.0.32"
+tree-sitter-css = "0.0.30"
+tree-sitter-nu = "scm"
 
 # Rocks
 "rocks.nvim" = "2.40.5"
@@ -32,6 +34,7 @@ tree-sitter-cpp = "0.0.32"
 "rocks-config.nvim" = "3.0.0"
 "rocks-lazy.nvim" = "1.1.1"
 "rocks-edit.nvim" = "scm"
+"rocks-dev.nvim" = "1.7.0"
 
 # Other plugins
 nvim-web-devicons = "0.100"
@@ -54,7 +57,6 @@ nvim-notify = { version = "3.14.0" }
 rustaceanvim = { version = "5.13.0", ft = 'rust' }
 "todo-comments.nvim" = { version = "1.4.0", event = 'DeferredUIEnter' }
 neorg-se = { version = "1.1.10" }
-"flash.nvim" = { version = "2.1.0" }
 nvim-ufo = { version = "1.4.0", event = 'DeferredUIEnter' }
 "lazydev.nvim" = { version = "1.8.0" }
 "indentmini.nvim" = { version = "scm", event = 'DeferredUIEnter' }
@@ -63,7 +65,6 @@ nvim-dap = { version = "scm", event = "DeferredUIEnter" }
 "helpview.nvim" = { version = "1.1.0", event = 'DeferredUIEnter' }
 "markview.nvim" = { version = "24.0.0", ft = 'markdown' }
 "mason.nvim" = { version = "1.10.0", event = 'DeferredUIEnter' }
-"multicursors.nvim" = "2.0.0"
 cmp-buffer = "scm"
 cmp-path = "scm"
 cmp_luasnip = "scm"
@@ -71,7 +72,9 @@ cmp_luasnip = "scm"
 "nvim-tree.lua" = { version = "1.6.0", event = "DeferredUIEnter" }
 neorg = { version = "9.1.1", ft = "norg" }
 neorg-telescope = { version = "1.2.2", ft = "norg" }
-tree-sitter-css = "0.0.30"
+
+[plugins.ghostty]
+dir = "~/dev/github/ghostty/zig-out/share/vim/vimfiles/"
 
 [plugins."oil.nvim"]
 version = "2.12.2"
