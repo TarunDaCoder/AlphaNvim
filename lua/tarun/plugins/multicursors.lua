@@ -1,1 +1,0 @@
-require('multicursors').setup({})
