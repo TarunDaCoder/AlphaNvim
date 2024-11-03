@@ -23,7 +23,7 @@ wk.add({
     { '<leader>gb', ':Gitsigns reset_buffer<CR>', desc = 'Reset buffer' },
     { '<leader>gd', ':Gitsigns diffthis<CR>', desc = 'Diff this', icon = ' ' },
     { '<leader>gh', ':Gitsigns preview_hunk<CR>', desc = 'Preview hunk', icon = ' ' },
-    { '<leader>gl', ':Gitsigns toggle_current_line_blame<CR>', desc = 'Toggle current line blame' },
+    { '<leader>gl', ':Gitsigns blame_line<CR>', desc = 'Toggle line blame' },
     { '<leader>gn', ':Gitsigns next_hunk<CR>', desc = 'Next hunk', icon = '󰼧 ' },
     { '<leader>gp', ':Gitsigns prev_hunk<CR>', desc = 'Previous hunk', icon = '󰼨 ' },
     { '<leader>gr', ':Gitsigns reset_hunk<CR>', desc = 'Reset hunk', icon = '󰝳 ' },
