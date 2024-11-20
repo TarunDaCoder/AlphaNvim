@@ -72,6 +72,7 @@ cmp_luasnip = "scm"
 "nvim-tree.lua" = { version = "1.6.0", event = "DeferredUIEnter" }
 neorg = { version = "9.1.1", ft = "norg" }
 neorg-telescope = { version = "1.2.2", ft = "norg" }
+tree-sitter-python = "0.0.30"
 
 [plugins.ghostty]
 dir = "~/dev/github/ghostty/zig-out/share/vim/vimfiles/"
@@ -121,7 +122,7 @@ rev = "v3.0.0^{}"
 
 [plugins."care.nvim"]
 git = "max397574/care.nvim"
-rev = "main"
+rev = "53229fa"
 
 [plugins.care-cmp]
 git = "max397574/care-cmp"
@@ -143,6 +144,10 @@ rev = "25874e2f2197fe5ae939b824f0f983c9a062ad7e"
 git = "brianhuster/live-preview.nvim"
 rev = "e92c6099bc0177378e8a9dfa169de24b109a5ad9"
 ft = ['markdown', 'html', 'css', 'javscript']
+
+[plugins.cmp-omni]
+git = "hrsh7th/cmp-omni"
+rev = "4ef610bbd85a5ee4e97e09450c0daecbdc60de86"
 
 [config]
 plugins_dir = 'tarun/plugins/'
