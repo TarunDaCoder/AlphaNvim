@@ -75,7 +75,7 @@ neorg-telescope = { version = "1.2.2", ft = "norg" }
 tree-sitter-python = "0.0.30"
 
 [plugins.ghostty]
-dir = "~/dev/github/ghostty/zig-out/share/vim/vimfiles/"
+dir = "/usr/share/vim/vimfiles/"
 
 [plugins."oil.nvim"]
 version = "2.12.2"
@@ -120,13 +120,13 @@ git = "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
 event = 'LspAttach'
 rev = "v3.0.0^{}"
 
-[plugins."care.nvim"]
-git = "max397574/care.nvim"
-rev = "53229fa"
+# [plugins."care.nvim"]
+# git = "max397574/care.nvim"
+# rev = "53229fa"
 
-[plugins.care-cmp]
-git = "max397574/care-cmp"
-rev = 'main'
+# [plugins.care-cmp]
+# git = "max397574/care-cmp"
+# rev = 'main'
 
 [plugins.nvim]
 git = "catppuccin/nvim"
@@ -148,6 +148,11 @@ ft = ['markdown', 'html', 'css', 'javscript']
 [plugins.cmp-omni]
 git = "hrsh7th/cmp-omni"
 rev = "4ef610bbd85a5ee4e97e09450c0daecbdc60de86"
+
+[plugins."blink.cmp"]
+git = "saghen/blink.cmp"
+rev = "v0.6.2"
+config = "tarun.plugins.blink"
 
 [config]
 plugins_dir = 'tarun/plugins/'
